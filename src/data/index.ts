@@ -12,7 +12,7 @@ export const heroData = {
   image: "/images/hero-banner.png",
 };
 
-export const introVideoData = {
+export const introData = {
   title: "GIỚI THIỆU TÂY NINH",
   desc: "Tây Ninh - Điểm đến tiềm năng cho chuỗi cung ứng xuất nhập khẩu và thương mại điện tử xuyên biên giới.",
   details: [
