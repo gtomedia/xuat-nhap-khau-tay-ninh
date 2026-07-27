@@ -266,9 +266,9 @@ export const statsData = [
 export const footerData = {
   logoTitle: "HỘI NGHỊ KẾT NỐI CHUỖI CUNG ỨNG HÀNG HOÁ",
   logoImg: "/images/logo.png",
-  directors: ["Bộ Công Thương", "UBND Tỉnh Tây Ninh"],
+  directors: ["Bộ công thương", "UBND tỉnh Tây Ninh"],
   implementers: ["Sở Công Thương tỉnh Tây Ninh"],
-  location: "Hội trường Tỉnh uỷ Tây Ninh, Số 1, đường Phạm Tùng, TP Tây Ninh",
+  location: "Hội trường Thống nhất, Số 61 Nguyễn Huệ, Phường Long An, Tây Ninh",
   contact: {
     phone: "0276 3811 111",
     email: "socongthuong@tayninh.gov.vn",

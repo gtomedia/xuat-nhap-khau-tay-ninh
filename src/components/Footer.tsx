@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, Mail, Phone, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import { footerData } from '@/data';
 import { useAppStore } from '@/store/useAppStore';
 
@@ -53,42 +53,19 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           <div>
-            <h4 style={{ fontSize: '1.125rem', marginBottom: '1rem', fontWeight: 700, color: '#facc15', textTransform: 'uppercase' }}>Liên hệ</h4>
+            <h4 style={{ fontSize: '1.125rem', marginBottom: '1rem', fontWeight: 700, color: '#facc15', textTransform: 'uppercase' }}>Hoặc liên hệ</h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem', color: 'rgba(255,255,255,0.8)' }}>
-              <li style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-                <Phone size={16} />
-                <a
-                  href={`tel:${footerData.contact.phone}`}
-                  style={{ color: 'inherit', textDecoration: 'none' }}
-                  onMouseEnter={e => (e.currentTarget.style.color = '#facc15')}
-                  onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.8)')}
-                >
-                  {footerData.contact.phone}
-                </a>
+              <li>
+                <strong style={{ color: '#fff' }}>Cơ quan ngoại giao:</strong> Đ/c Thái Hòa - Tel: <a href="tel:0918128365" style={{ color: 'inherit', textDecoration: 'none' }} onMouseEnter={e => (e.currentTarget.style.color = '#facc15')} onMouseLeave={e => (e.currentTarget.style.color = 'inherit')}>0918.128.365</a>
               </li>
-              <li style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-                <Mail size={16} />
-                <a
-                  href={`mailto:${footerData.contact.email}`}
-                  style={{ color: 'inherit', textDecoration: 'none' }}
-                  onMouseEnter={e => (e.currentTarget.style.color = '#facc15')}
-                  onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.8)')}
-                >
-                  {footerData.contact.email}
-                </a>
+              <li>
+                <strong style={{ color: '#fff' }}>KCN:</strong> Quốc Tuấn <a href="tel:0949819964" style={{ color: 'inherit', textDecoration: 'none' }} onMouseEnter={e => (e.currentTarget.style.color = '#facc15')} onMouseLeave={e => (e.currentTarget.style.color = 'inherit')}>0949.819.964</a>
               </li>
-              <li style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-                <Globe size={16} />
-                <a
-                  href={`https://${footerData.contact.website}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: 'inherit', textDecoration: 'none' }}
-                  onMouseEnter={e => (e.currentTarget.style.color = '#facc15')}
-                  onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.8)')}
-                >
-                  {footerData.contact.website}
-                </a>
+              <li>
+                <strong style={{ color: '#fff' }}>Sở Công Thương:</strong> Đ/c Thúy Duy - Tel: <a href="tel:0979972528" style={{ color: 'inherit', textDecoration: 'none' }} onMouseEnter={e => (e.currentTarget.style.color = '#facc15')} onMouseLeave={e => (e.currentTarget.style.color = 'inherit')}>0979.972.528</a>
+              </li>
+              <li>
+                <strong style={{ color: '#fff' }}>Sở Tài chính:</strong> Tường Oanh <a href="tel:0325492768" style={{ color: 'inherit', textDecoration: 'none' }} onMouseEnter={e => (e.currentTarget.style.color = '#facc15')} onMouseLeave={e => (e.currentTarget.style.color = 'inherit')}>0325.492.768</a>
               </li>
             </ul>
           </div>

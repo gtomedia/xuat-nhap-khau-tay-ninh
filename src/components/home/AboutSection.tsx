@@ -22,7 +22,7 @@ const AboutSection: React.FC = () => {
     <section className="section about-section" id="about" style={{ padding: "5rem 0", background: "#ffffff" }}>
       <div className="container">
         <div className="about-layout" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3.5rem", alignItems: "center" }}>
-          {/* Left Column: Text Content & Info Cards */}
+          {/* Left Column: Text Content */}
           <div className="about-text" data-reveal="left">
             <span
               style={{
@@ -68,51 +68,15 @@ const AboutSection: React.FC = () => {
               style={{
                 color: "#475569",
                 lineHeight: 1.75,
-                marginBottom: "1.75rem",
+                marginBottom: "0",
                 fontSize: "1.05rem",
               }}
             >
               {aboutData.desc2}
             </p>
-
-            {/* Highlights Grid 2x2 */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0.875rem" }}>
-              {aboutData.highlights.map((item, index) => (
-                <div
-                  key={index}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.75rem",
-                    padding: "0.75rem 1rem",
-                    background: "#f8fafc",
-                    borderRadius: "0.75rem",
-                    border: "1px solid #e2e8f0",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: "2.25rem",
-                      height: "2.25rem",
-                      borderRadius: "0.5rem",
-                      background: "rgba(5, 85, 253, 0.08)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                    }}
-                  >
-                    {renderIcon(item.icon)}
-                  </div>
-                  <span style={{ fontWeight: 600, fontSize: "0.9rem", color: "#334155", lineHeight: "1.3" }}>
-                    {item.text}
-                  </span>
-                </div>
-              ))}
-            </div>
           </div>
 
-          {/* Right Column: Video + Stat Cards */}
+          {/* Right Column: Video Box */}
           <div
             data-reveal="right"
             style={{
@@ -174,43 +138,80 @@ const AboutSection: React.FC = () => {
                 )}
               </div>
             </div>
-
-            {/* Metric Highlights below video */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-              <div
-                style={{
-                  background: "linear-gradient(135deg, #0555fd, #0340d0)",
-                  borderRadius: "1rem",
-                  padding: "1.25rem 1.5rem",
-                  color: "#ffffff",
-                  boxShadow: "0 8px 20px rgba(5, 85, 253, 0.2)",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                }}
-              >
-                <div style={{ fontSize: "1.75rem", fontWeight: "800", lineHeight: "1.2" }}>700+</div>
-                <div style={{ fontSize: "0.875rem", opacity: 0.9, marginTop: "0.25rem" }}>Đại biểu tham dự</div>
-              </div>
-
-              <div
-                style={{
-                  background: "linear-gradient(135deg, #e67e22, #d35400)",
-                  borderRadius: "1rem",
-                  padding: "1.25rem 1.5rem",
-                  color: "#ffffff",
-                  boxShadow: "0 8px 20px rgba(230, 126, 34, 0.2)",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                }}
-              >
-                <div style={{ fontSize: "1.75rem", fontWeight: "800", lineHeight: "1.2" }}>300+</div>
-                <div style={{ fontSize: "0.875rem", opacity: 0.9, marginTop: "0.25rem" }}>Doanh nghiệp đồng hành</div>
-              </div>
-            </div>
           </div>
         </div>
+
+        {/* 4 Highlights Horizontal Row */}
+        <div className="about-highlights-row">
+          {aboutData.highlights.map((item, index) => (
+            <div
+              key={index}
+              className="about-highlight-card"
+            >
+              <div
+                style={{
+                  width: "2.75rem",
+                  height: "2.75rem",
+                  borderRadius: "0.75rem",
+                  background: "rgba(5, 85, 253, 0.08)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                }}
+              >
+                {renderIcon(item.icon)}
+              </div>
+              <span
+                style={{
+                  fontWeight: 600,
+                  fontSize: "0.95rem",
+                  color: "#334155",
+                  lineHeight: "1.45",
+                }}
+              >
+                {item.text}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <style>{`
+          .about-highlights-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+          }
+          .about-highlight-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            background: #f8fafc;
+            border-radius: 1rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+          .about-highlight-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-color: rgba(5, 85, 253, 0.3);
+          }
+          @media (max-width: 1024px) {
+            .about-highlights-row {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 1rem;
+              margin-top: 2.5rem;
+            }
+          }
+          @media (max-width: 640px) {
+            .about-highlights-row {
+              grid-template-columns: 1fr;
+            }
+          }
+        `}</style>
       </div>
     </section>
   );

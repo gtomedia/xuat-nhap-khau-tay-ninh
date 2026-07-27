@@ -20,7 +20,7 @@ const SpeakersSection: React.FC = () => {
       <div className="container" style={{ position: "relative", zIndex: 2 }}>
         <div className="text-center" style={{ marginBottom: "4rem" }} data-reveal>
           <h2 className="heading-split">
-            DIỄN <span>GIẢ</span>
+            DIỄN GIẢ
           </h2>
           <p
             style={{
