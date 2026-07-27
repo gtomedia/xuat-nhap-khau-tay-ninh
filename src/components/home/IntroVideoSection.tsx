@@ -4,11 +4,12 @@ import { introVideoData } from "@/data";
 const IntroVideoSection: React.FC = () => {
   return (
     <section
-      className="section bg-white animate-fade-up"
+      className="section bg-white"
       style={{ padding: "5rem 0" }}
+      data-reveal
     >
       <div className="container">
-        <div className="text-center" style={{ marginBottom: "3rem" }}>
+        <div className="text-center" style={{ marginBottom: "3rem" }} data-reveal>
           <h2 className="heading-overline">{introVideoData.title}</h2>
           <p
             style={{

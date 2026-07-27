@@ -225,3 +225,43 @@ export const footerData = {
     website: "tayninh.gov.vn",
   },
 };
+
+export const benefitsData = {
+  tagline: "Vì sao nên tham gia?",
+  title: "QUYỀN LỢI ĐẠI BIỂU",
+  desc: "Hội nghị mở ra nhiều cơ hội thiết thực cho các doanh nghiệp, nhà đầu tư và tổ chức quan tâm đến sự phát triển của chuỗi cung ứng Tây Ninh.",
+  items: [
+    {
+      icon: "Globe",
+      title: "Mở rộng thị trường quốc tế",
+      desc: "Tiếp cận trực tiếp các nhà mua hàng và đối tác quốc tế từ EU, Bắc Mỹ và Đông Nam Á.",
+    },
+    {
+      icon: "TrendingUp",
+      title: "Cập nhật xu hướng TMĐT",
+      desc: "Nắm bắt các xu hướng thương mại điện tử xuyên biên giới mới nhất từ chuyên gia hàng đầu.",
+    },
+    {
+      icon: "Handshake",
+      title: "Kết nối giao thương B2B",
+      desc: "Tham gia các phiên B2B chuyên sâu, tìm kiếm đối tác vận tải và logistics tối ưu.",
+    },
+    {
+      icon: "FileText",
+      title: "Lắng nghe chính sách mới",
+      desc: "Cập nhật các chính sách ưu đãi đầu tư và hỗ trợ xuất nhập khẩu từ chính quyền địa phương.",
+    },
+  ]
+};
+
+export const mapData = {
+  tagline: "Không gian sự kiện",
+  title: "SƠ ĐỒ TRIỂN LÃM & B2B",
+  desc: "Hội nghị được tổ chức quy mô với các phân khu chức năng riêng biệt nhằm tối ưu hóa trải nghiệm kết nối và giao thương của đại biểu.",
+  zones: [
+    { name: "Khu vực Hội trường chính", color: "bg-blue-600" },
+    { name: "Không gian trưng bày SP Tây Ninh", color: "bg-emerald-600" },
+    { name: "Khu vực Kết nối Giao thương (B2B)", color: "bg-amber-500" },
+    { name: "Khu vực Tư vấn Chính sách", color: "bg-purple-600" },
+  ]
+};

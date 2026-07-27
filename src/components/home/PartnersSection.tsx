@@ -4,7 +4,8 @@ import { partnersData } from "@/data";
 const PartnersSection: React.FC = () => {
   return (
     <section
-      className="section animate-fade-left"
+      className="section"
+      data-reveal
       style={{
         paddingBottom: "4rem",
         paddingTop: "4rem",

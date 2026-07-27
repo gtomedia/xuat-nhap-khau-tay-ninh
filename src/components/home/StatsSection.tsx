@@ -23,8 +23,9 @@ const StatsSection: React.FC = () => {
 
   return (
     <section
-      className="section animate-zoom"
+      className="section"
       style={{ backgroundColor: "var(--primary)", color: "white" }}
+      data-reveal="zoom"
       ref={statsRef}
     >
       <div className="container">

@@ -9,7 +9,7 @@ const SpeakersSection: React.FC = () => {
 
   return (
     <section
-      className="section animate-fade-up"
+      className="section"
       style={{
         paddingBottom: "5rem",
         paddingTop: "5rem",
@@ -18,7 +18,7 @@ const SpeakersSection: React.FC = () => {
       }}
     >
       <div className="container" style={{ position: "relative", zIndex: 2 }}>
-        <div className="text-center" style={{ marginBottom: "4rem" }}>
+        <div className="text-center" style={{ marginBottom: "4rem" }} data-reveal>
           <h2 className="heading-split">
             DIỄN <span>GIẢ</span>
           </h2>
@@ -37,6 +37,8 @@ const SpeakersSection: React.FC = () => {
 
         <div
           className="grid grid-cols-3 gap-8"
+          data-reveal-group
+          data-stagger="100"
           style={{
             transition: "all 0.5s ease-in-out",
             opacity: 1,
@@ -46,7 +48,7 @@ const SpeakersSection: React.FC = () => {
             <div
               className="speaker-pop-card"
               key={speaker.id}
-              style={{ animation: "fadeIn 0.5s ease" }}
+              data-reveal-child="up"
             >
               <img
                 src={speaker.img}

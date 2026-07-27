@@ -19,10 +19,10 @@ const AboutSection: React.FC = () => {
   };
 
   return (
-    <section className="section about-section animate-fade-up" id="about">
+    <section className="section about-section" id="about">
       <div className="container">
         <div className="about-layout">
-          <div className="about-text">
+          <div className="about-text" data-reveal="left">
             <span
               style={{
                 display: "inline-block",
@@ -89,6 +89,7 @@ const AboutSection: React.FC = () => {
           </div>
           <div
             className="about-image-wrapper"
+            data-reveal="right"
             style={{
               borderRadius: "1.5rem",
               overflow: "hidden",

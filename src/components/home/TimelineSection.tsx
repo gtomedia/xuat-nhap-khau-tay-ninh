@@ -28,30 +28,20 @@ const TimelineSection: React.FC = () => {
   };
 
   return (
-    <section
-      className="section bg-light animate-fade-up"
-      style={{ paddingBottom: "5rem", paddingTop: "5rem" }}
-    >
+    <section className="section bg-gray-50 py-20">
       <div className="container">
-        <div className="text-center" style={{ marginBottom: "4rem" }}>
-          <h2 className="heading-numbered" data-number="01">
+        <div className="text-center mb-16" data-reveal>
+          <h2 className="section-title">
             CHƯƠNG TRÌNH SỰ KIỆN
           </h2>
-          <p
-            style={{
-              color: "var(--text-secondary)",
-              maxWidth: "600px",
-              margin: "0 auto",
-              fontSize: "1.125rem",
-            }}
-          >
+          <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-lg">
             Lịch trình được xây dựng chuyên sâu, kết hợp hài hòa giữa tham luận,
             triển lãm và kết nối doanh nghiệp.
           </p>
         </div>
-        <div className="timeline">
+        <div className="timeline" data-reveal-group data-stagger="120">
           {timelineData.map((item, index) => (
-            <div key={index} className="timeline-item">
+            <div key={index} className="timeline-item" data-reveal-child="up">
               <div className="timeline-icon">{getIconForIndex(index)}</div>
               <div className="timeline-content">
                 <span className="timeline-time">{item.time}</span>
@@ -61,18 +51,7 @@ const TimelineSection: React.FC = () => {
                   <>
                     <button
                       onClick={() => setShowTopics(!showTopics)}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "0.5rem",
-                        background: "none",
-                        border: "none",
-                        color: "var(--accent)",
-                        fontWeight: 600,
-                        cursor: "pointer",
-                        padding: "0.5rem 0",
-                        marginTop: "0.5rem",
-                      }}
+                      className="flex items-center gap-2 text-[var(--accent)] font-semibold bg-transparent border-none cursor-pointer py-2 mt-2 hover:opacity-80 transition-opacity"
                     >
                       {showTopics
                         ? "Ẩn danh sách chuyên đề"
@@ -84,40 +63,14 @@ const TimelineSection: React.FC = () => {
                       )}
                     </button>
                     {showTopics && (
-                      <div
-                        style={{
-                          marginTop: "1rem",
-                          padding: "1rem",
-                          backgroundColor: "rgba(0,0,0,0.02)",
-                          borderRadius: "0.5rem",
-                          border: "1px solid rgba(0,0,0,0.05)",
-                        }}
-                      >
-                        <ul
-                          style={{
-                            listStyle: "none",
-                            padding: 0,
-                            margin: 0,
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "0.75rem",
-                          }}
-                        >
+                      <div className="mt-4 p-4 bg-black/5 rounded-lg border border-black/5">
+                        <ul className="flex flex-col gap-3 m-0 p-0 list-none">
                           {item.topics.map((topic, i) => (
                             <li
                               key={i}
-                              style={{
-                                display: "flex",
-                                gap: "0.5rem",
-                                alignItems: "flex-start",
-                              }}
+                              className="flex gap-2 items-start"
                             >
-                              <span
-                                style={{
-                                  color: "var(--accent)",
-                                  fontWeight: "bold",
-                                }}
-                              >
+                              <span className="text-[var(--accent)] font-bold">
                                 •
                               </span>
                               <span>{topic}</span>

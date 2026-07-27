@@ -2,11 +2,12 @@ import React from "react";
 
 const CTASection: React.FC = () => {
   return (
-    <section className="cta-section animate-zoom">
+    <section className="cta-section" data-reveal="zoom">
       <div className="cta-overlay"></div>
       <div
         className="container text-center"
         style={{ position: "relative", zIndex: 2 }}
+        data-reveal
       >
         <h2
           style={{

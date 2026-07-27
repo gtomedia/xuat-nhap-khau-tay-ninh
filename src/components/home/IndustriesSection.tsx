@@ -5,17 +5,18 @@ import { industriesData as industries } from "@/data";
 const IndustriesSection: React.FC = () => {
   return (
     <section
-      style={{ padding: "6rem 0", background: "var(--background-alt)" }}
-      className="animate-fade-up"
+      style={{ padding: "6rem 0" }}
+      className="bg-slate-900"
+      data-reveal
     >
       <div className="container">
-        <div className="text-center" style={{ marginBottom: "4rem" }}>
-          <h2 className="heading-split" style={{ marginBottom: "1rem" }}>
+        <div className="text-center" style={{ marginBottom: "4rem" }} data-reveal>
+          <h2 className="heading-split" style={{ marginBottom: "1rem", color: "white" }}>
             TIỀM NĂNG <span>XUẤT NHẬP KHẨU</span>
           </h2>
           <p
             style={{
-              color: "var(--text-secondary)",
+              color: "rgba(255,255,255,0.7)",
               maxWidth: "620px",
               margin: "0 auto",
               fontSize: "1.1rem",
@@ -27,11 +28,12 @@ const IndustriesSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 gap-6" data-reveal-group data-stagger="100">
           {industries.map((item) => (
             <div
               key={item.label}
               className="industry-showcase-card group"
+              data-reveal-child="zoom"
               style={{
                 position: "relative",
                 borderRadius: "1.25rem",

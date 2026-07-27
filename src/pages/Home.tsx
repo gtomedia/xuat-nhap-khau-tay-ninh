@@ -2,6 +2,7 @@ import React from 'react';
 import HeroSection from '@/components/home/HeroSection';
 import IntroVideoSection from '@/components/home/IntroVideoSection';
 import AboutSection from '@/components/home/AboutSection';
+import BenefitsSection from '@/components/home/BenefitsSection';
 import IndustriesSection from '@/components/home/IndustriesSection';
 import ParallaxDivider from '@/components/home/ParallaxDivider';
 import EventGallerySection from '@/components/home/EventGallerySection';
@@ -18,6 +19,7 @@ const Home: React.FC = () => {
       <HeroSection />
       <IntroVideoSection />
       <AboutSection />
+      <BenefitsSection />
       <IndustriesSection />
       <ParallaxDivider />
       <TimelineSection />

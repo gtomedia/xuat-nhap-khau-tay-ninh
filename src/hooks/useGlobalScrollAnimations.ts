@@ -1,78 +1,101 @@
 import { useEffect } from "react";
 
 /**
- * Initialize scroll animations globally
- * Automatically applies animations to elements with animation class patterns
+ * Global scroll-triggered animation system.
+ *
+ * Approach:
+ * - Elements with [data-reveal] are hidden (opacity: 0, transformed) by default.
+ * - When they enter the viewport, the class "revealed" is added which triggers CSS transitions.
+ * - Children with [data-reveal-child] inside a [data-reveal-group] stagger sequentially.
+ * - A MutationObserver watches for new elements added to the DOM (e.g. lazy-loaded sections).
  */
+
+const REVEAL_SELECTOR = "[data-reveal], [data-reveal-group]";
+const REVEAL_CHILD_SELECTOR = "[data-reveal-child]";
+const REVEALED_CLASS = "revealed";
+
+function observeElement(el: Element, io: IntersectionObserver) {
+  if (!el.classList.contains(REVEALED_CLASS)) {
+    io.observe(el);
+  }
+}
+
+let revealTimeout: number | null = null;
+let revealQueue: HTMLElement[] = [];
+
 export const useGlobalScrollAnimations = () => {
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const io = new IntersectionObserver(
       (entries) => {
+        // Collect all newly intersecting elements
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const element = entry.target as HTMLElement;
-
-            // Check for animation classes in the element or its children
-            const animationClasses = [
-              "animate-fade-up",
-              "animate-fade-left",
-              "animate-fade-right",
-              "animate-zoom",
-            ];
-
-            // Trigger animation for the element itself
-            for (const animClass of animationClasses) {
-              if (element.classList.contains(animClass)) {
-                // Element already has the class, just make sure it triggers
-                element.style.animation = "none";
-                setTimeout(() => {
-                  element.style.animation = "";
-                }, 10);
-                break;
-              }
-            }
-
-            // Trigger animations for children with stagger effect
-            const animatedChildren = element.querySelectorAll("[data-animate]");
-            if (animatedChildren.length > 0) {
-              const staggerDelay = parseInt(element.dataset.stagger || "80");
-              animatedChildren.forEach((child, index) => {
-                const childEl = child as HTMLElement;
-                const animation = childEl.dataset.animate;
-                if (animation) {
-                  setTimeout(() => {
-                    childEl.classList.add(animation);
-                  }, index * staggerDelay);
-                }
-              });
-              observer.unobserve(element);
+            const el = entry.target as HTMLElement;
+            if (!el.classList.contains(REVEALED_CLASS)) {
+              revealQueue.push(el);
+              io.unobserve(el);
             }
           }
         });
+
+        if (revealQueue.length > 0 && !revealTimeout) {
+          revealTimeout = window.setTimeout(() => {
+            // Sort by vertical position (top to bottom) then horizontal (left to right)
+            revealQueue.sort((a, b) => {
+              const rectA = a.getBoundingClientRect();
+              const rectB = b.getBoundingClientRect();
+              if (Math.abs(rectA.top - rectB.top) > 50) {
+                return rectA.top - rectB.top;
+              }
+              return rectA.left - rectB.left;
+            });
+
+            // Reveal them with a stagger
+            revealQueue.forEach((el, i) => {
+              // Try to find a custom stagger, otherwise default to 100ms
+              let stagger = 100;
+              const group = el.closest("[data-stagger]");
+              if (group) {
+                stagger = parseInt((group as HTMLElement).dataset.stagger ?? "100");
+              }
+              
+              setTimeout(() => {
+                el.classList.add(REVEALED_CLASS);
+              }, i * stagger);
+            });
+
+            revealQueue = [];
+            revealTimeout = null;
+          }, 50); // Wait 50ms to batch intersections
+        }
       },
       {
-        threshold: 0.1,
-        rootMargin: "0px 0px -100px 0px",
-      },
+        threshold: 0.05,
+        rootMargin: "0px 0px -40px 0px",
+      }
     );
 
-    // Observe all elements with animation classes
-    const animationSelectors = [
-      ".animate-fade-up",
-      ".animate-fade-left",
-      ".animate-fade-right",
-      ".animate-zoom",
-      "[data-animate-group]",
-    ];
-
-    animationSelectors.forEach((selector) => {
-      document.querySelectorAll(selector).forEach((element) => {
-        observer.observe(element);
+    function scanAndObserve() {
+      // Find all items that need revealing
+      document.querySelectorAll("[data-reveal], [data-reveal-child]").forEach((el) => {
+        if (!el.classList.contains(REVEALED_CLASS)) {
+          io.observe(el);
+        }
       });
+    }
+
+    // Initial scan
+    scanAndObserve();
+
+    // Watch for DOM changes (new sections added dynamically)
+    const mo = new MutationObserver(() => {
+      scanAndObserve();
     });
+    mo.observe(document.body, { childList: true, subtree: true });
 
     return () => {
-      observer.disconnect();
+      io.disconnect();
+      mo.disconnect();
     };
   }, []);
 };
