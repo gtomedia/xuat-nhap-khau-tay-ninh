@@ -44,38 +44,45 @@ export const aboutData = {
   isVideoFile: false,
 };
 
-export const industriesData = [
+export const potentialData = [
   {
-    src: "/images/industries/cangbien.jpg",
-    label: "Cảng biển & Logistics",
-    desc: "Hệ thống hạ tầng giao thông kết nối đồng bộ với các trung tâm cảng biển lớn và ICD khu vực.",
+    id: 1,
+    title: "Cảng Biển & Logistics",
+    subtitle: "Hệ thống hạ tầng giao thông kết nối đồng bộ với các trung tâm cảng biển lớn và ICD khu vực.",
+    img: "/images/industries/cangbien.jpg",
   },
   {
-    src: "/images/industries/congnghiep.jpg",
-    label: "Công nghiệp",
-    desc: "Các khu công nghiệp hiện đại, thu hút mạnh mẽ vốn FDI và sản xuất công nghệ cao.",
+    id: 2,
+    title: "Công Nghiệp",
+    subtitle: "Các khu công nghiệp hiện đại, thu hút mạnh mẽ vốn FDI và sản xuất công nghệ cao.",
+    img: "/images/industries/congnghiep.jpg",
   },
   {
-    src: "/images/industries/dulich.png",
-    label: "Du lịch",
-    desc: "Phát triển du lịch sinh thái, văn hóa và tâm linh gắn với các danh thắng nổi tiếng.",
+    id: 3,
+    title: "Du Lịch",
+    subtitle: "Phát triển du lịch sinh thái, văn hóa và tâm linh gắn với các danh thắng nổi tiếng.",
+    img: "/images/industries/dulich.png",
   },
   {
-    src: "/images/industries/nongnghiep.jpg",
-    label: "Nông nghiệp Công nghệ cao",
-    desc: "Ứng dụng khoa học kỹ thuật nâng cao giá trị và chất lượng nông sản xuất khẩu.",
+    id: 4,
+    title: "Nông Nghiệp Công Nghệ Cao",
+    subtitle: "Ứng dụng khoa học kỹ thuật nâng cao giá trị và chất lượng nông sản xuất khẩu.",
+    img: "/images/industries/nongnghiep.jpg",
   },
   {
-    src: "/images/industries/nangluongmattroi.jpg",
-    label: "Năng lượng tái tạo",
-    desc: "Tiên phong phát triển dự án năng lượng mặt trời, hướng tới nền kinh tế xanh.",
+    id: 5,
+    title: "Năng Lượng Tái Tạo",
+    subtitle: "Tiên phong phát triển dự án năng lượng mặt trời, hướng tới nền kinh tế xanh.",
+    img: "/images/industries/nangluongmattroi.jpg",
   },
   {
-    src: "/images/industries/thuongmai.jpg",
-    label: "Thương mại Điện tử",
-    desc: "Thúc đẩy chuyển đổi số, đưa sản phẩm địa phương vươn tầm quốc tế qua các nền tảng số.",
+    id: 6,
+    title: "Thương Mại Điện Tử",
+    subtitle: "Thúc đẩy chuyển đổi số, đưa sản phẩm địa phương vươn tầm quốc tế qua các nền tảng số.",
+    img: "/images/industries/thuongmai.jpg",
   },
 ];
+
 
 export const timelineData = [
   {
