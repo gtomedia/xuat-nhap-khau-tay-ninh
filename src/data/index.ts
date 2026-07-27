@@ -84,36 +84,75 @@ export const potentialData = [
 ];
 
 
-export const timelineData = [
+export interface TimelineSubItem {
+  time: string;
+  title: string;
+}
+
+export interface TimelineItem {
+  time: string;
+  title: string;
+  desc?: string;
+  topics?: string[];
+  subItems?: TimelineSubItem[];
+}
+
+export const timelineData: TimelineItem[] = [
   {
-    time: "07:30 - 08:30",
-    title: "Đón tiếp đại biểu & Triển lãm sản phẩm",
-    desc: "Đăng ký tham dự, tham quan không gian trưng bày các sản phẩm xuất nhập khẩu tiêu biểu của tỉnh.",
+    time: "07:30 - 08:00",
+    title: "ĐÓN TIẾP ĐẠI BIỂU",
   },
   {
-    time: "08:30 - 09:30",
-    title: "Lễ khai mạc & Phát biểu chính sách",
-    desc: "Lãnh đạo tỉnh và Bộ Công Thương phát biểu định hướng. Ký kết biên bản ghi nhớ hợp tác chiến lược.",
+    time: "08:00 - 08:10",
+    title: "TUYÊN BỐ LÝ DO, GIỚI THIỆU ĐẠI BIỂU",
   },
   {
-    time: "09:30 - 11:30",
-    title: "Tham luận chuyên đề",
-    desc: "Các chuyên gia hàng đầu trình bày về Logistics, TMĐT xuyên biên giới, tối ưu hóa chuỗi cung ứng và xu hướng số hóa 2026.",
-    topics: [
-      "Chuyên đề 1: Tối ưu hóa chuỗi cung ứng logistics khu vực cửa khẩu",
-      "Chuyên đề 2: Tiêu chuẩn xanh cho hàng xuất khẩu EU",
-      "Chuyên đề 3: Chuyển đổi số thông quan xuyên biên giới",
-    ],
+    time: "08:10 - 08:30",
+    title: "PHÁT BIỂU KHAI MẠC & CHÀO MỪNG",
+    subItems: [
+      {
+        time: "08:10 - 08:20",
+        title: "PHÁT BIỂU KHAI MẠC",
+      },
+      {
+        time: "08:20 - 08:30",
+        title: "PHÁT BIỂU CHÀO MỪNG",
+      },
+    ]
+  },
+  {
+    time: "08:30 - 08:40",
+    title: "CHIẾU VIDEO CLIP",
+  },
+  {
+    time: "08:40 - 11:00",
+    title: "CÁC PHIÊN THẢO LUẬN",
+    subItems: [
+      {
+        time: "08:40 - 09:20",
+        title: "PHIÊN 1: TIỀM NĂNG, CƠ HỘI KẾT NỐI HÀNG HÓA, MỞ RỘNG THỊ TRƯỜNG",
+      },
+      {
+        time: "09:20 - 11:00",
+        title: "PHIÊN 2: KẾT NỐI CHUỖI CUNG ỨNG HÀNG HÓA QUỐC TẾ",
+      },
+    ]
+  },
+  {
+    time: "11:00 - 11:10",
+    title: "KÝ KẾT GHI NHỚ GIỮA CÁC DOANH NGHIỆP",
+  },
+  {
+    time: "11:10 - 11:30",
+    title: "PHÁT BIỂU BẾ MẠC HỘI NGHỊ",
   },
   {
     time: "11:30 - 13:30",
-    title: "Tiệc trưa & Giao lưu mở rộng",
-    desc: "Không gian Networking tự do.",
+    title: "TIỆC CHIÊU ĐÃI",
   },
   {
-    time: "13:30 - 17:00",
-    title: "Phiên kết nối B2B & Giao thương",
-    desc: "Doanh nghiệp gặp gỡ trực tiếp, trao đổi cơ hội hợp tác. Hỗ trợ kết nối với các sàn TMĐT lớn như Shopee, Lazada, TikTok Shop.",
+    time: "13:30 - 16:30",
+    title: "KẾT NỐI GIAO THƯƠNG - KHẢO SÁT DOANH NGHIỆP",
   },
 ];
 
