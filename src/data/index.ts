@@ -15,8 +15,8 @@ export const heroData = {
 export const introVideoData = {
   title: "GIỚI THIỆU TÂY NINH",
   desc: "Tây Ninh - Điểm đến tiềm năng cho chuỗi cung ứng xuất nhập khẩu và thương mại điện tử xuyên biên giới.",
-  videoUrl: "/gioi-thieu-tay-ninh.mp4",
-  isVideoFile: true,
+  videoUrl: "https://drive.google.com/file/d/15Y_FqNQbZRCpOLMIdMoBw49Bq5Sd2RES/preview",
+  isVideoFile: false,
 };
 
 export const aboutData = {
