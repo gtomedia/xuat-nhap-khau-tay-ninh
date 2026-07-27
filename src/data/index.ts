@@ -15,8 +15,12 @@ export const heroData = {
 export const introVideoData = {
   title: "GIỚI THIỆU TÂY NINH",
   desc: "Tây Ninh - Điểm đến tiềm năng cho chuỗi cung ứng xuất nhập khẩu và thương mại điện tử xuyên biên giới.",
-  videoUrl: "https://drive.google.com/file/d/15Y_FqNQbZRCpOLMIdMoBw49Bq5Sd2RES/preview",
-  isVideoFile: false,
+  details: [
+    "Tây Ninh có vị trí chiến lược, là cửa ngõ giao thương quan trọng giữa Việt Nam và Campuchia, cũng như các nước trong khu vực ASEAN.",
+    "Với hệ thống hạ tầng giao thông kết nối liên vùng ngày càng hoàn thiện, Tây Ninh đang trở thành trung tâm logistics và trung chuyển hàng hóa sôi động.",
+    "Tỉnh đặc biệt chú trọng phát triển thương mại điện tử xuyên biên giới, kiến tạo môi trường kinh doanh thuận lợi cho các doanh nghiệp xuất nhập khẩu vươn tầm quốc tế.",
+    "Sự kiện lần này là cơ hội vàng để các nhà đầu tư, doanh nghiệp giao lưu, tìm hiểu tiềm năng, chính sách ưu đãi và mở rộng mạng lưới đối tác chiến lược tại Tây Ninh."
+  ],
 };
 
 export const aboutData = {

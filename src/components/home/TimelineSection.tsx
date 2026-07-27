@@ -30,11 +30,11 @@ const TimelineSection: React.FC = () => {
   return (
     <section className="section bg-gray-50 py-20" id="schedule">
       <div className="container">
-        <div className="text-center mb-16" data-reveal>
-          <h2 className="section-title">
+        <div className="flex flex-col items-center justify-center text-center mb-16 w-full" data-reveal>
+          <h2 className="section-title text-center">
             CHƯƠNG TRÌNH SỰ KIỆN
           </h2>
-          <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-lg text-center">
+          <p className="text-[var(--text-secondary)] max-w-2xl text-lg text-center">
             Lịch trình được xây dựng chuyên sâu, kết hợp hài hòa giữa tham luận,
             triển lãm và kết nối doanh nghiệp.
           </p>

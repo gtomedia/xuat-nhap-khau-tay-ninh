@@ -22,56 +22,19 @@ const IntroVideoSection: React.FC = () => {
             {introVideoData.desc}
           </p>
         </div>
-        <div
-          style={{
-            maxWidth: "1000px",
-            margin: "0 auto",
-            borderRadius: "1rem",
-            overflow: "hidden",
-            boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-          }}
-        >
-          <div
-            style={{
-              position: "relative",
-              paddingBottom: "56.25%",
-              height: 0,
-              overflow: "hidden",
-            }}
-          >
-            {introVideoData.isVideoFile ? (
-              <video
-                src={introVideoData.videoUrl}
-                controls
-                autoPlay
-                muted
-                loop
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  border: "none",
-                  objectFit: "cover",
-                }}
-              />
-            ) : (
-              <iframe
-                src={introVideoData.videoUrl}
-                title={introVideoData.title}
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  border: "none",
-                }}
-              />
-            )}
+        <div className="max-w-4xl mx-auto mt-12 bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100 relative overflow-hidden">
+          {/* Decorative element */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+          
+          <div className="relative z-10 flex flex-col gap-6">
+            {introVideoData.details?.map((paragraph, idx) => (
+              <div key={idx} className="flex gap-4 items-start" data-reveal-child="up">
+                <div className="w-2 h-2 rounded-full bg-[var(--accent)] mt-2.5 flex-shrink-0"></div>
+                <p className="text-gray-700 text-lg leading-relaxed text-justify">
+                  {paragraph}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
