@@ -10,15 +10,7 @@ import { useEffect } from "react";
  * - A MutationObserver watches for new elements added to the DOM (e.g. lazy-loaded sections).
  */
 
-const REVEAL_SELECTOR = "[data-reveal], [data-reveal-group]";
-const REVEAL_CHILD_SELECTOR = "[data-reveal-child]";
 const REVEALED_CLASS = "revealed";
-
-function observeElement(el: Element, io: IntersectionObserver) {
-  if (!el.classList.contains(REVEALED_CLASS)) {
-    io.observe(el);
-  }
-}
 
 let revealTimeout: number | null = null;
 let revealQueue: HTMLElement[] = [];
