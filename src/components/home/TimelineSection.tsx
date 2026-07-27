@@ -28,19 +28,20 @@ const TimelineSection: React.FC = () => {
   };
 
   return (
-    <section className="section bg-gray-50 py-20">
+    <section className="section bg-gray-50 py-20" id="schedule">
       <div className="container">
         <div className="text-center mb-16" data-reveal>
           <h2 className="section-title">
             CHƯƠNG TRÌNH SỰ KIỆN
           </h2>
-          <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-lg">
+          <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-lg text-center">
             Lịch trình được xây dựng chuyên sâu, kết hợp hài hòa giữa tham luận,
             triển lãm và kết nối doanh nghiệp.
           </p>
         </div>
+        
         <div className="timeline" data-reveal-group data-stagger="120">
-          {timelineData.map((item, index) => (
+            {timelineData.map((item, index) => (
             <div key={index} className="timeline-item" data-reveal-child="up">
               <div className="timeline-icon">{getIconForIndex(index)}</div>
               <div className="timeline-content">
