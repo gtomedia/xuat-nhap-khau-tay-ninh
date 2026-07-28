@@ -52,7 +52,7 @@ const Header: React.FC = () => {
       <div className="container header-container" style={{ display: "flex", justifyContent: "center", alignItems: "center", position: "relative" }}>
         {/* Logos + Texts ở giữa */}
         <div
-          style={{ display: "flex", alignItems: "flex-end", gap: "clamp(1rem, 5vw, 4rem)", cursor: "pointer" }}
+          style={{ display: "flex", alignItems: "flex-start", gap: "clamp(1rem, 5vw, 4rem)", cursor: "pointer" }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
 
