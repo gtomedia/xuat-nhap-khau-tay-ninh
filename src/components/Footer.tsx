@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
               <li style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
                 <MapPin size={16} style={{ marginTop: '0.15rem', flexShrink: 0 }} />
                 <a
-                  href="https://maps.google.com/?q=Hội+trường+Tỉnh+uỷ+Tây+Ninh"
+                  href="https://www.google.com/maps/place/UBND+T%E1%BB%89nh+T%C3%A2y+Ninh/@10.541237,106.4122555,332m/data=!3m1!1e3!4m14!1m7!3m6!1s0x310ab620e5209607:0x885223bd6e764bb7!2zVHJ1bmcgVMOibSBQaOG7pWMgVuG7pSBI4buZaSBuZ2jhu4sgTG9uZyBBbg!8m2!3d10.5411984!4d106.4129984!16s%2Fg%2F11cp5s8r5h!3m5!1s0x310ab6218fffffff:0x680093c4537ba988!8m2!3d10.5413431!4d106.4138736!16s%2Fg%2F1wt3kvw3?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: 'inherit', textDecoration: 'none' }}
