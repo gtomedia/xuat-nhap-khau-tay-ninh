@@ -73,102 +73,88 @@ const HeroSection: React.FC = () => {
         .hero {
           position: relative;
           overflow: hidden;
+          padding-top: 140px;
+          padding-bottom: 60px;
         }
         .hero-content {
-          margin-top: -13rem !important;
+          margin-top: 0 !important;
+          padding: 0 15px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
         }
         @media (max-width: 768px) {
+          .hero {
+            padding-top: 120px;
+          }
           .hero-content {
-            margin-top: -10rem !important;
+            margin-top: 0 !important;
+          }
+        }
+        @media (max-height: 600px) {
+          .hero {
+            min-height: auto !important;
+            padding-top: 120px;
+            padding-bottom: 40px;
           }
         }
         .hero-title-main {
-          font-size: 5.2rem;
+          font-size: clamp(2rem, 6vw, 5.2rem);
           margin-bottom: 0.8rem;
           text-transform: uppercase;
           font-weight: 900;
           line-height: 1.2;
-          white-space: nowrap;
+          white-space: normal;
           text-shadow: 0 4px 15px rgba(0,0,0,0.8), 0 2px 5px rgba(0,0,0,0.8);
         }
         .hero-title-sub {
-          font-size: 3rem;
+          font-size: clamp(1.5rem, 4vw, 3rem);
           font-weight: 800;
           margin-bottom: 1.2rem;
           text-transform: uppercase;
           line-height: 1.3;
-          white-space: nowrap;
+          white-space: normal;
           text-shadow: 0 4px 15px rgba(0,0,0,0.8), 0 2px 5px rgba(0,0,0,0.8);
         }
         .hero-location-line {
-          font-size: 1.6rem;
+          font-size: clamp(1rem, 2vw, 1.6rem);
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 0.5px;
           line-height: 1.4;
-          white-space: nowrap;
+          white-space: normal;
           text-shadow: 0 4px 15px rgba(0,0,0,0.8), 0 2px 5px rgba(0,0,0,0.8);
         }
         .hero-date-line {
-          font-size: 1.3rem;
+          font-size: clamp(0.9rem, 1.5vw, 1.3rem);
           font-weight: 400;
           margin-top: 2.5rem;
           color: white;
           font-style: italic;
-          white-space: nowrap;
+          white-space: normal;
           text-shadow: 0 4px 15px rgba(0,0,0,0.8), 0 2px 5px rgba(0,0,0,0.8);
         }
         /* English Layout */
         .en-subtitle {
-          font-size: 2.4rem;
+          font-size: clamp(1.2rem, 3vw, 2.4rem);
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 1px;
-          white-space: nowrap;
+          white-space: normal;
           color: white;
           margin-bottom: 0.6rem;
           line-height: 1.2;
           text-shadow: 0 4px 15px rgba(0,0,0,0.8), 0 2px 5px rgba(0,0,0,0.8);
         }
         .en-title {
-          font-size: 6.2rem;
+          font-size: clamp(2.5rem, 7vw, 6.2rem);
           font-weight: 900;
           text-transform: uppercase;
           line-height: 1.1;
-          white-space: nowrap;
+          white-space: normal;
           color: white;
           margin-bottom: 0.6rem;
           text-shadow: 0 4px 15px rgba(0,0,0,0.8), 0 2px 5px rgba(0,0,0,0.8);
-        }
-
-        /* Tablet Responsive */
-        @media (max-width: 1024px) {
-          .hero-title-main { font-size: 8vw; margin-bottom: 1vw; }
-          .hero-title-sub { font-size: 5vw; margin-bottom: 1.5vw; }
-          .hero-location-line { font-size: 2.8vw; line-height: 1.4; }
-          .hero-date-line { font-size: 2.2vw; margin-top: 4vw; }
-          .en-title { font-size: 9.5vw; }
-          .en-subtitle { font-size: 3.5vw; margin-bottom: 1vw; }
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-          .hero-title-main { font-size: 10vw; margin-bottom: 1.5vw; }
-          .hero-title-sub { font-size: 6vw; margin-bottom: 2vw; }
-          .hero-location-line { font-size: 3.2vw; letter-spacing: 0px; line-height: 1.4; }
-          .hero-date-line { font-size: 2.6vw; margin-top: 5vw; }
-          .en-title { font-size: 11vw; }
-          .en-subtitle { font-size: 4vw; margin-bottom: 1.5vw; }
-        }
-
-        /* Small Mobile Responsive */
-        @media (max-width: 480px) {
-          .hero-title-main { font-size: 12vw; margin-bottom: 2vw; }
-          .hero-title-sub { font-size: 7vw; margin-bottom: 2.5vw; }
-          .hero-location-line { font-size: 3.6vw; line-height: 1.4; }
-          .hero-date-line { font-size: 3vw; margin-top: 6vw; }
-          .en-title { font-size: 13vw; }
-          .en-subtitle { font-size: 4.5vw; margin-bottom: 2vw; }
         }
 
         .hero-bg-zoom {

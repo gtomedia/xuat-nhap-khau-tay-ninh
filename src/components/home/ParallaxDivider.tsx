@@ -8,14 +8,14 @@ const ParallaxDivider: React.FC = () => {
         style={{ position: "relative", zIndex: 2 }}
       >
         <h2
+          className="parallax-title"
           style={{
-            fontSize: "2.5rem",
             fontWeight: 800,
             marginBottom: "1rem",
             textShadow: "0 2px 10px rgba(0,0,0,0.5)",
           }}
         >
-          KẾT NỐI VÀ KIẾN TẠO TƯƠNG LAI
+          KẾT NỐI VÀ KIẾN TẠO <br className="mobile-break" /> TƯƠNG LAI
         </h2>
         <p
           style={{
@@ -30,6 +30,22 @@ const ParallaxDivider: React.FC = () => {
         </p>
       </div>
       <div className="parallax-overlay"></div>
+      <style>{`
+        .parallax-title {
+          font-size: 2.5rem;
+        }
+        .mobile-break {
+          display: none;
+        }
+        @media (max-width: 768px) {
+          .parallax-title {
+            font-size: 1.8rem;
+          }
+          .mobile-break {
+            display: block;
+          }
+        }
+      `}</style>
     </section>
   );
 };

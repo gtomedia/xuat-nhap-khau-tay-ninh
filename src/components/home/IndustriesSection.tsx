@@ -29,7 +29,8 @@ const IndustriesSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center" style={{ marginBottom: "3.5rem" }} data-reveal>
           <h2 className="heading-split" style={{ marginBottom: "1rem", color: "#0f172a", fontSize: "2.5rem" }}>
-            TIỀM NĂNG <span>XUẤT NHẬP KHẨU & PHÁT TRIỂN</span>
+            <span style={{ display: "block", marginBottom: "0.5rem" }}>TIỀM NĂNG</span>
+            <span>XUẤT NHẬP KHẨU & PHÁT TRIỂN</span>
           </h2>
           <p
             style={{
