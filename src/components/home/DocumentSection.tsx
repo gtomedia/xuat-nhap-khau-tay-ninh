@@ -1,36 +1,21 @@
 import React from "react";
-import { ctaData } from "@/data";
+import { documentData } from "@/data";
 
-const CTASection: React.FC = () => {
+const DocumentSection: React.FC = () => {
   return (
-    <section className="cta-section" data-reveal="zoom">
-      <div className="cta-overlay"></div>
-      <div
-        className="container text-center"
-        style={{ position: "relative", zIndex: 2 }}
-        data-reveal
-      >
-        <h2
-          style={{
-            fontSize: "2.75rem",
-            fontWeight: 900,
-            color: "white",
-            marginBottom: "1.25rem",
-            textShadow: "0 2px 10px rgba(0,0,0,0.3)",
-          }}
-        >
-          {ctaData.title}
-        </h2>
+    <section className="section bg-alt" data-reveal="fade">
+      <div className="container text-center">
+        <h2 className="section-title">{documentData.title}</h2>
         <p
           style={{
-            color: "rgba(255,255,255,0.9)",
+            color: "var(--text-secondary)",
             marginBottom: "2.5rem",
             fontSize: "1.2rem",
             maxWidth: "600px",
             margin: "0 auto 2.5rem",
           }}
         >
-          {ctaData.desc}
+          {documentData.desc}
         </p>
         <div
           style={{
@@ -38,12 +23,10 @@ const CTASection: React.FC = () => {
             justifyContent: "center",
           }}
         >
-          {/* Card Đăng ký */}
           <div
             style={{
-              background: "rgba(255, 255, 255, 0.1)",
-              backdropFilter: "blur(10px)",
-              border: "1px solid rgba(255, 255, 255, 0.2)",
+              background: "#ffffff",
+              border: "1px solid var(--border)",
               borderRadius: "1rem",
               padding: "2rem",
               display: "flex",
@@ -52,35 +35,37 @@ const CTASection: React.FC = () => {
               gap: "1.5rem",
               width: "100%",
               maxWidth: "400px",
+              boxShadow: "var(--shadow-lg)"
             }}
           >
-            <h3 style={{ color: "white", fontSize: "1.5rem", fontWeight: "bold" }}>Quét Mã QR</h3>
+            <h3 style={{ color: "var(--primary)", fontSize: "1.5rem", fontWeight: "bold" }}>Quét Mã QR</h3>
             <div 
               style={{ 
                 width: "200px", 
                 height: "200px", 
-                background: "white", 
+                background: "#f8fafc", 
                 borderRadius: "0.5rem",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                padding: "1rem"
+                padding: "0.5rem",
+                border: "1px solid var(--border)"
               }}
             >
               <img 
-                src={ctaData.qrImg} 
-                alt="QR Đăng Ký" 
+                src={documentData.qrImg} 
+                alt="QR Tài Liệu" 
                 style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: "0.25rem" }} 
               />
             </div>
             <a
-              href={ctaData.link}
+              href={documentData.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-accent"
+              className="btn btn-primary"
               style={{ width: "100%", fontSize: "1.1rem" }}
             >
-              ĐĂNG KÝ NGAY
+              XEM TÀI LIỆU
             </a>
           </div>
         </div>
@@ -89,4 +74,4 @@ const CTASection: React.FC = () => {
   );
 };
 
-export default CTASection;
+export default DocumentSection;

@@ -44,11 +44,12 @@ const StatsSection: React.FC = () => {
               </div>
               <p
                 style={{
-                  fontSize: stat.label.length > 25 ? "0.9rem" : "1.125rem",
+                  fontSize: "1.125rem",
                   marginTop: "0.5rem",
                   textTransform: "uppercase",
-                  letterSpacing: stat.label.length > 25 ? "0.5px" : "1px",
+                  letterSpacing: "1px",
                   lineHeight: 1.5,
+                  whiteSpace: "pre-line"
                 }}
               >
                 {stat.label}

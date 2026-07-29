@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { introData } from "@/data";
-import { MapPin, Truck, Globe, TrendingUp } from "lucide-react";
-
-const icons = [MapPin, Truck, Globe, TrendingUp];
-
+import { Globe } from "lucide-react";
 const IntroSection: React.FC = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
@@ -26,94 +23,97 @@ const IntroSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 4 Detail Cards */}
+        {/* 4 News Cards */}
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr",
-            gap: "1.5rem",
-            maxWidth: "780px",
-            margin: "0 auto",
-          }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full"
           data-reveal-group
           data-stagger="120"
         >
-          {introData.details?.map((paragraph, idx) => {
-            const Icon = icons[idx % icons.length];
+          {introData.news?.map((newsItem, idx) => {
             const isHovered = hoveredCard === idx;
 
             return (
-              <div
+              <a
+                href={newsItem.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 key={idx}
                 data-reveal-child="up"
                 onMouseEnter={() => setHoveredCard(idx)}
                 onMouseLeave={() => setHoveredCard(null)}
                 style={{
-                  position: "relative",
+                  display: "flex",
+                  flexDirection: "column",
                   background: "#ffffff",
                   borderRadius: "1rem",
-                  padding: "1.75rem 2.25rem",
                   border: `2px solid ${isHovered ? "#0555fd" : "#bfdbfe"}`,
                   boxShadow: isHovered
                     ? "0 12px 36px rgba(5, 85, 253, 0.1)"
                     : "0 2px 12px rgba(0, 0, 0, 0.04)",
                   transform: isHovered ? "translateY(-4px)" : "translateY(0)",
                   transition: "all 0.3s ease",
-                  cursor: "default",
                   overflow: "hidden",
+                  textDecoration: "none",
+                  color: "inherit"
                 }}
               >
-                {/* Submerged background icon at bottom right */}
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "-0.75rem",
-                    right: "-0.75rem",
-                    opacity: isHovered ? 0.15 : 0.07,
-                    color: "#0555fd",
-                    transform: isHovered ? "scale(1.1) rotate(-5deg)" : "scale(1)",
-                    transition: "all 0.4s ease",
-                    pointerEvents: "none",
-                  }}
-                >
-                  <Icon size={110} strokeWidth={1.5} />
+                {/* Image */}
+                <div style={{ width: "100%", aspectRatio: "16/9", overflow: "hidden" }}>
+                  <img 
+                    src={newsItem.image} 
+                    alt={newsItem.title} 
+                    style={{ 
+                      width: "100%", 
+                      height: "100%", 
+                      objectFit: "cover",
+                      transform: isHovered ? "scale(1.05)" : "scale(1)",
+                      transition: "transform 0.5s ease"
+                    }} 
+                  />
                 </div>
 
-                {/* Index number tag */}
-                <div
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: "0.2rem 0.75rem",
-                    borderRadius: "9999px",
-                    background: isHovered ? "rgba(5, 85, 253, 0.12)" : "rgba(5, 85, 253, 0.06)",
-                    color: "#0555fd",
-                    fontWeight: "800",
-                    fontSize: "0.875rem",
-                    marginBottom: "0.875rem",
-                    letterSpacing: "0.05em",
-                    transition: "all 0.3s ease",
-                    position: "relative",
-                    zIndex: 1,
-                  }}
-                >
-                  0{idx + 1}
+                {/* Content */}
+                <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", flexGrow: 1 }}>
+                  <h3
+                    style={{
+                      color: isHovered ? "#0555fd" : "#1e293b",
+                      fontSize: "1.25rem",
+                      fontWeight: "bold",
+                      marginBottom: "0.75rem",
+                      lineHeight: "1.4",
+                      transition: "color 0.3s ease"
+                    }}
+                  >
+                    {newsItem.title}
+                  </h3>
+                  <p
+                    style={{
+                      color: "#475569",
+                      fontSize: "0.95rem",
+                      lineHeight: "1.6",
+                      display: "-webkit-box",
+                      WebkitLineClamp: 3,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                    }}
+                  >
+                    {newsItem.desc}
+                  </p>
+                  
+                  <div style={{ marginTop: "auto", paddingTop: "1rem" }}>
+                    <span style={{ 
+                      color: "#0555fd", 
+                      fontWeight: "600", 
+                      fontSize: "0.9rem",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.5rem"
+                    }}>
+                      Xem chi tiết <Globe size={16} />
+                    </span>
+                  </div>
                 </div>
-
-                {/* Text */}
-                <p
-                  style={{
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: "1.8",
-                    position: "relative",
-                    zIndex: 1,
-                  }}
-                >
-                  {paragraph}
-                </p>
-              </div>
+              </a>
             );
           })}
         </div>

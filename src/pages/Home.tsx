@@ -11,6 +11,7 @@ import SpeakersSection from '@/components/home/SpeakersSection';
 import PanelDiscussionSection from '@/components/home/PanelDiscussionSection';
 import PartnersSection from '@/components/home/PartnersSection';
 import StatsSection from '@/components/home/StatsSection';
+import DocumentSection from '@/components/home/DocumentSection';
 import CTASection from '@/components/home/CTASection';
 
 const Home: React.FC = () => {
@@ -28,6 +29,7 @@ const Home: React.FC = () => {
       <EventGallerySection />
       <PartnersSection />
       <StatsSection />
+      <DocumentSection />
       <CTASection />
     </>
   );

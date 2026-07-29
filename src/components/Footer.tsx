@@ -14,10 +14,6 @@ const Footer: React.FC = () => {
 
             <span style={{ fontSize: '1.25rem', fontWeight: 800 }}>{title}</span>
           </div>
-          <div style={{ marginTop: '1.5rem', fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)', lineHeight: '1.6' }}>
-            @2026 Bản quyền do UBND Tỉnh Tây Ninh<br />
-            Được thiết kế bởi <a href="https://gto.vn" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', fontWeight: 600 }}>GTO Media</a>
-          </div>
         </div>
         <div className="grid grid-cols-3 gap-6" style={{ width: '100%', textAlign: 'left' }}>
           <div>
@@ -69,6 +65,13 @@ const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      <div className="container" style={{ marginTop: '3rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', textAlign: 'center' }}>
+        <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: '1.6' }}>
+          @2026 Bản quyền do UBND Tỉnh Tây Ninh<br />
+          Được thiết kế bởi <a href="https://gto.vn" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', fontWeight: 600 }}>GTO Media</a>
         </div>
       </div>
     </footer>

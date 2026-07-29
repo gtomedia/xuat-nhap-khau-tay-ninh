@@ -15,11 +15,31 @@ export const heroData = {
 export const introData = {
   title: "GIỚI THIỆU TÂY NINH",
   desc: "Tây Ninh - Điểm đến tiềm năng cho chuỗi cung ứng xuất nhập khẩu và thương mại điện tử xuyên biên giới.",
-  details: [
-    "Tây Ninh có vị trí chiến lược, là cửa ngõ giao thương quan trọng giữa Việt Nam và Campuchia, cũng như các nước trong khu vực ASEAN.",
-    "Với hệ thống hạ tầng giao thông kết nối liên vùng ngày càng hoàn thiện, Tây Ninh đang trở thành trung tâm logistics và trung chuyển hàng hóa sôi động.",
-    "Tỉnh đặc biệt chú trọng phát triển thương mại điện tử xuyên biên giới, kiến tạo môi trường kinh doanh thuận lợi cho các doanh nghiệp xuất nhập khẩu vươn tầm quốc tế.",
-    "Sự kiện lần này là cơ hội vàng để các nhà đầu tư, doanh nghiệp giao lưu, tìm hiểu tiềm năng, chính sách ưu đãi và mở rộng mạng lưới đối tác chiến lược tại Tây Ninh."
+  news: [
+    {
+      title: "Tìm hiểu về Tây Ninh",
+      desc: "Tây Ninh là vùng đất trù phú của vùng Đông Nam Bộ, nơi đây là miền hội tụ giữa cảnh sắc thiên nhiên kỳ vĩ, văn hóa tâm linh đặc sắc và chiều sâu lịch sử. Với tổng diện tích 8.536,44 km², dân số 3.254.170 người, có 96 đơn vị hành chính cấp xã (82 xã, 14 phường), vùng đất này trải dài giữa những tuyến giao thương huyết mạch, tiếp giáp với TP. Hồ Chí Minh, Đồng Tháp, Đồng Nai, và giáp Vương quốc Campuchia qua những cửa khẩu quốc tế nhộn nhịp.",
+      image: "https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2022/7/1/1062784/289799822_1015995557.jpg",
+      link: "https://dulich.tayninh.gov.vn/thong-tin/Thong-tin-chung-ve-tinh-Tay-Ninh-15.html"
+    },
+    {
+      title: "Du lịch Tây Ninh: Ðiểm nhấn tăng trưởng, hướng đến phát triển bền vững",
+      desc: "Tây Ninh đang nổi lên như là điểm đến hấp dẫn về du lịch sinh thái, du lịch về văn hoá, tâm linh, đóng góp tích cực cho sự phát triển kinh tế - xã hội của tỉnh.",
+      image: "https://images.vietnamtourism.gov.vn/vn/images/2024/thang_1/2901.du_lich_tay_ninh.jpg",
+      link: "https://vietnamtourism.gov.vn/post/54482"
+    },
+    {
+      title: "Tây Ninh đẩy mạnh thu hút đầu tư phát triển hạ tầng thương mại, logistics hiện đại",
+      desc: "Nhằm nâng cao năng lực cạnh tranh và mở rộng không gian phát triển kinh tế, tỉnh Tây Ninh tập trung thu hút đầu tư phát triển hạ tầng thương mại, logistics theo hướng hiện đại, đồng bộ.",
+      image: "https://imghappyvietnam.vnanet.vn/MediaUpload/Medium/2026/07/22/104708-vna_potal_tay_ninh_day_manh_thu_hut_dau_tu_phat_trien_ha_tang_thuong_mai_logistics_hien_dai_8896909.jpg",
+      link: "https://happyvietnam.vnanet.vn/tay-ninh-day-manh-thu-hut-dau-tu-phat-trien-ha-tang-thuong-mai-logistics-hien-dai/60119.html"
+    },
+    {
+      title: "Tây Ninh đặt mục tiêu tăng trưởng xuất khẩu từ 15-16% mỗi năm",
+      desc: "Với lợi thế cửa ngõ kết nối Việt Nam với Campuchia và các nước ASEAN, Tây Ninh tiếp tục phát huy tiềm năng kinh tế biên mậu, thúc đẩy thương mại biên giới trở thành động lực tăng trưởng quan trọng.",
+      image: "https://media.vietnamplus.vn/images/c14f6479e83e315b4cf3a2906cc6a51eb9d6ced238aab0d68b7df356f0b1062ac4fdd44f6a814fc382fe145e64bf577f9688f8384215be0238917c33e4ac81e321e1616ff4a61d0a25e6c6407b9b0b1d3d598da530926ad440618e46f5418c5021e0fc433d783cb75816347765d085e506058199cbc218f8e19c57d4f3e72619e302fa28abdf71aa7a43283315b85f70/ttxvn-khai-truong-cua-hang-mien-thue-the-ky-vang-tai-cua-khau-quoc-te-moc-bai-tay-ninh-8533814.jpg.webp",
+      link: "https://www.vietnamplus.vn/tay-ninh-dat-muc-tieu-tang-truong-xuat-khau-tu-15-16-moi-nam-post1112223.vnp"
+    }
   ],
 };
 
@@ -255,7 +275,7 @@ export const statsData = [
   },
   {
     number: "300+",
-    label: "Doanh nghiệp địa phương, trong và ngoài nước",
+    label: "Doanh nghiệp địa phương,\ntrong và ngoài nước",
   },
   {
     number: "700+",
@@ -314,4 +334,18 @@ export const mapData = {
     { name: "Khu vực Kết nối Giao thương (B2B)", color: "bg-amber-500" },
     { name: "Khu vực Tư vấn Chính sách", color: "bg-purple-600" },
   ]
+};
+
+export const documentData = {
+  title: "TÀI LIỆU HỘI NGHỊ",
+  desc: "Quét mã QR dưới đây để xem toàn bộ tài liệu, hồ sơ và nội dung chương trình của sự kiện.",
+  qrImg: "/images/qr-tai-lieu.png",
+  link: "https://drive.google.com/drive/folders/1xiCngZSJDUIQfPdnrjhTywbQFvJh7Idn?usp=sharing",
+};
+
+export const ctaData = {
+  title: "BẠN ĐÃ SẴN SÀNG THAM GIA?",
+  desc: "Đừng bỏ lỡ cơ hội kết nối với hàng trăm đối tác tiềm năng và các chuyên gia hàng đầu tại sự kiện.",
+  qrImg: "/images/qr-dang-ky.png",
+  link: "https://forms.gle/977Dc7kyF79Go2SP6",
 };
