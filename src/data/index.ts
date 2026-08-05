@@ -150,11 +150,11 @@ export const timelineData: TimelineItem[] = [
     subItems: [
       {
         time: "08:40 - 09:20",
-        title: "PHIÊN 1: TIỀM NĂNG, CƠ HỘI KẾT NỐI HÀNG HÓA, MỞ RỘNG THỊ TRƯỜNG",
+        title: "PHIÊN 1: NÂNG TẦM CHẤT LƯỢNG, THƯƠNG HIỆU\n(Session 1: Elevating Quality and Brand Position)",
       },
       {
         time: "09:20 - 11:00",
-        title: "PHIÊN 2: KẾT NỐI CHUỖI CUNG ỨNG HÀNG HÓA QUỐC TẾ",
+        title: "PHIÊN 2: THAM GIA SÂU CHUỖI GIÁ TRỊ TOÀN CẦU\n(Session 2: Deeply Integrating into Global Value Chains)",
       },
     ]
   },

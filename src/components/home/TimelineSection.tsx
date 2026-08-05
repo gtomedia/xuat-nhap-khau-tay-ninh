@@ -177,6 +177,7 @@ const TimelineSection: React.FC = () => {
                         lineHeight: 1.5,
                         margin: 0,
                         flex: 1,
+                        whiteSpace: "pre-line",
                       }}
                     >
                       {item.title}

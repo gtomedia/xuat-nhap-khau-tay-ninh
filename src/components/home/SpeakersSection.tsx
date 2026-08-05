@@ -49,6 +49,10 @@ const SpeakersSection: React.FC = () => {
               className="speaker-pop-card"
               key={speaker.id}
               data-reveal-child="up"
+              style={{
+                backgroundColor: "#f4f8ff",
+                border: "1px solid rgba(5, 85, 253, 0.08)",
+              }}
             >
               <img
                 src={speaker.img}
@@ -59,10 +63,18 @@ const SpeakersSection: React.FC = () => {
                 <p
                   className="speaker-pop-role"
                   style={{
-                    color: "var(--accent)",
+                    color: "#ffffff",
+                    background: "linear-gradient(90deg, #0b3c7c 0%, #1e6ada 50%, #0b3c7c 100%)",
+                    borderRadius: "999px",
+                    padding: "0.4rem 1.5rem",
+                    display: "inline-block",
                     fontWeight: 700,
-                    fontSize: "1.25rem",
-                    marginBottom: "0.25rem",
+                    fontSize: "1.15rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px",
+                    marginBottom: "0.75rem",
+                    border: "1px solid rgba(255, 255, 255, 0.25)",
+                    boxShadow: "0 6px 16px rgba(11, 60, 124, 0.35)",
                   }}
                 >
                   {speaker.name}
