@@ -25,8 +25,8 @@ const ParallaxDivider: React.FC = () => {
             color: "rgba(255,255,255,0.9)",
           }}
         >
-          Hành trình chuyển đổi số và tối ưu hóa logistics bắt đầu từ những cái
-          bắt tay chiến lược tại Tây Ninh.
+          Những kết nối chiến lược mở ra động lực mới cho chuyển đổi số, phát
+          triển logistics và thương mại điện tử xuyên biên giới.
         </p>
       </div>
       <div className="parallax-overlay"></div>

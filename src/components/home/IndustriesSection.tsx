@@ -27,7 +27,7 @@ const IndustriesSection: React.FC = () => {
               lineHeight: 1.75,
             }}
           >
-            Tây Ninh hội tụ đầy đủ các thế mạnh chiến lược về hạ tầng, logistics, cửa khẩu và công nghiệp để bứt phá trở thành trung tâm giao thương khu vực.
+            Phát huy lợi thế vị trí, hạ tầng và cửa khẩu, Tây Ninh từng bước khẳng định vai trò đầu mối giao thương và trung chuyển vùng Đông Nam Bộ và biên giới.
           </p>
         </div>
 

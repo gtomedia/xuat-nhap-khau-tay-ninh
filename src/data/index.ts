@@ -14,7 +14,7 @@ export const heroData = {
 
 export const introData = {
   title: "GIỚI THIỆU TÂY NINH",
-  desc: "Tây Ninh - Điểm đến tiềm năng cho chuỗi cung ứng xuất nhập khẩu và thương mại điện tử xuyên biên giới.",
+  desc: "Tây Ninh - Trung tâm kết nối chuỗi cung ứng và thương mại điện tử xuyên biên giới.",
   news: [
     {
       title: "Tìm hiểu về Tây Ninh",
@@ -47,9 +47,9 @@ export const aboutData = {
   tagline: "Về Sự Kiện",
   title: "VỀ HỘI NGHỊ",
   desc1:
-    "Hội nghị kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu và thương mại điện tử tỉnh Tây Ninh là sự kiện trọng điểm nhằm thúc đẩy giao thương, tháo gỡ khó khăn trong logistics và phát triển kinh tế số tại khu vực biên giới.",
+    "Hội nghị kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu và thương mại điện tử tỉnh Tây Ninh nhằm thúc đẩy kết nối cung cầu, tăng cường liên kết giữa các chủ thể trong chuỗi cung ứng, góp phần phát triển xuất nhập khẩu, logistics và thương mại điện tử xuyên biên giới, nâng cao năng lực cạnh tranh của doanh nghiệp trong bối cảnh hội nhập.",
   desc2:
-    "Sự kiện quy tụ các cơ quan ban ngành, nền tảng thương mại điện tử hàng đầu, các doanh nghiệp logistics và xuất nhập khẩu. Đây là cơ hội để thiết lập mạng lưới đối tác chiến lược, chia sẻ giải pháp tối ưu hóa vận tải và cập nhật xu hướng thương mại điện tử xuyên biên giới.",
+    "Hội nghị quy tụ đại diện cơ quan quản lý, hiệp hội, doanh nghiệp logistics, xuất nhập khẩu và các nền tảng thương mại điện tử trong và ngoài nước. Đây là diễn đàn thảo luận, cập nhật xu hướng, giới thiệu chính sách mới và mở rộng cơ hội hợp tác, đầu tư, phát triển chuỗi cung ứng bền vững.",
   highlights: [
     { icon: "Calendar", text: "Ngày 5.9.2026" },
     { icon: "Map", text: "Hội trường Thống nhất, UBND tỉnh Tây Ninh" },
@@ -288,18 +288,21 @@ export const footerData = {
   logoImg: "/images/logo.png",
   directors: ["Bộ công thương", "UBND tỉnh Tây Ninh"],
   implementers: ["Sở Công Thương tỉnh Tây Ninh"],
-  location: "Hội trường Thống nhất, Số 61 Nguyễn Huệ, Phường Long An, Tây Ninh",
-  contact: {
-    phone: "0276 3811 111",
-    email: "socongthuong@tayninh.gov.vn",
-    website: "tayninh.gov.vn",
-  },
+  location: "Hội trường Thống nhất, số 61 Nguyễn Huệ, phường Long An, tỉnh Tây Ninh",
+  locationMapUrl:
+    "https://www.google.com/maps/place/UBND+T%E1%BB%89nh+T%C3%A2y+Ninh/@10.541237,106.4122555,332m/data=!3m1!1e3!4m14!1m7!3m6!1s0x310ab620e5209607:0x885223bd6e764bb7!2zVHJ1bmcgVMOibSBQaOG7pWMgVuG7pSBI4buZaSBuZ2jhu4sgTG9uZyBBbg!8m2!3d10.5411984!4d106.4129984!16s%2Fg%2F11cp5s8r5h!3m5!1s0x310ab6218fffffff:0x680093c4537ba988!8m2!3d10.5413431!4d106.4138736!16s%2Fg%2F1wt3kvw3?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D",
+  contacts: [
+    { label: "Cơ quan ngoại giao", text: "Thái Hòa", phone: "0918.128.365" },
+    { label: "Khu công nghiệp", text: "Quốc Tuấn", phone: "0949.819.964" },
+    { label: "Sở Công Thương", text: "Thúy Duy", phone: "0979.972.528" },
+    { label: "Sở Tài chính", text: "Tường Oanh", phone: "0325.492.768" },
+  ],
 };
 
 export const benefitsData = {
   tagline: "Vì sao nên tham gia?",
   title: "QUYỀN LỢI ĐẠI BIỂU",
-  desc: "Hội nghị mở ra nhiều cơ hội thiết thực cho các doanh nghiệp, nhà đầu tư và tổ chức quan tâm đến sự phát triển của chuỗi cung ứng Tây Ninh.",
+  desc: "Hội nghị mở ra cơ hội kết nối, hợp tác và xúc tiến đầu tư cho các doanh nghiệp, nhà đầu tư và tổ chức, góp phần phát triển chuỗi cung ứng, logistics và thương mại điện tử tại tỉnh Tây Ninh.",
   items: [
     {
       icon: "Globe",

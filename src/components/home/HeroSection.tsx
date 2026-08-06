@@ -25,45 +25,42 @@ const HeroSection: React.FC = () => {
       {/* Removed dark overlay as requested */}
 
       <div
-        className={`container hero-content text-center ${currentLang === 'en' ? 'notranslate' : ''}`}
+        className={`container hero-content text-center ${currentLang === "en" ? "notranslate" : ""}`}
         style={{ position: "relative", zIndex: 2 }}
       >
-        <div className="hero-logo-large" style={{ textShadow: "0 4px 15px rgba(0, 0, 0, 0.8), 0 2px 5px rgba(0, 0, 0, 0.8)", maxWidth: "100vw", overflow: "hidden" }}>
-          {currentLang === 'en' ? (
+        <div
+          className="hero-logo-large"
+          style={{
+            textShadow:
+              "0 4px 15px rgba(0, 0, 0, 0.8), 0 2px 5px rgba(0, 0, 0, 0.8)",
+            maxWidth: "100vw",
+            overflow: "hidden",
+          }}
+        >
+          {currentLang === "en" ? (
             <>
-              <p className="en-subtitle">
-                TAY NINH E-COMMERCE AND
-              </p>
+              <p className="en-subtitle">TAY NINH E-COMMERCE AND</p>
               <p className="en-subtitle" style={{ marginBottom: "0.8rem" }}>
                 EXPORT-IMPORT SUPPLY CHAIN
               </p>
               <h1 className="en-title" style={{ marginBottom: "0" }}>
                 NETWORKING
               </h1>
-              <h1 className="en-title">
-                FORUM 2026
-              </h1>
-              <p className="hero-date-line">
-                Tay Ninh, September 5, 2026
-              </p>
+              <h1 className="en-title">FORUM 2026</h1>
+              <p className="hero-date-line">Tay Ninh, September 5, 2026</p>
             </>
           ) : (
             <>
-              <h1 className="hero-title-main">
-                {heroData.title1}
-              </h1>
-              <h2 className="hero-title-sub">
-                {heroData.title2}
-              </h2>
-              <p className="hero-location-line" style={{ marginBottom: "0.3rem" }}>
+              <h1 className="hero-title-main">{heroData.title1}</h1>
+              <h2 className="hero-title-sub">{heroData.title2}</h2>
+              <p
+                className="hero-location-line"
+                style={{ marginBottom: "0.3rem" }}
+              >
                 {heroData.subtitle1}
               </p>
-              <p className="hero-location-line">
-                {heroData.subtitle2}
-              </p>
-              <p className="hero-date-line">
-                {heroData.date}
-              </p>
+              <p className="hero-location-line">{heroData.subtitle2}</p>
+              <p className="hero-date-line">{heroData.date}</p>
             </>
           )}
         </div>
@@ -73,8 +70,9 @@ const HeroSection: React.FC = () => {
         .hero {
           position: relative;
           overflow: hidden;
-          padding-top: 140px;
+          padding-top: 160px;
           padding-bottom: 60px;
+          align-items: flex-start !important;
         }
         .hero-content {
           margin-top: 0 !important;
@@ -84,9 +82,6 @@ const HeroSection: React.FC = () => {
           justify-content: center;
         }
         @media (max-width: 768px) {
-          .hero {
-            padding-top: 120px;
-          }
           .hero-content {
             margin-top: 0 !important;
           }

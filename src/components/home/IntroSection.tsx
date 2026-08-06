@@ -58,17 +58,17 @@ const IntroSection: React.FC = () => {
                 }}
               >
                 {/* Image */}
-                <div style={{ width: "100%", aspectRatio: "16/9", overflow: "hidden" }}>
-                  <img 
-                    src={newsItem.image} 
-                    alt={newsItem.title} 
-                    style={{ 
-                      width: "100%", 
-                      height: "100%", 
+                <div style={{ width: "100%", aspectRatio: "4/3", overflow: "hidden" }}>
+                  <img
+                    src={newsItem.image}
+                    alt={newsItem.title}
+                    style={{
+                      width: "100%",
+                      height: "100%",
                       objectFit: "cover",
                       transform: isHovered ? "scale(1.05)" : "scale(1)",
                       transition: "transform 0.5s ease"
-                    }} 
+                    }}
                   />
                 </div>
 

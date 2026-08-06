@@ -30,8 +30,10 @@ const SpeakersSection: React.FC = () => {
               fontSize: "1.125rem",
             }}
           >
-            Các chủ đề tham luận chuyên sâu được trình bày bởi các nhà tham tán
-            thương mại của các nước và chuyên gia quốc tế.
+            Các tham luận chuyên sâu được trình bày bởi đại diện cơ quan
+            thương mại, tham tán thương mại và các chuyên gia quốc tế, tập
+            trung vào những xu hướng, giải pháp và kinh nghiệm thực tiễn
+            trong lĩnh vực liên quan.
           </p>
         </div>
 

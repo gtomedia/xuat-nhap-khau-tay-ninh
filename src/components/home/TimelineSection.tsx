@@ -56,7 +56,7 @@ const TimelineSection: React.FC = () => {
           </span>
           <h2 className="section-title text-center">CHƯƠNG TRÌNH SỰ KIỆN</h2>
           <p style={{ color: "var(--text-secondary)", maxWidth: 560, fontSize: "1.05rem", lineHeight: 1.7 }}>
-            Lịch trình được xây dựng chuyên sâu, kết hợp hài hòa giữa tham luận, triển lãm và kết nối doanh nghiệp.
+            Nội dung chương trình được thiết kế toàn diện, gồm các phiên tham luận chuyên sâu, không gian triển lãm và hoạt động kết nối, hợp tác giữa các doanh nghiệp.
           </p>
         </div>
 
