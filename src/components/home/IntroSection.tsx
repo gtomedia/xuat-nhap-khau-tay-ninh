@@ -13,10 +13,11 @@ const IntroSection: React.FC = () => {
           <p
             style={{
               color: "#64748b",
-              maxWidth: "680px",
+              maxWidth: "800px",
               margin: "0 auto",
               fontSize: "1.1rem",
               lineHeight: "1.75",
+              textWrap: "balance",
             }}
           >
             {introData.desc}

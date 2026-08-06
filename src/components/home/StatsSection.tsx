@@ -44,7 +44,7 @@ const StatsSection: React.FC = () => {
               </div>
               <p
                 style={{
-                  fontSize: "1.125rem",
+                  fontSize: "0.95rem",
                   marginTop: "0.5rem",
                   textTransform: "uppercase",
                   letterSpacing: "1px",

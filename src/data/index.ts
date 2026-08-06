@@ -275,7 +275,7 @@ export const statsData = [
   },
   {
     number: "300+",
-    label: "Doanh nghiệp địa phương,\ntrong và ngoài nước",
+    label: "Doanh nghiệp địa phương\ntrong và ngoài nước",
   },
   {
     number: "700+",
@@ -284,7 +284,10 @@ export const statsData = [
 ];
 
 export const footerData = {
-  logoTitle: "HỘI NGHỊ KẾT NỐI CHUỖI CUNG ỨNG HÀNG HOÁ",
+  logoTitle: [
+    "HỘI NGHỊ KẾT NỐI CHUỖI CUNG ỨNG",
+    "HÀNG HÓA XUẤT NHẬP KHẨU VÀ THƯƠNG MẠI ĐIỆN TỬ TỈNH TÂY NINH NĂM 2026",
+  ],
   logoImg: "/images/logo.png",
   directors: ["Bộ công thương", "UBND tỉnh Tây Ninh"],
   implementers: ["Sở Công Thương tỉnh Tây Ninh"],
