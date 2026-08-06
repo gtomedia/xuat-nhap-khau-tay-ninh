@@ -1,5 +1,6 @@
 import React from 'react';
 import HeroSection from '@/components/home/HeroSection';
+import LiveStreamSection from '@/components/home/LiveStreamSection';
 import IntroSection from '@/components/home/IntroSection';
 import AboutSection from '@/components/home/AboutSection';
 import BenefitsSection from '@/components/home/BenefitsSection';
@@ -18,6 +19,7 @@ const Home: React.FC = () => {
   return (
     <>
       <HeroSection />
+      <LiveStreamSection />
       <IntroSection />
       <AboutSection />
       <BenefitsSection />

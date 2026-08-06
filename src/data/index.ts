@@ -12,6 +12,11 @@ export const heroData = {
   image: "/images/hero-banner.png",
 };
 
+export const liveStreamData = {
+  link: "https://www.youtube.com/watch?v=Pr6wm391iF0", // Để trống "" nếu không có livestream
+  title: "Trực tiếp Hội nghị Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu và Thương mại điện tử tỉnh Tây Ninh năm 2026",
+};
+
 export const introData = {
   title: "GIỚI THIỆU TÂY NINH",
   desc: "Tây Ninh - Trung tâm kết nối chuỗi cung ứng và thương mại điện tử xuyên biên giới.",
@@ -64,6 +69,34 @@ export const aboutData = {
   isVideoFile: false,
 };
 
+export const benefitsData = {
+  tagline: "Vì sao nên tham gia?",
+  title: "QUYỀN LỢI ĐẠI BIỂU",
+  desc: "Hội nghị mở ra cơ hội kết nối, hợp tác và xúc tiến đầu tư cho các doanh nghiệp, nhà đầu tư và tổ chức, góp phần phát triển chuỗi cung ứng, logistics và thương mại điện tử tại tỉnh Tây Ninh.",
+  items: [
+    {
+      icon: "Globe",
+      title: "Mở rộng thị trường quốc tế",
+      desc: "Tiếp cận trực tiếp các nhà mua hàng và đối tác quốc tế từ EU, Bắc Mỹ và Đông Nam Á.",
+    },
+    {
+      icon: "TrendingUp",
+      title: "Cập nhật xu hướng TMĐT",
+      desc: "Nắm bắt các xu hướng thương mại điện tử xuyên biên giới mới nhất từ chuyên gia hàng đầu.",
+    },
+    {
+      icon: "Handshake",
+      title: "Kết nối giao thương B2B",
+      desc: "Tham gia các phiên B2B chuyên sâu, tìm kiếm đối tác vận tải và logistics tối ưu.",
+    },
+    {
+      icon: "FileText",
+      title: "Lắng nghe chính sách mới",
+      desc: "Cập nhật các chính sách ưu đãi đầu tư và hỗ trợ xuất nhập khẩu từ chính quyền địa phương.",
+    },
+  ]
+};
+
 export const potentialData = [
   {
     id: 1,
@@ -103,7 +136,6 @@ export const potentialData = [
   },
 ];
 
-
 export interface TimelineSubItem {
   time: string;
   title: string;
@@ -121,58 +153,87 @@ export const timelineData: TimelineItem[] = [
   {
     time: "07:30 - 08:00",
     title: "ĐÓN TIẾP ĐẠI BIỂU",
+    desc: "Đăng ký và đón tiếp đại biểu, tham quan trưng bày sản phẩm đặc trưng, sản phẩm xuất khẩu của tỉnh Tây Ninh (Sở Công Thương thực hiện)",
   },
   {
     time: "08:00 - 08:10",
     title: "TUYÊN BỐ LÝ DO, GIỚI THIỆU ĐẠI BIỂU",
+    desc: "Tuyên bố lý do và giới thiệu đại biểu tham dự hội nghị (MC thực hiện)",
   },
   {
-    time: "08:10 - 08:30",
-    title: "PHÁT BIỂU KHAI MẠC & CHÀO MỪNG",
-    subItems: [
-      {
-        time: "08:10 - 08:20",
-        title: "PHÁT BIỂU KHAI MẠC",
-      },
-      {
-        time: "08:20 - 08:30",
-        title: "PHÁT BIỂU CHÀO MỪNG",
-      },
-    ]
+    time: "08:10 - 08:20",
+    title: "PHÁT BIỂU KHAI MẠC",
+    desc: "Phát biểu khai mạc hội nghị của Lãnh đạo Bộ Công Thương",
+  },
+  {
+    time: "08:20 - 08:30",
+    title: "PHÁT BIỂU CHÀO MỪNG",
+    desc: "Phát biểu chào mừng hội nghị của Lãnh đạo UBND tỉnh Tây Ninh",
   },
   {
     time: "08:30 - 08:40",
     title: "CHIẾU VIDEO CLIP",
+    desc: "Trình chiếu clip 'Tây Ninh – Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu, thương mại điện tử' (Sở Công Thương thực hiện)",
   },
   {
-    time: "08:40 - 11:00",
-    title: "CÁC PHIÊN THẢO LUẬN",
-    subItems: [
-      {
-        time: "08:40 - 09:20",
-        title: "PHIÊN 1: NÂNG TẦM CHẤT LƯỢNG, THƯƠNG HIỆU",
-      },
-      {
-        time: "09:20 - 11:00",
-        title: "PHIÊN 2: THAM GIA SÂU CHUỖI GIÁ TRỊ TOÀN CẦU",
-      },
-    ]
+    time: "08:40 - 09:30",
+    title: "PHIÊN 1: NÂNG TẦM CHẤT LƯỢNG, THƯƠNG HIỆU",
+    desc: "Các tham luận chuyên đề nhằm thúc đẩy và định vị thương hiệu hàng hóa (mỗi diễn giả trình bày trong 08 phút)",
+    topics: [
+      "Doanh nghiệp Tây Ninh – Chiến lược vươn ra toàn cầu (Hiệp hội Doanh nghiệp tỉnh)",
+      "Tối ưu hóa logistics thúc đẩy thương mại xuyên biên giới (Cảng Quốc tế Long An)",
+      "Thương hiệu tinh bột mì Việt Nam trên thị trường quốc tế (Hiệp hội sản xuất tinh bột mì)",
+      "Chuỗi liên kết chăn nuôi gia cầm tiêu chuẩn Châu Âu (Tập đoàn Hùng Nhơn)",
+      "Nâng tầm vị thế nông sản Việt (Agris)",
+      "Xây dựng chuỗi cung ứng cao su bền vững (Doanh nghiệp cao su)",
+    ],
   },
   {
-    time: "11:00 - 11:10",
-    title: "KÝ KẾT GHI NHỚ GIỮA CÁC DOANH NGHIỆP",
+    time: "09:30 - 10:00",
+    title: "GIẢI LAO - TIỆC TRÀ (TEABREAK)",
+    desc: "Giải lao và tham quan các gian hàng triển lãm thực tế của doanh nghiệp",
   },
   {
-    time: "11:10 - 11:30",
+    time: "10:00 - 11:15",
+    title: "PHIÊN 2: THAM GIA SÂU CHUỖI GIÁ TRỊ TOÀN CẦU",
+    desc: "Các tham luận định hướng, tháo gỡ rào cản và giải pháp xuất khẩu (mỗi diễn giả trình bày trong 08 phút)",
+    topics: [
+      "Định hướng và giải pháp thúc đẩy xuất khẩu đạt mục tiêu tăng trưởng hai con số (Cục Xuất nhập khẩu/Vụ Phát triển thị trường nước ngoài, Bộ Công Thương)",
+      "Cảnh báo về các vấn đề phòng vệ thương mại trong bối cảnh hội nhập sâu rộng và Khuyến nghị cho cộng đồng doanh nghiệp (Cục Phòng vệ thương mại, Bộ Công Thương)",
+      "Giải pháp cho doanh nghiệp Việt Nam từng bước thích ứng với các tiêu chuẩn xanh, ESG (PGS. TS. Dương Minh Hải, Đại học Quốc gia Singapore – NUS)",
+      "Nâng cao giá trị nông sản Tây Ninh và dư địa xuất khẩu tại thị trường Trung Quốc (Tham tán thương mại Việt Nam tại Trung Quốc / Pagoda)",
+      "Đánh giá và dự báo thị trường Hoa Kỳ trước những diễn biến chính sách thuế quan mới (Tham tán thương mại Việt Nam tại Hoa Kỳ)",
+      "Tác động từ bất ổn địa chính trị và cánh cửa thâm nhập thị trường Trung Đông (Chủ tịch Tập đoàn Altaj International Holdings, Ả-rập Xê-út)",
+      "Nhu cầu và triển vọng hợp tác tham gia hiệu quả kênh phân phối quốc tế (Central Retail)",
+      "Chiến lược kinh doanh, đầu tư của các doanh nghiệp châu Âu và đồng hành xây dựng chuỗi cung ứng chất lượng, minh bạch, bền vững tại Việt Nam (Tổng Giám đốc De Heus Việt Nam & châu Á)",
+      "Bứt phá xuất khẩu cùng Amazon (Amazon)",
+      "Phiên thảo luận hỏi đáp Q&A (Các đại biểu tham dự)",
+    ],
+  },
+  {
+    time: "11:15 - 11:30",
+    title: "LỄ TRAO GHI NHỚ HỢP TÁC (MOU)",
+    desc: "Lễ ký kết bản ghi nhớ hợp tác (MOU) giữa các cơ quan, hiệp hội và doanh nghiệp",
+  },
+  {
+    time: "11:30 - 11:40",
     title: "PHÁT BIỂU BẾ MẠC HỘI NGHỊ",
+    desc: "Phát biểu bế mạc Hội nghị của Lãnh đạo UBND tỉnh Tây Ninh",
   },
   {
-    time: "11:30 - 13:30",
+    time: "11:40 - 13:30",
     title: "TIỆC CHIÊU ĐÃI",
+    desc: "Tiệc chiêu đãi đại biểu tham dự hội nghị",
   },
   {
-    time: "13:30 - 16:30",
-    title: "KẾT NỐI GIAO THƯƠNG - KHẢO SÁT DOANH NGHIỆP",
+    time: "14:00 - 16:30",
+    title: "KẾT NỐI GIAO THƯƠNG & KHẢO SÁT THỰC TẾ",
+    desc: "Giao thương trực tiếp giữa các doanh nghiệp (B2B) và khảo sát thực địa địa bàn tỉnh Tây Ninh",
+    topics: [
+      "Giao thương trực tiếp giữa các doanh nghiệp (B2B) tại Hội trường chính",
+      "Khảo sát thực tế tại Cảng quốc tế Long An",
+      "Khảo sát thực tế tại Công ty Cổ phần Thực phẩm Richy Miền Nam",
+    ],
   },
 ];
 
@@ -283,53 +344,6 @@ export const statsData = [
   },
 ];
 
-export const footerData = {
-  logoTitle: [
-    "HỘI NGHỊ KẾT NỐI CHUỖI CUNG ỨNG",
-    "HÀNG HÓA XUẤT NHẬP KHẨU VÀ THƯƠNG MẠI ĐIỆN TỬ TỈNH TÂY NINH NĂM 2026",
-  ],
-  logoImg: "/images/logo.png",
-  directors: ["Bộ công thương", "UBND tỉnh Tây Ninh"],
-  implementers: ["Sở Công Thương tỉnh Tây Ninh"],
-  location: "Hội trường Thống nhất, số 61 Nguyễn Huệ, phường Long An, tỉnh Tây Ninh",
-  locationMapUrl:
-    "https://www.google.com/maps/place/UBND+T%E1%BB%89nh+T%C3%A2y+Ninh/@10.541237,106.4122555,332m/data=!3m1!1e3!4m14!1m7!3m6!1s0x310ab620e5209607:0x885223bd6e764bb7!2zVHJ1bmcgVMOibSBQaOG7pWMgVuG7pSBI4buZaSBuZ2jhu4sgTG9uZyBBbg!8m2!3d10.5411984!4d106.4129984!16s%2Fg%2F11cp5s8r5h!3m5!1s0x310ab6218fffffff:0x680093c4537ba988!8m2!3d10.5413431!4d106.4138736!16s%2Fg%2F1wt3kvw3?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D",
-  contacts: [
-    { label: "Cơ quan ngoại giao", text: "Thái Hòa", phone: "0918.128.365" },
-    { label: "Khu công nghiệp", text: "Quốc Tuấn", phone: "0949.819.964" },
-    { label: "Sở Công Thương", text: "Thúy Duy", phone: "0979.972.528" },
-    { label: "Sở Tài chính", text: "Tường Oanh", phone: "0325.492.768" },
-  ],
-};
-
-export const benefitsData = {
-  tagline: "Vì sao nên tham gia?",
-  title: "QUYỀN LỢI ĐẠI BIỂU",
-  desc: "Hội nghị mở ra cơ hội kết nối, hợp tác và xúc tiến đầu tư cho các doanh nghiệp, nhà đầu tư và tổ chức, góp phần phát triển chuỗi cung ứng, logistics và thương mại điện tử tại tỉnh Tây Ninh.",
-  items: [
-    {
-      icon: "Globe",
-      title: "Mở rộng thị trường quốc tế",
-      desc: "Tiếp cận trực tiếp các nhà mua hàng và đối tác quốc tế từ EU, Bắc Mỹ và Đông Nam Á.",
-    },
-    {
-      icon: "TrendingUp",
-      title: "Cập nhật xu hướng TMĐT",
-      desc: "Nắm bắt các xu hướng thương mại điện tử xuyên biên giới mới nhất từ chuyên gia hàng đầu.",
-    },
-    {
-      icon: "Handshake",
-      title: "Kết nối giao thương B2B",
-      desc: "Tham gia các phiên B2B chuyên sâu, tìm kiếm đối tác vận tải và logistics tối ưu.",
-    },
-    {
-      icon: "FileText",
-      title: "Lắng nghe chính sách mới",
-      desc: "Cập nhật các chính sách ưu đãi đầu tư và hỗ trợ xuất nhập khẩu từ chính quyền địa phương.",
-    },
-  ]
-};
-
 export const mapData = {
   tagline: "Không gian sự kiện",
   title: "SƠ ĐỒ TRIỂN LÃM & B2B",
@@ -354,4 +368,23 @@ export const ctaData = {
   desc: "Đừng bỏ lỡ cơ hội kết nối với hàng trăm đối tác tiềm năng và các chuyên gia hàng đầu tại sự kiện.",
   qrImg: "/images/qr-dang-ky.png",
   link: "https://forms.gle/977Dc7kyF79Go2SP6",
+};
+
+export const footerData = {
+  logoTitle: [
+    "HỘI NGHỊ KẾT NỐI CHUỖI CUNG ỨNG",
+    "HÀNG HÓA XUẤT NHẬP KHẨU VÀ THƯƠNG MẠI ĐIỆN TỬ TỈNH TÂY NINH NĂM 2026",
+  ],
+  logoImg: "/images/logo.png",
+  directors: ["Bộ công thương", "UBND tỉnh Tây Ninh"],
+  implementers: ["Sở Công Thương tỉnh Tây Ninh"],
+  location: "Hội trường Thống nhất, số 61 Nguyễn Huệ, phường Long An, tỉnh Tây Ninh",
+  locationMapUrl:
+    "https://www.google.com/maps/place/UBND+T%E1%BB%89nh+T%C3%A2y+Ninh/@10.541237,106.4122555,332m/data=!3m1!1e3!4m14!1m7!3m6!1s0x310ab620e5209607:0x885223bd6e764bb7!2zVHJ1bmcgVMOibSBQaOG7pWMgVuG7pSBI4buZaSBuZ2jhu4sgTG9uZyBBbg!8m2!3d10.5411984!4d106.4129984!16s%2Fg%2F11cp5s8r5h!3m5!1s0x310ab6218fffffff:0x680093c4537ba988!8m2!3d10.5413431!4d106.4138736!16s%2Fg%2F1wt3kvw3?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D",
+  contacts: [
+    { label: "Cơ quan ngoại giao", text: "Thái Hòa", phone: "0918.128.365" },
+    { label: "Khu công nghiệp", text: "Quốc Tuấn", phone: "0949.819.964" },
+    { label: "Sở Công Thương", text: "Thúy Duy", phone: "0979.972.528" },
+    { label: "Sở Tài chính", text: "Tường Oanh", phone: "0325.492.768" },
+  ],
 };

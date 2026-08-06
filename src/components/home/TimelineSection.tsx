@@ -8,23 +8,24 @@ import {
   Utensils,
   Building2,
   ChevronDown,
+  Coffee,
 } from "lucide-react";
 import { timelineData } from "@/data";
 
 const ICONS = [
-  <Users size={22} />,       // Đón tiếp
-  <Megaphone size={22} />,   // Tuyên bố lý do
-  <Megaphone size={22} />,   // Phát biểu
-  <Video size={22} />,       // Chiếu video
-  <Presentation size={22} />, // Các phiên
-  <Handshake size={22} />,   // Ký kết
-  <Megaphone size={22} />,   // Bế mạc
-  <Utensils size={22} />,    // Tiệc chiêu đãi
-  <Building2 size={22} />,   // Kết nối giao thương
+  <Users size={22} />,         // 0. Đón tiếp đại biểu
+  <Megaphone size={22} />,     // 1. Tuyên bố lý do, giới thiệu đại biểu
+  <Megaphone size={22} />,     // 2. Phát biểu khai mạc
+  <Megaphone size={22} />,     // 3. Phát biểu chào mừng
+  <Video size={22} />,         // 4. Chiếu video clip
+  <Presentation size={22} />,   // 5. Phiên 1: Nâng tầm chất lượng
+  <Coffee size={22} />,        // 6. Giải lao - Tiệc trà (Teabreak)
+  <Presentation size={22} />,   // 7. Phiên 2: Tham gia chuỗi giá trị
+  <Handshake size={22} />,     // 8. Lễ trao ghi nhớ hợp tác (MOU)
+  <Megaphone size={22} />,     // 9. Phát biểu bế mạc hội nghị
+  <Utensils size={22} />,      // 10. Tiệc chiêu đãi
+  <Building2 size={22} />,     // 11. Kết nối giao thương
 ];
-
-// Những mục nổi bật (dùng màu accent)
-const HIGHLIGHT_INDICES = [4, 5, 8];
 
 const TimelineSection: React.FC = () => {
   const [openMap, setOpenMap] = useState<Record<number, boolean>>({});
@@ -81,14 +82,14 @@ const TimelineSection: React.FC = () => {
               top: 28,
               bottom: 28,
               width: 2,
-              background: "linear-gradient(to bottom, var(--primary), var(--accent))",
+              background: "var(--primary)",
+              opacity: 0.5,
               borderRadius: 4,
               zIndex: 0,
             }}
           />
 
           {timelineData.map((item, index) => {
-            const isHighlight = HIGHLIGHT_INDICES.includes(index);
             const hasExpand = !!(item.subItems || item.topics);
             const isOpen = !!openMap[index];
             const icon = ICONS[index] ?? <Megaphone size={22} />;
@@ -99,6 +100,7 @@ const TimelineSection: React.FC = () => {
                 style={{
                   display: "flex",
                   gap: "1.5rem",
+                  alignItems: "center",
                   position: "relative",
                   zIndex: 1,
                   marginBottom: "1.5rem",
@@ -111,17 +113,13 @@ const TimelineSection: React.FC = () => {
                     width: 56,
                     height: 56,
                     borderRadius: "50%",
-                    background: isHighlight
-                      ? "linear-gradient(135deg, var(--accent), #f97316cc)"
-                      : "linear-gradient(135deg, var(--primary), var(--primary-light))",
+                    background: "linear-gradient(135deg, var(--primary), var(--primary-light))",
                     color: "#fff",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     flexShrink: 0,
-                    boxShadow: isHighlight
-                      ? "0 4px 16px rgba(249,115,22,0.45)"
-                      : "0 4px 16px rgba(5,85,253,0.3)",
+                    boxShadow: "0 4px 16px rgba(5,85,253,0.25)",
                     border: "3px solid #fff",
                     zIndex: 2,
                   }}
@@ -136,10 +134,8 @@ const TimelineSection: React.FC = () => {
                     background: "#fff",
                     borderRadius: "1rem",
                     padding: "1.25rem 1.75rem",
-                    boxShadow: isHighlight
-                      ? "0 4px 24px rgba(249,115,22,0.12)"
-                      : "0 4px 20px rgba(0,0,0,0.07)",
-                    borderLeft: `4px solid ${isHighlight ? "var(--accent)" : "var(--primary)"}`,
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
+                    borderLeft: "4px solid var(--primary)",
                     transition: "box-shadow 0.3s",
                   }}
                 >
@@ -147,8 +143,8 @@ const TimelineSection: React.FC = () => {
                   <span
                     style={{
                       display: "inline-block",
-                      background: isHighlight ? "rgba(249,115,22,0.1)" : "rgba(5,85,253,0.08)",
-                      color: isHighlight ? "var(--accent)" : "var(--primary)",
+                      background: "rgba(5,85,253,0.08)",
+                      color: "var(--primary)",
                       borderRadius: 999,
                       padding: "0.25rem 0.875rem",
                       fontSize: "0.8rem",
@@ -188,10 +184,10 @@ const TimelineSection: React.FC = () => {
                         onClick={() => toggle(index)}
                         style={{
                           flexShrink: 0,
-                          background: isHighlight ? "rgba(249,115,22,0.1)" : "rgba(5,85,253,0.08)",
+                          background: "rgba(5,85,253,0.08)",
                           border: "none",
                           borderRadius: 999,
-                          color: isHighlight ? "var(--accent)" : "var(--primary)",
+                          color: "var(--primary)",
                           cursor: "pointer",
                           padding: "0.3rem 0.9rem",
                           fontSize: "0.8rem",
@@ -234,14 +230,14 @@ const TimelineSection: React.FC = () => {
                     <div
                       style={{
                         overflow: "hidden",
-                        maxHeight: isOpen ? 400 : 0,
+                        maxHeight: isOpen ? 1000 : 0,
                         transition: "max-height 0.4s ease",
                         marginTop: isOpen ? "1rem" : 0,
                       }}
                     >
                       <div
                         style={{
-                          background: isHighlight ? "rgba(249,115,22,0.06)" : "rgba(5,85,253,0.04)",
+                          background: "rgba(5,85,253,0.04)",
                           borderRadius: "0.75rem",
                           padding: "1rem 1.25rem",
                           display: "flex",
@@ -265,7 +261,7 @@ const TimelineSection: React.FC = () => {
                           >
                             <span
                               style={{
-                                color: isHighlight ? "var(--accent)" : "var(--primary)",
+                                color: "var(--primary)",
                                 fontWeight: 700,
                                 fontSize: "0.78rem",
                                 whiteSpace: "nowrap",
@@ -289,7 +285,7 @@ const TimelineSection: React.FC = () => {
                     <div
                       style={{
                         overflow: "hidden",
-                        maxHeight: isOpen ? 400 : 0,
+                        maxHeight: isOpen ? 1000 : 0,
                         transition: "max-height 0.4s ease",
                         marginTop: isOpen ? "1rem" : 0,
                       }}
@@ -297,7 +293,7 @@ const TimelineSection: React.FC = () => {
                       <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                         {item.topics.map((topic, i) => (
                           <li key={i} style={{ display: "flex", gap: "0.5rem", alignItems: "flex-start", fontSize: "0.9rem", color: "var(--text-secondary)" }}>
-                            <span style={{ color: "var(--accent)", fontWeight: 700, marginTop: 1 }}>•</span>
+                            <span style={{ color: "var(--primary)", fontWeight: 700, marginTop: 1 }}>•</span>
                             {topic}
                           </li>
                         ))}
