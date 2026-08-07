@@ -153,12 +153,12 @@ export const timelineData: TimelineItem[] = [
   {
     time: "07:30 - 08:00",
     title: "ĐÓN TIẾP ĐẠI BIỂU",
-    desc: "Đăng ký và đón tiếp đại biểu, tham quan trưng bày sản phẩm đặc trưng, sản phẩm xuất khẩu của tỉnh Tây Ninh (Sở Công Thương thực hiện)",
+    desc: "Đăng ký và đón tiếp đại biểu, tham quan trưng bày sản phẩm đặc trưng, sản phẩm xuất khẩu của tỉnh Tây Ninh",
   },
   {
     time: "08:00 - 08:10",
     title: "TUYÊN BỐ LÝ DO, GIỚI THIỆU ĐẠI BIỂU",
-    desc: "Tuyên bố lý do và giới thiệu đại biểu tham dự hội nghị (MC thực hiện)",
+    desc: "Tuyên bố lý do và giới thiệu đại biểu tham dự hội nghị",
   },
   {
     time: "08:10 - 08:20",
@@ -173,12 +173,12 @@ export const timelineData: TimelineItem[] = [
   {
     time: "08:30 - 08:40",
     title: "CHIẾU VIDEO CLIP",
-    desc: "Trình chiếu clip 'Tây Ninh – Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu, thương mại điện tử' (Sở Công Thương thực hiện)",
+    desc: "Trình chiếu clip 'Tây Ninh – Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu, thương mại điện tử'",
   },
   {
     time: "08:40 - 09:30",
     title: "PHIÊN 1: NÂNG TẦM CHẤT LƯỢNG, THƯƠNG HIỆU",
-    desc: "Các tham luận chuyên đề nhằm thúc đẩy và định vị thương hiệu hàng hóa (mỗi diễn giả trình bày trong 08 phút)",
+    desc: "Các tham luận chuyên đề nhằm thúc đẩy và định vị thương hiệu hàng hóa",
     topics: [
       "Doanh nghiệp Tây Ninh – Chiến lược vươn ra toàn cầu (Hiệp hội Doanh nghiệp tỉnh)",
       "Tối ưu hóa logistics thúc đẩy thương mại xuyên biên giới (Cảng Quốc tế Long An)",
@@ -196,7 +196,7 @@ export const timelineData: TimelineItem[] = [
   {
     time: "10:00 - 11:15",
     title: "PHIÊN 2: THAM GIA SÂU CHUỖI GIÁ TRỊ TOÀN CẦU",
-    desc: "Các tham luận định hướng, tháo gỡ rào cản và giải pháp xuất khẩu (mỗi diễn giả trình bày trong 08 phút)",
+    desc: "Các tham luận định hướng, tháo gỡ rào cản và giải pháp xuất khẩu",
     topics: [
       "Định hướng và giải pháp thúc đẩy xuất khẩu đạt mục tiêu tăng trưởng hai con số (Cục Xuất nhập khẩu/Vụ Phát triển thị trường nước ngoài, Bộ Công Thương)",
       "Cảnh báo về các vấn đề phòng vệ thương mại trong bối cảnh hội nhập sâu rộng và Khuyến nghị cho cộng đồng doanh nghiệp (Cục Phòng vệ thương mại, Bộ Công Thương)",
@@ -212,7 +212,7 @@ export const timelineData: TimelineItem[] = [
   },
   {
     time: "11:15 - 11:30",
-    title: "LỄ TRAO GHI NHỚ HỢP TÁC (MOU)",
+    title: "KÝ KẾT GHI NHỚ GIỮA CÁC DOANH NGHIỆP",
     desc: "Lễ ký kết bản ghi nhớ hợp tác (MOU) giữa các cơ quan, hiệp hội và doanh nghiệp",
   },
   {
@@ -226,8 +226,8 @@ export const timelineData: TimelineItem[] = [
     desc: "Tiệc chiêu đãi đại biểu tham dự hội nghị",
   },
   {
-    time: "14:00 - 16:30",
-    title: "KẾT NỐI GIAO THƯƠNG & KHẢO SÁT THỰC TẾ",
+    time: "13:30 - 16:30",
+    title: "KẾT NỐI GIAO THƯƠNG - KHẢO SÁT DOANH NGHIỆP",
     desc: "Giao thương trực tiếp giữa các doanh nghiệp (B2B) và khảo sát thực địa địa bàn tỉnh Tây Ninh",
     topics: [
       "Giao thương trực tiếp giữa các doanh nghiệp (B2B) tại Hội trường chính",

@@ -21,7 +21,7 @@ const ICONS = [
   <Presentation size={22} />,   // 5. Phiên 1: Nâng tầm chất lượng
   <Coffee size={22} />,        // 6. Giải lao - Tiệc trà (Teabreak)
   <Presentation size={22} />,   // 7. Phiên 2: Tham gia chuỗi giá trị
-  <Handshake size={22} />,     // 8. Lễ trao ghi nhớ hợp tác (MOU)
+  <Handshake size={22} />,     // 8. Ký kết ghi nhớ giữa các doanh nghiệp
   <Megaphone size={22} />,     // 9. Phát biểu bế mạc hội nghị
   <Utensils size={22} />,      // 10. Tiệc chiêu đãi
   <Building2 size={22} />,     // 11. Kết nối giao thương
@@ -76,9 +76,9 @@ const TimelineSection: React.FC = () => {
         >
           {/* Vertical line */}
           <div
+            className="tl-line"
             style={{
               position: "absolute",
-              left: 27,
               top: 28,
               bottom: 28,
               width: 2,
@@ -97,19 +97,38 @@ const TimelineSection: React.FC = () => {
             return (
               <div
                 key={index}
+                className="tl-item"
                 style={{
-                  display: "flex",
-                  gap: "1.5rem",
+                  display: "grid",
+                  gridTemplateColumns: "96px 56px 1fr",
+                  gridTemplateAreas: '"time icon card"',
                   alignItems: "center",
+                  gap: "1.5rem",
                   position: "relative",
                   zIndex: 1,
                   marginBottom: "1.5rem",
                 }}
                 data-reveal-child="up"
               >
+                {/* Time */}
+                <div
+                  className="tl-time"
+                  style={{
+                    gridArea: "time",
+                    textAlign: "right",
+                    color: "var(--primary)",
+                    fontWeight: 700,
+                    fontSize: "0.85rem",
+                  }}
+                >
+                  {item.time}
+                </div>
+
                 {/* Icon circle */}
                 <div
+                  className="tl-icon"
                   style={{
+                    gridArea: "icon",
                     width: 56,
                     height: 56,
                     borderRadius: "50%",
@@ -118,7 +137,6 @@ const TimelineSection: React.FC = () => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    flexShrink: 0,
                     boxShadow: "0 4px 16px rgba(5,85,253,0.25)",
                     border: "3px solid #fff",
                     zIndex: 2,
@@ -129,8 +147,9 @@ const TimelineSection: React.FC = () => {
 
                 {/* Card */}
                 <div
+                  className="tl-card"
                   style={{
-                    flex: 1,
+                    gridArea: "card",
                     background: "#fff",
                     borderRadius: "1rem",
                     padding: "1.25rem 1.75rem",
@@ -139,23 +158,6 @@ const TimelineSection: React.FC = () => {
                     transition: "box-shadow 0.3s",
                   }}
                 >
-                  {/* Time badge */}
-                  <span
-                    style={{
-                      display: "inline-block",
-                      background: "rgba(5,85,253,0.08)",
-                      color: "var(--primary)",
-                      borderRadius: 999,
-                      padding: "0.25rem 0.875rem",
-                      fontSize: "0.8rem",
-                      fontWeight: 700,
-                      letterSpacing: 0.5,
-                      marginBottom: "0.5rem",
-                    }}
-                  >
-                    {item.time}
-                  </span>
-
                   {/* Title + expand button on same row if has expand */}
                   <div
                     style={{
@@ -300,12 +302,40 @@ const TimelineSection: React.FC = () => {
                       </ul>
                     </div>
                   )}
-                </div>
+                  </div>
               </div>
             );
           })}
         </div>
       </div>
+
+      <style>{`
+        .tl-line {
+          left: 147px;
+        }
+        @media (max-width: 640px) {
+          .tl-item {
+            grid-template-columns: 44px 1fr !important;
+            grid-template-areas: "icon time" "icon card" !important;
+            align-items: start !important;
+            gap: 0.5rem 1rem !important;
+          }
+          .tl-time {
+            text-align: left !important;
+            align-self: end;
+          }
+          .tl-icon {
+            width: 44px !important;
+            height: 44px !important;
+          }
+          .tl-card {
+            padding: 1rem 1.25rem !important;
+          }
+          .tl-line {
+            left: 21px;
+          }
+        }
+      `}</style>
     </section>
   );
 };
