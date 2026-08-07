@@ -23,7 +23,7 @@ const PartnersSection: React.FC = () => {
             fontSize: "1rem",
           }}
         >
-          Được đồng hành bởi các tổ chức và doanh nghiệp uy tín hàng đầu
+          Được đồng hành bởi các tổ chức và doanh nghiệp uy tín hàng đầu.
         </p>
         <div className="marquee-container">
           <div className="marquee-track">
