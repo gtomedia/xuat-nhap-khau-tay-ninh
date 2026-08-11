@@ -13,7 +13,7 @@ export const heroData = {
 };
 
 export const liveStreamData = {
-  link: "https://www.youtube.com/watch?v=Pr6wm391iF0", // Để trống "" nếu không có livestream
+  link: "https://www.youtube.com/watch?v=wyBRq0TLiqc", // Để trống "" nếu không có livestream
   title: "Trực tiếp Hội nghị Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu và Thương mại điện tử tỉnh Tây Ninh năm 2026",
 };
 
