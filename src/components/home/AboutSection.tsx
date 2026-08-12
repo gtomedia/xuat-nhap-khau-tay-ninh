@@ -3,16 +3,16 @@ import { Calendar, Map, Users, Building } from "lucide-react";
 import { aboutData } from "@/data";
 
 const AboutSection: React.FC = () => {
-  const renderIcon = (iconName: string) => {
+  const renderIcon = (iconName: string, size = 18) => {
     switch (iconName) {
       case "Calendar":
-        return <Calendar size={18} style={{ color: "#0555fd" }} />;
+        return <Calendar size={size} />;
       case "Map":
-        return <Map size={18} style={{ color: "#0555fd" }} />;
+        return <Map size={size} />;
       case "Users":
-        return <Users size={18} style={{ color: "#0555fd" }} />;
+        return <Users size={size} />;
       case "Building":
-        return <Building size={18} style={{ color: "#0555fd" }} />;
+        return <Building size={size} />;
       default:
         return null;
     }
@@ -141,37 +141,38 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
 
-        {/* 4 Highlights Horizontal Row */}
+        {/* Highlights: single card holding all 4 items */}
         <div className="about-highlights-row">
           {aboutData.highlights.map((item, index) => (
             <div
               key={index}
-              className="about-highlight-card"
+              className="about-highlight-item"
             >
+              <span className="about-highlight-icon">
+                {renderIcon(item.icon, 16)}
+              </span>
               <div
                 style={{
-                  width: "2.75rem",
-                  height: "2.75rem",
-                  borderRadius: "0.75rem",
-                  background: "rgba(5, 85, 253, 0.08)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0,
+                  fontWeight: 800,
+                  fontSize: "1.75rem",
+                  color: "#0555fd",
+                  lineHeight: "1.2",
+                  paddingRight: "1.75rem",
                 }}
               >
-                {renderIcon(item.icon)}
+                {item.value}
               </div>
-              <span
+              <div
                 style={{
                   fontWeight: 600,
-                  fontSize: "0.95rem",
-                  color: "#334155",
-                  lineHeight: "1.45",
+                  fontSize: "0.9rem",
+                  color: "#64748b",
+                  lineHeight: "1.4",
+                  marginTop: "0.35rem",
                 }}
               >
-                {item.text}
-              </span>
+                {item.label}
+              </div>
             </div>
           ))}
         </div>
@@ -180,35 +181,55 @@ const AboutSection: React.FC = () => {
           .about-highlights-row {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
             margin-top: 3.5rem;
+            background: rgba(5, 85, 253, 0.04);
+            border-radius: 1rem;
+            border: 1px solid rgba(5, 85, 253, 0.12);
+            overflow: hidden;
           }
-          .about-highlight-card {
+          .about-highlight-item {
+            position: relative;
+            padding: 1.5rem 1.5rem 1.25rem;
+            border-left: 1px solid rgba(5, 85, 253, 0.12);
+          }
+          .about-highlight-item:first-child {
+            border-left: none;
+          }
+          .about-highlight-icon {
+            position: absolute;
+            top: 1.1rem;
+            right: 1.1rem;
+            width: 1.75rem;
+            height: 1.75rem;
+            border-radius: 50%;
+            background: #0555fd;
+            color: #fff;
             display: flex;
             align-items: center;
-            gap: 1rem;
-            padding: 1.25rem 1.5rem;
-            background: #f8fafc;
-            border-radius: 1rem;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-          }
-          .about-highlight-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            border-color: rgba(5, 85, 253, 0.3);
+            justify-content: center;
           }
           @media (max-width: 1024px) {
             .about-highlights-row {
               grid-template-columns: repeat(2, 1fr);
-              gap: 1rem;
               margin-top: 2.5rem;
+            }
+            .about-highlight-item:nth-child(3) {
+              border-left: none;
+            }
+            .about-highlight-item:nth-child(n+3) {
+              border-top: 1px solid rgba(5, 85, 253, 0.12);
             }
           }
           @media (max-width: 640px) {
             .about-highlights-row {
               grid-template-columns: 1fr;
+            }
+            .about-highlight-item {
+              border-left: none !important;
+              border-top: 1px solid rgba(5, 85, 253, 0.12);
+            }
+            .about-highlight-item:first-child {
+              border-top: none;
             }
           }
         `}</style>

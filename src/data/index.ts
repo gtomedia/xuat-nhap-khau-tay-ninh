@@ -63,13 +63,10 @@ export const aboutData = {
   desc2:
     "Hội nghị quy tụ đại diện cơ quan quản lý, hiệp hội, doanh nghiệp logistics, xuất nhập khẩu và các nền tảng thương mại điện tử trong và ngoài nước. Đây là diễn đàn thảo luận, cập nhật xu hướng, giới thiệu chính sách mới và mở rộng cơ hội hợp tác, đầu tư, phát triển chuỗi cung ứng bền vững.",
   highlights: [
-    { icon: "Calendar", text: "Ngày 5.9.2026" },
-    { icon: "Map", text: "Hội trường Thống nhất, UBND tỉnh Tây Ninh" },
-    { icon: "Users", text: "700+ Đại biểu" },
-    {
-      icon: "Building",
-      text: "300+ Doanh nghiệp địa phương, trong nước và quốc tế",
-    },
+    { icon: "Calendar", value: "5.9.2026", label: "Ngày diễn ra" },
+    { icon: "Map", value: "Hội trường Thống Nhất", label: "UBND tỉnh Tây Ninh" },
+    { icon: "Users", value: "700+", label: "Đại biểu" },
+    { icon: "Building", value: "300+", label: "Doanh nghiệp địa phương, trong nước và quốc tế" },
   ],
   videoUrl:
     "https://www.youtube.com/embed/wyBRq0TLiqc?autoplay=1&mute=1&loop=1&playlist=wyBRq0TLiqc&controls=0&modestbranding=1",
@@ -84,7 +81,7 @@ export const benefitsData = {
     {
       icon: "Globe",
       title: "Mở rộng thị trường quốc tế",
-      desc: "Tiếp cận trực tiếp các nhà mua hàng và đối tác quốc tế từ EU, Bắc Mỹ và Đông Nam Á.",
+      desc: "Tiếp cận trực tiếp các nhà nhập khẩu, nhà phân phối và đối tác quốc tế từ EU, Bắc Mỹ và Đông Nam Á.",
     },
     {
       icon: "TrendingUp",
@@ -175,28 +172,18 @@ export const timelineData: TimelineItem[] = [
     desc: "Đăng ký và đón tiếp đại biểu, tham quan trưng bày sản phẩm đặc trưng, sản phẩm xuất khẩu của tỉnh Tây Ninh",
   },
   {
-    time: "08:00 - 08:10",
-    title: "TUYÊN BỐ LÝ DO, GIỚI THIỆU ĐẠI BIỂU",
-    desc: "Tuyên bố lý do và giới thiệu đại biểu tham dự hội nghị",
-  },
-  {
-    time: "08:10 - 08:20",
-    title: "PHÁT BIỂU KHAI MẠC",
-    desc: "Phát biểu khai mạc hội nghị của Lãnh đạo Bộ Công Thương",
-  },
-  {
-    time: "08:20 - 08:30",
-    title: "PHÁT BIỂU CHÀO MỪNG",
-    desc: "Phát biểu chào mừng hội nghị của Lãnh đạo UBND tỉnh Tây Ninh",
-  },
-  {
-    time: "08:30 - 08:40",
-    title: "CHIẾU VIDEO CLIP",
-    desc: "Trình chiếu clip 'Tây Ninh – Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu, thương mại điện tử'",
+    time: "08:00 - 08:40",
+    title: "KHAI MẠC CHƯƠNG TRÌNH",
+    subItems: [
+      { time: "08:00 - 08:10", title: "Tuyên bố lý do, giới thiệu đại biểu" },
+      { time: "08:10 - 08:20", title: "Phát biểu khai mạc (Lãnh đạo Bộ Công Thương)" },
+      { time: "08:20 - 08:30", title: "Phát biểu chào mừng (Lãnh đạo UBND tỉnh Tây Ninh)" },
+      { time: "08:30 - 08:40", title: "Trình chiếu video clip 'Tây Ninh – Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu, thương mại điện tử'" },
+    ],
   },
   {
     time: "08:40 - 09:30",
-    title: "PHIÊN 1: NÂNG TẦM CHẤT LƯỢNG, THƯƠNG HIỆU",
+    title: "PHIÊN THẢO LUẬN 1: NÂNG TẦM CHẤT LƯỢNG, THƯƠNG HIỆU",
     desc: "Các tham luận chuyên đề nhằm thúc đẩy và định vị thương hiệu hàng hóa",
     topics: [
       "Doanh nghiệp Tây Ninh – Chiến lược vươn ra toàn cầu (Hiệp hội Doanh nghiệp tỉnh)",
@@ -209,7 +196,7 @@ export const timelineData: TimelineItem[] = [
   },
   {
     time: "09:30 - 10:00",
-    title: "GIẢI LAO - TIỆC TRÀ (TEABREAK)",
+    title: "GIẢI LAO – KẾT NỐI",
     desc: "Giải lao và tham quan các gian hàng triển lãm thực tế của doanh nghiệp",
   },
   {
@@ -231,7 +218,7 @@ export const timelineData: TimelineItem[] = [
   },
   {
     time: "11:15 - 11:30",
-    title: "KÝ KẾT GHI NHỚ GIỮA CÁC DOANH NGHIỆP",
+    title: "LỄ KÝ KẾT BIÊN BẢN GHI NHỚ HỢP TÁC",
     desc: "Lễ ký kết bản ghi nhớ hợp tác (MOU) giữa các cơ quan, hiệp hội và doanh nghiệp",
   },
   {
@@ -342,22 +329,27 @@ export const partnersData = [
 
 export const statsData = [
   {
+    icon: "Landmark",
     number: "4",
     label: "Cửa khẩu Quốc tế",
   },
   {
+    icon: "Factory",
     number: "10+",
     label: "Khu Công Nghiệp",
   },
   {
+    icon: "DollarSign",
     number: "15B+",
     label: "USD Kim ngạch XNK",
   },
   {
+    icon: "Building2",
     number: "300+",
     label: "Doanh nghiệp địa phương\ntrong và ngoài nước",
   },
   {
+    icon: "Users",
     number: "700+",
     label: "Đại biểu tham gia",
   },
@@ -395,10 +387,10 @@ export const footerData = {
     "HÀNG HÓA XUẤT NHẬP KHẨU VÀ THƯƠNG MẠI ĐIỆN TỬ TỈNH TÂY NINH NĂM 2026",
   ],
   logoImg: "/images/logo.png",
-  directors: ["Bộ công thương", "UBND tỉnh Tây Ninh"],
+  directors: ["Bộ Công Thương", "UBND tỉnh Tây Ninh"],
   implementers: ["Sở Công Thương tỉnh Tây Ninh"],
   location:
-    "Hội trường Thống nhất, số 61 Nguyễn Huệ, phường Long An, tỉnh Tây Ninh",
+    "Hội trường Thống Nhất, số 61 Nguyễn Huệ, phường Long An, tỉnh Tây Ninh",
   locationMapUrl:
     "https://www.google.com/maps/place/UBND+T%E1%BB%89nh+T%C3%A2y+Ninh/@10.541237,106.4122555,332m/data=!3m1!1e3!4m14!1m7!3m6!1s0x310ab620e5209607:0x885223bd6e764bb7!2zVHJ1bmcgVMOibSBQaOG7pWMgVuG7pSBI4buZaSBuZ2jhu4sgTG9uZyBBbg!8m2!3d10.5411984!4d106.4129984!16s%2Fg%2F11cp5s8r5h!3m5!1s0x310ab6218fffffff:0x680093c4537ba988!8m2!3d10.5413431!4d106.4138736!16s%2Fg%2F1wt3kvw3?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D",
   contacts: [
