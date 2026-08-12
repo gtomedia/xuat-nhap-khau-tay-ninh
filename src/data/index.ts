@@ -14,7 +14,8 @@ export const heroData = {
 
 export const liveStreamData = {
   link: "https://www.youtube.com/watch?v=wyBRq0TLiqc", // Để trống "" nếu không có livestream
-  title: "Trực tiếp Hội nghị Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu và Thương mại điện tử tỉnh Tây Ninh năm 2026",
+  title:
+    "Trực tiếp Hội nghị Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu và Thương mại điện tử tỉnh Tây Ninh năm 2026",
 };
 
 export const introData = {
@@ -24,27 +25,33 @@ export const introData = {
     {
       title: "Tìm hiểu về Tây Ninh",
       desc: "Tây Ninh là vùng đất trù phú của vùng Đông Nam Bộ, nơi đây là miền hội tụ giữa cảnh sắc thiên nhiên kỳ vĩ, văn hóa tâm linh đặc sắc và chiều sâu lịch sử. Với tổng diện tích 8.536,44 km², dân số 3.254.170 người, có 96 đơn vị hành chính cấp xã (82 xã, 14 phường), vùng đất này trải dài giữa những tuyến giao thương huyết mạch, tiếp giáp với TP. Hồ Chí Minh, Đồng Tháp, Đồng Nai, và giáp Vương quốc Campuchia qua những cửa khẩu quốc tế nhộn nhịp.",
-      image: "https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2022/7/1/1062784/289799822_1015995557.jpg",
-      link: "https://dulich.tayninh.gov.vn/thong-tin/Thong-tin-chung-ve-tinh-Tay-Ninh-15.html"
+      image:
+        "https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2022/7/1/1062784/289799822_1015995557.jpg",
+      link: "https://dulich.tayninh.gov.vn/thong-tin/Thong-tin-chung-ve-tinh-Tay-Ninh-15.html",
     },
     {
-      title: "Du lịch Tây Ninh: Ðiểm nhấn tăng trưởng, hướng đến phát triển bền vững",
+      title:
+        "Du lịch Tây Ninh: Ðiểm nhấn tăng trưởng, hướng đến phát triển bền vững",
       desc: "Tây Ninh đang nổi lên như là điểm đến hấp dẫn về du lịch sinh thái, du lịch về văn hoá, tâm linh, đóng góp tích cực cho sự phát triển kinh tế - xã hội của tỉnh.",
-      image: "https://images.vietnamtourism.gov.vn/vn/images/2024/thang_1/2901.du_lich_tay_ninh.jpg",
-      link: "https://vietnamtourism.gov.vn/post/54482"
+      image:
+        "https://images.vietnamtourism.gov.vn/vn/images/2024/thang_1/2901.du_lich_tay_ninh.jpg",
+      link: "https://vietnamtourism.gov.vn/post/54482",
     },
     {
-      title: "Tây Ninh đẩy mạnh thu hút đầu tư phát triển hạ tầng thương mại, logistics hiện đại",
+      title:
+        "Tây Ninh đẩy mạnh thu hút đầu tư phát triển hạ tầng thương mại, logistics hiện đại",
       desc: "Nhằm nâng cao năng lực cạnh tranh và mở rộng không gian phát triển kinh tế, tỉnh Tây Ninh tập trung thu hút đầu tư phát triển hạ tầng thương mại, logistics theo hướng hiện đại, đồng bộ.",
-      image: "https://imghappyvietnam.vnanet.vn/MediaUpload/Medium/2026/07/22/104708-vna_potal_tay_ninh_day_manh_thu_hut_dau_tu_phat_trien_ha_tang_thuong_mai_logistics_hien_dai_8896909.jpg",
-      link: "https://happyvietnam.vnanet.vn/tay-ninh-day-manh-thu-hut-dau-tu-phat-trien-ha-tang-thuong-mai-logistics-hien-dai/60119.html"
+      image:
+        "https://imghappyvietnam.vnanet.vn/MediaUpload/Medium/2026/07/22/104708-vna_potal_tay_ninh_day_manh_thu_hut_dau_tu_phat_trien_ha_tang_thuong_mai_logistics_hien_dai_8896909.jpg",
+      link: "https://happyvietnam.vnanet.vn/tay-ninh-day-manh-thu-hut-dau-tu-phat-trien-ha-tang-thuong-mai-logistics-hien-dai/60119.html",
     },
     {
       title: "Tây Ninh đặt mục tiêu tăng trưởng xuất khẩu từ 15-16% mỗi năm",
       desc: "Với lợi thế cửa ngõ kết nối Việt Nam với Campuchia và các nước ASEAN, Tây Ninh tiếp tục phát huy tiềm năng kinh tế biên mậu, thúc đẩy thương mại biên giới trở thành động lực tăng trưởng quan trọng.",
-      image: "https://media.vietnamplus.vn/images/c14f6479e83e315b4cf3a2906cc6a51eb9d6ced238aab0d68b7df356f0b1062ac4fdd44f6a814fc382fe145e64bf577f9688f8384215be0238917c33e4ac81e321e1616ff4a61d0a25e6c6407b9b0b1d3d598da530926ad440618e46f5418c5021e0fc433d783cb75816347765d085e506058199cbc218f8e19c57d4f3e72619e302fa28abdf71aa7a43283315b85f70/ttxvn-khai-truong-cua-hang-mien-thue-the-ky-vang-tai-cua-khau-quoc-te-moc-bai-tay-ninh-8533814.jpg.webp",
-      link: "https://www.vietnamplus.vn/tay-ninh-dat-muc-tieu-tang-truong-xuat-khau-tu-15-16-moi-nam-post1112223.vnp"
-    }
+      image:
+        "https://media.vietnamplus.vn/images/c14f6479e83e315b4cf3a2906cc6a51eb9d6ced238aab0d68b7df356f0b1062ac4fdd44f6a814fc382fe145e64bf577f9688f8384215be0238917c33e4ac81e321e1616ff4a61d0a25e6c6407b9b0b1d3d598da530926ad440618e46f5418c5021e0fc433d783cb75816347765d085e506058199cbc218f8e19c57d4f3e72619e302fa28abdf71aa7a43283315b85f70/ttxvn-khai-truong-cua-hang-mien-thue-the-ky-vang-tai-cua-khau-quoc-te-moc-bai-tay-ninh-8533814.jpg.webp",
+      link: "https://www.vietnamplus.vn/tay-ninh-dat-muc-tieu-tang-truong-xuat-khau-tu-15-16-moi-nam-post1112223.vnp",
+    },
   ],
 };
 
@@ -94,44 +101,50 @@ export const benefitsData = {
       title: "Lắng nghe chính sách mới",
       desc: "Cập nhật các chính sách ưu đãi đầu tư và hỗ trợ xuất nhập khẩu từ chính quyền địa phương.",
     },
-  ]
+  ],
 };
 
 export const potentialData = [
   {
     id: 1,
     title: "Cảng Biển & Logistics",
-    subtitle: "Hệ thống hạ tầng giao thông kết nối đồng bộ với các trung tâm cảng biển lớn và ICD khu vực.",
+    subtitle:
+      "Hệ thống hạ tầng giao thông kết nối đồng bộ với các trung tâm cảng biển lớn và ICD khu vực.",
     img: "/images/industries/cangbien.jpg",
   },
   {
     id: 2,
     title: "Công Nghiệp",
-    subtitle: "Các khu công nghiệp hiện đại, thu hút mạnh mẽ vốn FDI và sản xuất công nghệ cao.",
+    subtitle:
+      "Các khu công nghiệp hiện đại, thu hút mạnh mẽ vốn FDI và sản xuất công nghệ cao.",
     img: "/images/industries/congnghiep.jpg",
   },
   {
     id: 3,
     title: "Du Lịch",
-    subtitle: "Phát triển du lịch sinh thái, văn hóa và tâm linh gắn với các danh thắng nổi tiếng.",
+    subtitle:
+      "Phát triển du lịch sinh thái, văn hóa và tâm linh gắn với các danh thắng nổi tiếng.",
     img: "/images/industries/dulich.png",
   },
   {
     id: 4,
     title: "Nông Nghiệp Công Nghệ Cao",
-    subtitle: "Ứng dụng khoa học kỹ thuật nâng cao giá trị và chất lượng nông sản xuất khẩu.",
+    subtitle:
+      "Ứng dụng khoa học kỹ thuật nâng cao giá trị và chất lượng nông sản xuất khẩu.",
     img: "/images/industries/nongnghiep.jpg",
   },
   {
     id: 5,
     title: "Năng Lượng Tái Tạo",
-    subtitle: "Tiên phong phát triển dự án năng lượng mặt trời, hướng tới nền kinh tế xanh.",
+    subtitle:
+      "Tiên phong phát triển dự án năng lượng mặt trời, hướng tới nền kinh tế xanh.",
     img: "/images/industries/nangluongmattroi.jpg",
   },
   {
     id: 6,
     title: "Thương Mại Điện Tử",
-    subtitle: "Thúc đẩy chuyển đổi số, đưa sản phẩm địa phương vươn tầm quốc tế qua các nền tảng số.",
+    subtitle:
+      "Thúc đẩy chuyển đổi số, đưa sản phẩm địa phương vươn tầm quốc tế qua các nền tảng số.",
     img: "/images/industries/thuongmai.jpg",
   },
 ];
@@ -323,7 +336,7 @@ export const partnersData = [
 
 export const statsData = [
   {
-    number: "3",
+    number: "4",
     label: "Cửa khẩu Quốc tế",
   },
   {
@@ -353,7 +366,7 @@ export const mapData = {
     { name: "Không gian trưng bày SP Tây Ninh", color: "bg-emerald-600" },
     { name: "Khu vực Kết nối Giao thương (B2B)", color: "bg-amber-500" },
     { name: "Khu vực Tư vấn Chính sách", color: "bg-purple-600" },
-  ]
+  ],
 };
 
 export const documentData = {
@@ -378,7 +391,8 @@ export const footerData = {
   logoImg: "/images/logo.png",
   directors: ["Bộ công thương", "UBND tỉnh Tây Ninh"],
   implementers: ["Sở Công Thương tỉnh Tây Ninh"],
-  location: "Hội trường Thống nhất, số 61 Nguyễn Huệ, phường Long An, tỉnh Tây Ninh",
+  location:
+    "Hội trường Thống nhất, số 61 Nguyễn Huệ, phường Long An, tỉnh Tây Ninh",
   locationMapUrl:
     "https://www.google.com/maps/place/UBND+T%E1%BB%89nh+T%C3%A2y+Ninh/@10.541237,106.4122555,332m/data=!3m1!1e3!4m14!1m7!3m6!1s0x310ab620e5209607:0x885223bd6e764bb7!2zVHJ1bmcgVMOibSBQaOG7pWMgVuG7pSBI4buZaSBuZ2jhu4sgTG9uZyBBbg!8m2!3d10.5411984!4d106.4129984!16s%2Fg%2F11cp5s8r5h!3m5!1s0x310ab6218fffffff:0x680093c4537ba988!8m2!3d10.5413431!4d106.4138736!16s%2Fg%2F1wt3kvw3?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D",
   contacts: [
