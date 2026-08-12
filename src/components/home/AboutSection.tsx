@@ -56,6 +56,7 @@ const AboutSection: React.FC = () => {
                 lineHeight: 1.75,
                 marginBottom: "1rem",
                 fontSize: "1.05rem",
+                textAlign: "justify",
               }}
               dangerouslySetInnerHTML={{
                 __html: aboutData.desc1.replace(
@@ -70,6 +71,7 @@ const AboutSection: React.FC = () => {
                 lineHeight: 1.75,
                 marginBottom: "0",
                 fontSize: "1.05rem",
+                textAlign: "justify",
               }}
             >
               {aboutData.desc2}
@@ -169,6 +171,7 @@ const AboutSection: React.FC = () => {
                   color: "#64748b",
                   lineHeight: "1.4",
                   marginTop: "0.35rem",
+                  whiteSpace: "pre-line",
                 }}
               >
                 {item.label}
@@ -180,7 +183,7 @@ const AboutSection: React.FC = () => {
         <style>{`
           .about-highlights-row {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             margin-top: 3.5rem;
             background: rgba(5, 85, 253, 0.04);
             border-radius: 1rem;
@@ -192,8 +195,11 @@ const AboutSection: React.FC = () => {
             padding: 1.5rem 1.5rem 1.25rem;
             border-left: 1px solid rgba(5, 85, 253, 0.12);
           }
-          .about-highlight-item:first-child {
+          .about-highlight-item:nth-child(odd) {
             border-left: none;
+          }
+          .about-highlight-item:nth-child(n+3) {
+            border-top: 1px solid rgba(5, 85, 253, 0.12);
           }
           .about-highlight-icon {
             position: absolute;
@@ -210,14 +216,7 @@ const AboutSection: React.FC = () => {
           }
           @media (max-width: 1024px) {
             .about-highlights-row {
-              grid-template-columns: repeat(2, 1fr);
               margin-top: 2.5rem;
-            }
-            .about-highlight-item:nth-child(3) {
-              border-left: none;
-            }
-            .about-highlight-item:nth-child(n+3) {
-              border-top: 1px solid rgba(5, 85, 253, 0.12);
             }
           }
           @media (max-width: 640px) {
