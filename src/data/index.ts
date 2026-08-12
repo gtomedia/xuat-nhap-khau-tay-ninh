@@ -174,6 +174,7 @@ export const timelineData: TimelineItem[] = [
   {
     time: "08:00 - 08:40",
     title: "KHAI MẠC CHƯƠNG TRÌNH",
+    desc: "Tuyên bố lý do, phát biểu khai mạc, phát biểu chào mừng và trình chiếu video clip giới thiệu hội nghị",
     subItems: [
       { time: "08:00 - 08:10", title: "Tuyên bố lý do, giới thiệu đại biểu" },
       { time: "08:10 - 08:20", title: "Phát biểu khai mạc (Lãnh đạo Bộ Công Thương)" },
@@ -183,7 +184,7 @@ export const timelineData: TimelineItem[] = [
   },
   {
     time: "08:40 - 09:30",
-    title: "PHIÊN THẢO LUẬN 1: NÂNG TẦM CHẤT LƯỢNG, THƯƠNG HIỆU",
+    title: "PHIÊN THẢO LUẬN 1:\nNÂNG TẦM CHẤT LƯỢNG, THƯƠNG HIỆU",
     desc: "Các tham luận chuyên đề nhằm thúc đẩy và định vị thương hiệu hàng hóa",
     topics: [
       "Doanh nghiệp Tây Ninh – Chiến lược vươn ra toàn cầu (Hiệp hội Doanh nghiệp tỉnh)",
@@ -201,7 +202,7 @@ export const timelineData: TimelineItem[] = [
   },
   {
     time: "10:00 - 11:15",
-    title: "PHIÊN 2: THAM GIA SÂU CHUỖI GIÁ TRỊ TOÀN CẦU",
+    title: "PHIÊN THẢO LUẬN 2:\nTHAM GIA SÂU CHUỖI GIÁ TRỊ TOÀN CẦU",
     desc: "Các tham luận định hướng, tháo gỡ rào cản và giải pháp xuất khẩu",
     topics: [
       "Định hướng và giải pháp thúc đẩy xuất khẩu đạt mục tiêu tăng trưởng hai con số (Cục Xuất nhập khẩu/Vụ Phát triển thị trường nước ngoài, Bộ Công Thương)",

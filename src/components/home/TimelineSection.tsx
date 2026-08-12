@@ -38,7 +38,7 @@ const TimelineSection: React.FC = () => {
     <section className="section py-24" id="schedule" style={{ background: "var(--background-alt)" }}>
       <div className="container">
         {/* Heading */}
-        <div className="flex flex-col items-center text-center mb-16 tl-header" data-reveal>
+        <div className="flex flex-col items-center text-center tl-header" data-reveal style={{ marginBottom: "5.5rem" }}>
           <span
             style={{
               background: "linear-gradient(90deg, var(--primary), var(--accent))",

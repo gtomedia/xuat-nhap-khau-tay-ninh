@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const langSwitchRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +15,17 @@ const Header: React.FC = () => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isLangOpen) return;
+    const handleClickOutside = (e: MouseEvent) => {
+      if (!langSwitchRef.current?.contains(e.target as Node)) {
+        setIsLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isLangOpen]);
 
   const getCookie = (name: string) => {
     const value = `; ${document.cookie}`;
@@ -176,6 +188,7 @@ const Header: React.FC = () => {
             }}
           >
             <div
+              ref={langSwitchRef}
               className="lang-switch-wrapper"
               style={{
                 position: "relative",
