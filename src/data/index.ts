@@ -111,6 +111,7 @@ export const potentialData = [
     subtitle:
       "Hệ thống hạ tầng giao thông kết nối đồng bộ với các trung tâm cảng biển lớn và ICD khu vực.",
     img: "/images/industries/cangbien.jpg",
+    link: "", // Điền URL nếu muốn card này bấm vào được
   },
   {
     id: 2,
@@ -118,6 +119,7 @@ export const potentialData = [
     subtitle:
       "Các khu công nghiệp hiện đại, thu hút mạnh mẽ vốn FDI và sản xuất công nghệ cao.",
     img: "/images/industries/congnghiep.jpg",
+    link: "",
   },
   {
     id: 3,
@@ -125,6 +127,7 @@ export const potentialData = [
     subtitle:
       "Phát triển du lịch sinh thái, văn hóa và tâm linh gắn với các danh thắng nổi tiếng.",
     img: "/images/industries/dulich.png",
+    link: "",
   },
   {
     id: 4,
@@ -132,6 +135,7 @@ export const potentialData = [
     subtitle:
       "Ứng dụng khoa học kỹ thuật nâng cao giá trị và chất lượng nông sản xuất khẩu.",
     img: "/images/industries/nongnghiep.jpg",
+    link: "",
   },
   {
     id: 5,
@@ -139,6 +143,7 @@ export const potentialData = [
     subtitle:
       "Tiên phong phát triển dự án năng lượng mặt trời, hướng tới nền kinh tế xanh.",
     img: "/images/industries/nangluongmattroi.jpg",
+    link: "",
   },
   {
     id: 6,
@@ -146,6 +151,7 @@ export const potentialData = [
     subtitle:
       "Thúc đẩy chuyển đổi số, đưa sản phẩm địa phương vươn tầm quốc tế qua các nền tảng số.",
     img: "/images/industries/thuongmai.jpg",
+    link: "",
   },
 ];
 

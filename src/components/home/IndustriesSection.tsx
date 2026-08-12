@@ -1,6 +1,6 @@
 import React from "react";
+import { ArrowUpRight } from "lucide-react";
 import { potentialData } from "@/data";
-import AccordionGallery from "./AccordionGallery";
 
 const IndustriesSection: React.FC = () => {
   const pillars = potentialData || [];
@@ -31,32 +31,24 @@ const IndustriesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Desktop Interactive Expanding Showcase Bar (Accordion style) */}
-        <div className="desktop-showcase" data-reveal>
-          <AccordionGallery
-            items={pillars.map((pillar: any) => ({
-              image: pillar.img,
-              label: pillar.title,
-              subtitle: pillar.subtitle,
-            }))}
-            expandRatio={0.41}
-            trigger="hover"
-          />
-        </div>
-
-        {/* Mobile / Tablet Responsive Grid Fallback */}
-        <div className="mobile-showcase-grid" style={{ display: "none" }}>
+        {/* Always-visible Grid Showcase (no hover needed) */}
+        <div data-reveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.25rem" }}>
             {pillars.map((pillar: any, idx: number) => (
-              <div
+              <a
                 key={pillar.id || idx}
+                href={pillar.link || undefined}
+                target={pillar.link ? "_blank" : undefined}
+                rel={pillar.link ? "noopener noreferrer" : undefined}
                 style={{
                   position: "relative",
                   borderRadius: "1.25rem",
                   overflow: "hidden",
-                  height: "240px",
+                  height: "320px",
                   background: "#0f172a",
                   border: "1px solid rgba(255, 255, 255, 0.15)",
+                  display: "block",
+                  cursor: pillar.link ? "pointer" : "default",
                 }}
               >
                 <img
@@ -94,6 +86,26 @@ const IndustriesSection: React.FC = () => {
                   >
                     0{idx + 1}
                   </span>
+                  {pillar.link && (
+                    <span
+                      style={{
+                        position: "absolute",
+                        top: "1.25rem",
+                        right: "1.25rem",
+                        width: "2.25rem",
+                        height: "2.25rem",
+                        borderRadius: "50%",
+                        background: "rgba(255,255,255,0.15)",
+                        border: "1px solid rgba(255,255,255,0.35)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        backdropFilter: "blur(4px)",
+                      }}
+                    >
+                      <ArrowUpRight size={18} color="#fff" />
+                    </span>
+                  )}
                   <div>
                     <h4 style={{ fontSize: "1.1rem", fontWeight: 800, margin: "0 0 0.25rem 0" }}>
                       {pillar.title}
@@ -103,22 +115,10 @@ const IndustriesSection: React.FC = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
-
-        {/* Media Query CSS for Responsive Switch */}
-        <style>{`
-          @media (max-width: 992px) {
-            .desktop-showcase {
-              display: none !important;
-            }
-            .mobile-showcase-grid {
-              display: block !important;
-            }
-          }
-        `}</style>
       </div>
     </section>
   );

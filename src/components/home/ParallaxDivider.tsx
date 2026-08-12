@@ -32,14 +32,14 @@ const ParallaxDivider: React.FC = () => {
       <div className="parallax-overlay"></div>
       <style>{`
         .parallax-title {
-          font-size: 2.5rem;
+          font-size: 1.8rem;
         }
         .mobile-break {
           display: none;
         }
         @media (max-width: 768px) {
           .parallax-title {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
           }
           .mobile-break {
             display: block;

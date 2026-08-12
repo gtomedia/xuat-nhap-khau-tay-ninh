@@ -38,7 +38,7 @@ const TimelineSection: React.FC = () => {
     <section className="section py-24" id="schedule" style={{ background: "var(--background-alt)" }}>
       <div className="container">
         {/* Heading */}
-        <div className="flex flex-col items-center text-center mb-16" data-reveal>
+        <div className="flex flex-col items-center text-center mb-16 tl-header" data-reveal>
           <span
             style={{
               background: "linear-gradient(90deg, var(--primary), var(--accent))",
@@ -314,15 +314,20 @@ const TimelineSection: React.FC = () => {
           left: 147px;
         }
         @media (max-width: 640px) {
+          .tl-header {
+            margin-bottom: 2.5rem !important;
+          }
           .tl-item {
             grid-template-columns: 44px 1fr !important;
             grid-template-areas: "icon time" "icon card" !important;
             align-items: start !important;
-            gap: 0.5rem 1rem !important;
+            gap: 0.75rem 1rem !important;
           }
           .tl-time {
             text-align: left !important;
             align-self: end;
+            margin-top: 0.5rem;
+            margin-bottom: 0.35rem;
           }
           .tl-icon {
             width: 44px !important;
@@ -330,6 +335,9 @@ const TimelineSection: React.FC = () => {
           }
           .tl-card {
             padding: 1rem 1.25rem !important;
+          }
+          .tl-item {
+            margin-bottom: 0.75rem !important;
           }
           .tl-line {
             left: 21px;

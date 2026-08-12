@@ -211,7 +211,7 @@ const BenefitsSection: React.FC = () => {
                 <h3
                   style={{
                     color: style.textColor,
-                    fontSize: "1.2rem",
+                    fontSize: "1.05rem",
                     fontWeight: 800,
                     marginBottom: "0.875rem",
                     lineHeight: 1.3,
