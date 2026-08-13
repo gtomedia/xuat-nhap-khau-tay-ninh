@@ -26,7 +26,7 @@ const IntroSection: React.FC = () => {
 
         {/* 4 News Cards */}
         <div
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full"
+          className="intro-news-grid"
           data-reveal-group
           data-stagger="120"
         >
@@ -119,6 +119,18 @@ const IntroSection: React.FC = () => {
           })}
         </div>
       </div>
+
+      <style>{`
+        .intro-news-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+          width: 100%;
+        }
+        @media (max-width: 768px) {
+          .intro-news-grid { grid-template-columns: 1fr; }
+        }
+      `}</style>
     </section>
   );
 };

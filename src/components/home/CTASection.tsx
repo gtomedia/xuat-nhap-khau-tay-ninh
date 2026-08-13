@@ -12,7 +12,7 @@ const CTASection: React.FC = () => {
       >
         <h2
           style={{
-            fontSize: "2.75rem",
+            fontSize: "clamp(1.75rem, 5vw, 2.75rem)",
             fontWeight: 900,
             color: "white",
             marginBottom: "1.25rem",

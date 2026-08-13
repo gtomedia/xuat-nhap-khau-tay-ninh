@@ -39,7 +39,7 @@ const PanelDiscussionSection: React.FC = () => {
             {
               num: "03",
               time: "13:30 – 16:30",
-              title: "Khảo sát thực tế tại Công ty Cổ phần Thực phẩm Richy Miền Nam",
+              title: "Khảo sát thực tế tại Công ty Cổ phần\nThực phẩm Richy Miền Nam",
               color: "#0d9488",
             },
           ].map((p) => (
@@ -62,7 +62,7 @@ const PanelDiscussionSection: React.FC = () => {
               >
                 <Clock size={14} /> {p.time}
               </span>
-              <h4 className="panel-title" style={{ color: p.color }}>{p.title}</h4>
+              <h4 className="panel-title" style={{ color: p.color, whiteSpace: "pre-line" }}>{p.title}</h4>
             </div>
           ))}
         </div>

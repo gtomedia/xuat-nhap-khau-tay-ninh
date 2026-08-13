@@ -3,7 +3,7 @@ import { footerData } from '@/data';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" style={{ paddingBottom: '1.5rem' }}>
       <div className="container">
         {/* Tên chương trình 2 dòng, đặt ở trên cùng chiếm trọn bề ngang */}
         <div style={{ marginBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.15)', paddingBottom: '1.5rem' }}>
@@ -21,13 +21,13 @@ const Footer: React.FC = () => {
         <div className="footer-grid-3">
           <div>
             <h4 style={{ fontSize: '1.125rem', marginBottom: '1rem', fontWeight: 700, color: '#facc15', textTransform: 'uppercase' }}>Đơn vị chỉ đạo</h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem', color: 'rgba(255,255,255,0.8)', marginBottom: '1.5rem' }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem', color: '#fff', marginBottom: '1.5rem' }}>
               {footerData.directors.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
             <h4 style={{ fontSize: '1.125rem', marginBottom: '1rem', fontWeight: 700, color: '#facc15', textTransform: 'uppercase' }}>Đơn vị thực hiện</h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem', color: 'rgba(255,255,255,0.8)' }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem', color: '#fff' }}>
               {footerData.implementers.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
           </div>
           <div>
             <h4 style={{ fontSize: '1.125rem', marginBottom: '1rem', fontWeight: 700, color: '#facc15', textTransform: 'uppercase' }}>Địa điểm</h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem', color: 'rgba(255,255,255,0.8)' }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem', color: '#fff' }}>
               <li>
                 <a
                   href={footerData.locationMapUrl}
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   style={{ color: 'inherit', textDecoration: 'none' }}
                   onMouseEnter={e => (e.currentTarget.style.color = '#facc15')}
-                  onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.8)')}
+                  onMouseLeave={e => (e.currentTarget.style.color = '#fff')}
                 >
                   {footerData.location}
                 </a>
@@ -52,21 +52,23 @@ const Footer: React.FC = () => {
           </div>
           <div>
             <h4 style={{ fontSize: '1.125rem', marginBottom: '1rem', fontWeight: 700, color: '#facc15', textTransform: 'uppercase' }}>Hoặc liên hệ</h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem', color: 'rgba(255,255,255,0.8)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto', columnGap: '0.5rem', rowGap: '0.5rem', fontSize: '0.9rem', color: '#fff' }}>
               {footerData.contacts.map((c, index) => (
-                <li key={index}>
-                  <strong style={{ color: '#fff' }}>{c.label}:</strong> {c.text} <a href={`tel:${c.phone.replace(/\./g, '')}`} style={{ color: 'inherit', textDecoration: 'none' }} onMouseEnter={e => (e.currentTarget.style.color = '#facc15')} onMouseLeave={e => (e.currentTarget.style.color = 'inherit')}>{c.phone}</a>
-                </li>
+                <React.Fragment key={index}>
+                  <strong style={{ color: '#fff' }}>{c.label}:</strong>
+                  <span>{c.text}</span>
+                  <a href={`tel:${c.phone.replace(/\./g, '')}`} style={{ color: 'inherit', textDecoration: 'none' }} onMouseEnter={e => (e.currentTarget.style.color = '#facc15')} onMouseLeave={e => (e.currentTarget.style.color = 'inherit')}>{c.phone}</a>
+                </React.Fragment>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="container" style={{ marginTop: '3rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', textAlign: 'center' }}>
-        <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: '1.6' }}>
+      <div className="container" style={{ marginTop: '1.5rem', paddingTop: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.1)', textAlign: 'center' }}>
+        <div style={{ fontSize: '0.75rem', fontWeight: 300, color: 'rgba(255,255,255,0.7)', lineHeight: '1.6' }}>
           @2026 Bản quyền do UBND Tỉnh Tây Ninh<br />
-          Được thiết kế bởi <a href="https://gto.vn" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', fontWeight: 600 }}>GTO Media</a>
+          Được thiết kế bởi <a href="https://gto.vn" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', fontWeight: 400 }}>GTO Media</a>
         </div>
       </div>
 

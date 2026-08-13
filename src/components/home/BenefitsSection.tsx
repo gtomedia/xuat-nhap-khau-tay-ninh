@@ -215,6 +215,7 @@ const BenefitsSection: React.FC = () => {
                     fontWeight: 800,
                     marginBottom: "0.875rem",
                     lineHeight: 1.3,
+                    whiteSpace: "nowrap",
                   }}
                 >
                   {item.title}
@@ -226,6 +227,7 @@ const BenefitsSection: React.FC = () => {
                     color: style.descColor,
                     fontSize: "0.9rem",
                     lineHeight: 1.7,
+                    textWrap: "balance",
                   }}
                 >
                   {item.desc}

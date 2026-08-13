@@ -39,28 +39,28 @@ const HeroSection: React.FC = () => {
         >
           {currentLang === "en" ? (
             <>
-              <p className="en-subtitle">TAY NINH E-COMMERCE AND</p>
-              <p className="en-subtitle" style={{ marginBottom: "0.8rem" }}>
+              <p className="en-subtitle animate-fade-up" style={{ animationDelay: "0.1s" }}>TAY NINH E-COMMERCE AND</p>
+              <p className="en-subtitle animate-fade-up" style={{ marginBottom: "0.8rem", animationDelay: "0.2s" }}>
                 EXPORT-IMPORT SUPPLY CHAIN
               </p>
-              <h1 className="en-title" style={{ marginBottom: "0" }}>
+              <h1 className="en-title animate-fade-up" style={{ marginBottom: "0", animationDelay: "0.3s" }}>
                 NETWORKING
               </h1>
-              <h1 className="en-title">FORUM 2026</h1>
-              <p className="hero-date-line">Tay Ninh, September 5, 2026</p>
+              <h1 className="en-title animate-fade-up" style={{ animationDelay: "0.4s" }}>FORUM 2026</h1>
+              <p className="hero-date-line animate-fade-up" style={{ animationDelay: "0.5s" }}>Tay Ninh, September 5, 2026</p>
             </>
           ) : (
             <>
-              <h1 className="hero-title-main">{heroData.title1}</h1>
-              <h2 className="hero-title-sub">{heroData.title2}</h2>
+              <h1 className="hero-title-main animate-fade-up" style={{ animationDelay: "0.1s" }}>{heroData.title1}</h1>
+              <h2 className="hero-title-sub animate-fade-up" style={{ animationDelay: "0.2s" }}>{heroData.title2}</h2>
               <p
-                className="hero-location-line"
-                style={{ marginBottom: "0.3rem" }}
+                className="hero-location-line animate-fade-up"
+                style={{ marginBottom: "0.3rem", animationDelay: "0.3s" }}
               >
                 {heroData.subtitle1}
               </p>
-              <p className="hero-location-line">{heroData.subtitle2}</p>
-              <p className="hero-date-line">{heroData.date}</p>
+              <p className="hero-location-line animate-fade-up" style={{ animationDelay: "0.4s" }}>{heroData.subtitle2}</p>
+              <p className="hero-date-line animate-fade-up" style={{ animationDelay: "0.5s" }}>{heroData.date}</p>
             </>
           )}
         </div>

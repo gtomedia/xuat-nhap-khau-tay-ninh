@@ -1,12 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { speakersData as speakers } from "@/data";
 
 const SpeakersSection: React.FC = () => {
-  const [showAll, setShowAll] = useState(false);
-
-  const displayedSpeakers = showAll ? speakers : speakers.slice(0, 3);
-
   return (
     <section
       className="section"
@@ -25,9 +21,9 @@ const SpeakersSection: React.FC = () => {
           <p
             style={{
               color: "var(--text-secondary)",
-              maxWidth: "700px",
               margin: "0 auto",
               fontSize: "1.125rem",
+              textWrap: "initial",
             }}
           >
             Các tham luận chuyên sâu được trình bày bởi đại diện cơ quan
@@ -38,15 +34,12 @@ const SpeakersSection: React.FC = () => {
         </div>
 
         <div
-          className="grid grid-cols-3 gap-8"
+          className="grid grid-cols-2 gap-8"
           data-reveal-group
           data-stagger="100"
-          style={{
-            transition: "all 0.5s ease-in-out",
-            opacity: 1,
-          }}
+          style={{ alignItems: "stretch", paddingTop: "3rem" }}
         >
-          {displayedSpeakers.map((speaker) => (
+          {speakers.map((speaker) => (
             <div
               className="speaker-pop-card"
               key={speaker.id}
@@ -54,6 +47,8 @@ const SpeakersSection: React.FC = () => {
               style={{
                 backgroundColor: "#f4f8ff",
                 border: "1px solid rgba(5, 85, 253, 0.08)",
+                display: "flex",
+                flexDirection: "column",
               }}
             >
               <img
@@ -68,10 +63,16 @@ const SpeakersSection: React.FC = () => {
                     color: "#ffffff",
                     background: "linear-gradient(90deg, #0b3c7c 0%, #1e6ada 50%, #0b3c7c 100%)",
                     borderRadius: "999px",
-                    padding: "0.4rem 1.5rem",
-                    display: "inline-block",
+                    padding: "0.4rem 1.25rem",
+                    display: "block",
+                    width: "100%",
+                    boxSizing: "border-box",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    textAlign: "center",
                     fontWeight: 700,
-                    fontSize: "1.15rem",
+                    fontSize: "0.85rem",
                     textTransform: "uppercase",
                     letterSpacing: "0.5px",
                     marginBottom: "0.75rem",
@@ -91,11 +92,13 @@ const SpeakersSection: React.FC = () => {
                   }}
                 >
                   {speaker.role}
+                  <br />
+                  {speaker.unit}
                 </p>
                 <h3
                   className="speaker-pop-name"
                   style={{
-                    fontSize: "1rem",
+                    fontSize: "0.9rem",
                     lineHeight: 1.5,
                     fontWeight: 400,
                     color: "var(--text-primary)",
@@ -107,52 +110,6 @@ const SpeakersSection: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="text-center" style={{ marginTop: "4rem" }}>
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="btn btn-primary"
-            style={{
-              padding: "0.75rem 2.5rem",
-              borderRadius: "999px",
-              fontSize: "1.05rem",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              backgroundColor: "white",
-              color: "var(--primary)",
-              border: "2px solid var(--primary)",
-              fontWeight: 700,
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "var(--primary)";
-              e.currentTarget.style.color = "white";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "white";
-              e.currentTarget.style.color = "var(--primary)";
-            }}
-          >
-            {showAll ? "Thu gọn danh sách" : "Xem tất cả diễn giả"}
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              style={{
-                transform: showAll ? "rotate(180deg)" : "rotate(0deg)",
-                transition: "transform 0.3s ease",
-              }}
-            >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
         </div>
 
         <style>{`

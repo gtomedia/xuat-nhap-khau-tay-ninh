@@ -248,48 +248,54 @@ export const speakersData = [
   {
     id: 1,
     img: "/images/speakers/speaker-1.png",
-    name: "Ông Lê N. Hoàng A",
-    role: "Nhà Tham tán Thương mại Quốc tế",
+    name: "Nguyễn Trần Hoàng Bảo Nguyên Phương",
+    role: "Tham tán Thương mại",
+    unit: "Thương vụ Việt Nam tại Đức",
     topic:
       "Kinh nghiệm mở rộng thị trường xuất khẩu nông sản chủ lực sang khu vực EU và Bắc Mỹ thông qua các hiệp định thương mại tự do (FTA).",
   },
   {
     id: 2,
-    img: "/images/speakers/speaker-2.png",
-    name: "Bà Trần L. Quỳnh B",
-    role: "Nhà Tham tán Thương mại Quốc tế",
+    img: "/images/speakers/speaker-1.png",
+    name: "Phạm Thị Thu Hà",
+    role: "Trưởng phòng Xuất nhập khẩu",
+    unit: "Cục Hải quan tỉnh Tây Ninh",
     topic:
       "Đẩy mạnh chuyển đổi số trong quy trình thông quan hàng hóa tự động và quản lý rủi ro xuyên biên giới.",
   },
   {
     id: 3,
-    img: "/images/speakers/speaker-1.png",
-    name: "Ông Phạm Quốc C",
-    role: "Nhà Tham tán Thương mại Quốc tế",
+    img: "/images/speakers/speaker-2.png",
+    name: "Trần Minh Khoa",
+    role: "Tham tán Thương mại",
+    unit: "Thương vụ Việt Nam tại Hoa Kỳ",
     topic:
       "Tiêu chuẩn xanh và phát triển bền vững: Yêu cầu bắt buộc và cơ hội đối với hàng hóa xuất khẩu vào thị trường quốc tế.",
   },
   {
     id: 4,
     img: "/images/speakers/speaker-2.png",
-    name: "Bà Nguyễn T. Mai D",
+    name: "Đặng Nguyễn Thị Ngọc Lan Anh",
     role: "Chuyên gia Logistics & Chuỗi cung ứng",
+    unit: "Hiệp hội Logistics Việt Nam",
     topic:
       "Tối ưu hóa chi phí vận chuyển hàng hóa xuất nhập khẩu thông qua giải pháp kết nối đa phương thức.",
   },
   {
     id: 5,
     img: "/images/speakers/speaker-1.png",
-    name: "Ông David Smith",
+    name: "Michael Anderson",
     role: "Chuyên gia Thương mại Điện tử",
+    unit: "Amazon Global Selling",
     topic:
       "Chiến lược đưa sản phẩm địa phương lên sàn thương mại điện tử quốc tế (Amazon, Alibaba).",
   },
   {
     id: 6,
-    img: "/images/speakers/speaker-2.png",
-    name: "Bà Lê P. Ngọc E",
+    img: "/images/speakers/speaker-1.png",
+    name: "Võ Thị Kim Ngân",
     role: "Chuyên gia Thu hút Đầu tư",
+    unit: "Sở Kế hoạch và Đầu tư tỉnh Tây Ninh",
     topic:
       "Cơ hội thu hút vốn đầu tư trực tiếp nước ngoài (FDI) vào các ngành công nghiệp phụ trợ tại Tây Ninh.",
   },
