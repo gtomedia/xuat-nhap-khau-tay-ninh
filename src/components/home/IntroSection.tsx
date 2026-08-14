@@ -82,6 +82,7 @@ const IntroSection: React.FC = () => {
                       fontWeight: "bold",
                       marginBottom: "0.75rem",
                       lineHeight: "1.4",
+                      textWrap: "initial",
                       transition: "color 0.3s ease"
                     }}
                   >

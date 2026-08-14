@@ -1,37 +1,14 @@
 import React from "react";
 import { Play } from "lucide-react";
-import { liveStreamData } from "@/data";
+import { liveStreamData, getYoutubeEmbedUrl } from "@/data";
 
 const LiveStreamSection: React.FC = () => {
   if (!liveStreamData || !liveStreamData.link) return null;
 
-  // Hỗ trợ chuyển đổi link watch thông thường sang link embed của YouTube
-  const getEmbedUrl = (url: string) => {
-    if (url.includes("youtube.com/embed/")) {
-      return url;
-    }
-    let videoId = "";
-    if (url.includes("youtube.com/watch?v=")) {
-      videoId = url.split("v=")[1]?.split("&")[0];
-    } else if (url.includes("youtu.be/")) {
-      videoId = url.split("youtu.be/")[1]?.split("?")[0];
-    }
-    if (videoId) {
-      return `https://www.youtube.com/embed/${videoId}`;
-    }
-    return url;
-  };
-
-  const rawEmbedUrl = getEmbedUrl(liveStreamData.link);
+  const embedUrl = getYoutubeEmbedUrl(liveStreamData.link);
   const isEmbeddable =
-    rawEmbedUrl.includes("youtube.com/embed/") ||
-    rawEmbedUrl.includes("player.vimeo.com");
-  const autoplayParams = rawEmbedUrl.includes("youtube.com/embed/")
-    ? "autoplay=1&mute=1"
-    : "autoplay=1";
-  const embedUrl = isEmbeddable
-    ? `${rawEmbedUrl}${rawEmbedUrl.includes("?") ? "&" : "?"}${autoplayParams}`
-    : rawEmbedUrl;
+    embedUrl.includes("youtube.com/embed/") ||
+    embedUrl.includes("player.vimeo.com");
 
   return (
     <section

@@ -110,10 +110,11 @@ const BenefitsSection: React.FC = () => {
           <p
             style={{
               color: "#475569",
-              maxWidth: "640px",
+              maxWidth: "800px",
               margin: "0 auto",
               fontSize: "1.125rem",
               lineHeight: 1.7,
+              textWrap: "balance",
             }}
           >
             {benefitsData.desc}

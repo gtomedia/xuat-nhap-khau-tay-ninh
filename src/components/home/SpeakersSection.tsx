@@ -49,6 +49,7 @@ const SpeakersSection: React.FC = () => {
                 border: "1px solid rgba(5, 85, 253, 0.08)",
                 display: "flex",
                 flexDirection: "column",
+                minHeight: "480px",
               }}
             >
               <img
@@ -89,11 +90,10 @@ const SpeakersSection: React.FC = () => {
                     color: "var(--text-secondary)",
                     marginBottom: "0.75rem",
                     fontWeight: 500,
+                    whiteSpace: "pre-line",
                   }}
                 >
-                  {speaker.role}
-                  <br />
-                  {speaker.unit}
+                  {speaker.role} - {speaker.unit}
                 </p>
                 <h3
                   className="speaker-pop-name"
@@ -102,6 +102,8 @@ const SpeakersSection: React.FC = () => {
                     lineHeight: 1.5,
                     fontWeight: 400,
                     color: "var(--text-primary)",
+                    textAlign: "left",
+                    textWrap: "initial",
                   }}
                 >
                   <strong style={{ fontWeight: 600 }}>Chủ đề:</strong>{" "}

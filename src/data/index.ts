@@ -1,3 +1,15 @@
+// Chuyển link YouTube dạng watch/youtu.be sang dạng embed (bắt buộc để nhúng iframe)
+export const getYoutubeEmbedUrl = (url: string) => {
+  if (!url || url.includes("youtube.com/embed/")) return url;
+  let videoId = "";
+  if (url.includes("youtube.com/watch?v=")) {
+    videoId = url.split("v=")[1]?.split("&")[0];
+  } else if (url.includes("youtu.be/")) {
+    videoId = url.split("youtu.be/")[1]?.split("?")[0];
+  }
+  return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+};
+
 export const headerData = {
   logoImg: "/images/logo.png",
   logoText: "UBND TỈNH TÂY NINH",
@@ -13,7 +25,7 @@ export const heroData = {
 };
 
 export const liveStreamData = {
-  link: "https://www.youtube.com/watch?v=wyBRq0TLiqc", // Để trống "" nếu không có livestream
+  link: "https://www.youtube.com/watch?v=PtQNVlh5FNc", // Link video YouTube của Livestream, để trống "" nếu không có
   title:
     "Trực tiếp Hội nghị Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu và Thương mại điện tử tỉnh Tây Ninh năm 2026",
 };
@@ -64,12 +76,19 @@ export const aboutData = {
     "Hội nghị quy tụ đại diện cơ quan quản lý, hiệp hội, doanh nghiệp logistics, xuất nhập khẩu và các nền tảng thương mại điện tử trong và ngoài nước. Đây là diễn đàn thảo luận, cập nhật xu hướng, giới thiệu chính sách mới và mở rộng cơ hội hợp tác, đầu tư, phát triển chuỗi cung ứng bền vững.",
   highlights: [
     { icon: "Calendar", value: "5.9.2026", label: "Ngày diễn ra" },
-    { icon: "Map", value: "Hội trường Thống Nhất", label: "UBND tỉnh Tây Ninh" },
+    {
+      icon: "Map",
+      value: "Hội trường Thống Nhất",
+      label: "UBND tỉnh Tây Ninh",
+    },
     { icon: "Users", value: "700+", label: "Đại biểu" },
-    { icon: "Building", value: "300+", label: "Doanh nghiệp địa phương, trong nước và quốc tế" },
+    {
+      icon: "Building",
+      value: "300+",
+      label: "Doanh nghiệp địa phương, trong nước và quốc tế",
+    },
   ],
-  videoUrl:
-    "https://www.youtube.com/embed/wyBRq0TLiqc?autoplay=1&mute=1&loop=1&playlist=wyBRq0TLiqc&controls=0&modestbranding=1",
+  videoUrl: "https://www.youtube.com/watch?v=PtQNVlh5FNc", // Link video YouTube của About
   isVideoFile: false,
 };
 
@@ -177,9 +196,19 @@ export const timelineData: TimelineItem[] = [
     desc: "Tuyên bố lý do, phát biểu khai mạc, phát biểu chào mừng và trình chiếu video clip giới thiệu hội nghị",
     subItems: [
       { time: "08:00 - 08:10", title: "Tuyên bố lý do, giới thiệu đại biểu" },
-      { time: "08:10 - 08:20", title: "Phát biểu khai mạc (Lãnh đạo Bộ Công Thương)" },
-      { time: "08:20 - 08:30", title: "Phát biểu chào mừng (Lãnh đạo UBND tỉnh Tây Ninh)" },
-      { time: "08:30 - 08:40", title: "Trình chiếu video clip 'Tây Ninh – Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu, thương mại điện tử'" },
+      {
+        time: "08:10 - 08:20",
+        title: "Phát biểu khai mạc (Lãnh đạo Bộ Công Thương)",
+      },
+      {
+        time: "08:20 - 08:30",
+        title: "Phát biểu chào mừng (Lãnh đạo UBND tỉnh Tây Ninh)",
+      },
+      {
+        time: "08:30 - 08:40",
+        title:
+          "Trình chiếu video clip 'Tây Ninh – Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu, thương mại điện tử'",
+      },
     ],
   },
   {
@@ -268,7 +297,7 @@ export const speakersData = [
     img: "/images/speakers/speaker-2.png",
     name: "Trần Minh Khoa",
     role: "Tham tán Thương mại",
-    unit: "Thương vụ Việt Nam tại Hoa Kỳ",
+    unit: "\nThương vụ Việt Nam tại Hoa Kỳ",
     topic:
       "Tiêu chuẩn xanh và phát triển bền vững: Yêu cầu bắt buộc và cơ hội đối với hàng hóa xuất khẩu vào thị trường quốc tế.",
   },

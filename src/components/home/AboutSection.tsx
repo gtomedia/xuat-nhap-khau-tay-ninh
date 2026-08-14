@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Calendar, Map, Users, Building } from "lucide-react";
-import { aboutData } from "@/data";
+import { aboutData, getYoutubeEmbedUrl } from "@/data";
 
 const AboutSection: React.FC = () => {
+  const videoBoxRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = videoBoxRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   const renderIcon = (iconName: string, size = 18) => {
     switch (iconName) {
       case "Calendar":
@@ -89,6 +108,7 @@ const AboutSection: React.FC = () => {
           >
             {/* Video Box */}
             <div
+              ref={videoBoxRef}
               style={{
                 borderRadius: "1.25rem",
                 overflow: "hidden",
@@ -108,8 +128,6 @@ const AboutSection: React.FC = () => {
                 {(aboutData as any).isVideoFile ? (
                   <video
                     src={aboutData.videoUrl}
-                    autoPlay
-                    muted
                     loop
                     controls
                     playsInline
@@ -123,20 +141,22 @@ const AboutSection: React.FC = () => {
                     }}
                   />
                 ) : (
-                  <iframe
-                    src={aboutData.videoUrl}
-                    title="Hội nghị Tây Ninh"
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                      border: "none",
-                    }}
-                  />
+                  inView && (
+                    <iframe
+                      src={getYoutubeEmbedUrl(aboutData.videoUrl)}
+                      title="Hội nghị Tây Ninh"
+                      allow="encrypted-media"
+                      allowFullScreen
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        border: "none",
+                      }}
+                    />
+                  )
                 )}
               </div>
             </div>
