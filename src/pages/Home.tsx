@@ -8,7 +8,7 @@ import IndustriesSection from "@/components/home/IndustriesSection";
 import ParallaxDivider from "@/components/home/ParallaxDivider";
 import EventGallerySection from "@/components/home/EventGallerySection";
 import TimelineSection from "@/components/home/TimelineSection";
-import SpeakersSection from "@/components/home/SpeakersSection";
+// import SpeakersSection from "@/components/home/SpeakersSection";
 import PanelDiscussionSection from "@/components/home/PanelDiscussionSection";
 import PartnersSection from "@/components/home/PartnersSection";
 import StatsSection from "@/components/home/StatsSection";
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
       <LiveStreamSection />
       <IntroSection />
       <AboutSection />
-      <SpeakersSection />
+      {/* <SpeakersSection /> */}
       <BenefitsSection />
       <IndustriesSection />
       <ParallaxDivider />
