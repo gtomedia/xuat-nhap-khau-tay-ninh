@@ -143,11 +143,11 @@ const SpeakersSection: React.FC = () => {
                 border: "1px solid rgba(5, 85, 253, 0.12)",
                 display: "flex",
                 flexDirection: "column",
-                minHeight: "560px",
+                minHeight: "auto",
                 borderRadius: "1.5rem",
                 boxShadow: "0 10px 32px rgba(15, 23, 42, 0.07)",
                 marginTop: "110px",
-                padding: "225px 0.85rem 1.35rem",
+                padding: "220px 0.85rem 1.35rem",
                 position: "relative",
                 textAlign: "center",
                 flex: "0 0 calc((100% - 3rem) / 3)",
@@ -269,7 +269,7 @@ const SpeakersSection: React.FC = () => {
                   style={{
                     fontSize: "0.9rem",
                     color: "#475569",
-                    marginBottom: "1rem",
+                    marginBottom: "0.65rem",
                     fontWeight: 600,
                     lineHeight: 1.5,
                   }}
@@ -284,7 +284,7 @@ const SpeakersSection: React.FC = () => {
                 <div
                   className="speaker-topic-box"
                   style={{
-                    marginTop: "auto",
+                    marginTop: "0.4rem",
                     background: "rgba(5, 85, 253, 0.05)",
                     borderLeft: "3px solid var(--primary, #0555fd)",
                     borderRadius: "0.5rem",
