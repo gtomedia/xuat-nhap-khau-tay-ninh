@@ -47,7 +47,6 @@ const HeroSection: React.FC = () => {
                 NETWORKING
               </h1>
               <h1 className="en-title animate-fade-up" style={{ animationDelay: "0.4s" }}>FORUM 2026</h1>
-              <p className="hero-date-line animate-fade-up" style={{ animationDelay: "0.5s" }}>Tay Ninh, September 5, 2026</p>
             </>
           ) : (
             <>
@@ -60,7 +59,6 @@ const HeroSection: React.FC = () => {
                 {heroData.subtitle1}
               </p>
               <p className="hero-location-line animate-fade-up" style={{ animationDelay: "0.4s" }}>{heroData.subtitle2}</p>
-              <p className="hero-date-line animate-fade-up" style={{ animationDelay: "0.5s" }}>{heroData.date}</p>
             </>
           )}
         </div>
