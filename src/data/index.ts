@@ -10,11 +10,6 @@ export const getYoutubeEmbedUrl = (url: string) => {
   return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
 };
 
-export const headerData = {
-  logoImg: "/images/logo.png",
-  logoText: "UBND TỈNH TÂY NINH",
-};
-
 export const heroData = {
   title1: "HỘI NGHỊ",
   title2: "KẾT NỐI CHUỖI CUNG ỨNG",
@@ -24,10 +19,10 @@ export const heroData = {
   image: "/images/hero-banner.png",
 };
 
-export const liveStreamData = {
-  link: "https://www.youtube.com/watch?v=PtQNVlh5FNc", // Link video YouTube của Livestream, để trống "" nếu không có
+export const trailerData = {
+  link: "https://www.youtube.com/watch?v=b7TtQs8ZbBs", // Link video YouTube của Recap, để trống "" nếu không có
   title:
-    "Trực tiếp Hội nghị Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu và Thương mại điện tử tỉnh Tây Ninh năm 2026",
+    "Video Recap Hội nghị Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu và Thương mại điện tử tỉnh Tây Ninh năm 2026",
 };
 
 export const introData = {
@@ -88,7 +83,7 @@ export const aboutData = {
       label: "Doanh nghiệp địa phương, trong nước và quốc tế",
     },
   ],
-  videoUrl: "https://www.youtube.com/watch?v=PtQNVlh5FNc", // Link video YouTube của About
+  videoUrl: "https://www.youtube.com/watch?v=WzO3cW5UDJg", // Link video YouTube của About / Video tư liệu
   isVideoFile: false,
 };
 
@@ -171,162 +166,366 @@ export const potentialData = [
   },
 ];
 
-export interface TimelineSubItem {
-  time: string;
-  title: string;
-}
-
 export interface TimelineItem {
   time: string;
+  duration?: string;
   title: string;
   desc?: string;
+  performer?: string;
+  part?: string;
   topics?: string[];
-  subItems?: TimelineSubItem[];
 }
 
 export const timelineData: TimelineItem[] = [
+  // ==========================================
+  // I. BUỔI SÁNG NGÀY 05/9/2026 (07:30 - 11:30)
+  // Địa điểm: Hội trường Thống Nhất, UBND Tỉnh Tây Ninh, 61 Nguyễn Huệ, phường Long An, tỉnh Tây Ninh
+  // ==========================================
   {
     time: "07:30 - 08:00",
-    title: "ĐÓN TIẾP ĐẠI BIỂU",
-    desc: "Đăng ký và đón tiếp đại biểu, tham quan trưng bày sản phẩm đặc trưng, sản phẩm xuất khẩu của tỉnh Tây Ninh",
+    duration: "30 phút",
+    part: "Sáng 05/9",
+    title: "Đăng ký và đón tiếp đại biểu, tham quan trưng bày sản phẩm đặc trưng, sản phẩm xuất khẩu của Tỉnh",
+    performer: "Sở Công Thương",
   },
   {
-    time: "08:00 - 08:40",
-    title: "KHAI MẠC CHƯƠNG TRÌNH",
-    desc: "Tuyên bố lý do, phát biểu khai mạc, phát biểu chào mừng và trình chiếu video clip giới thiệu hội nghị",
-    subItems: [
-      { time: "08:00 - 08:10", title: "Tuyên bố lý do, giới thiệu đại biểu" },
-      {
-        time: "08:10 - 08:20",
-        title: "Phát biểu khai mạc (Lãnh đạo Bộ Công Thương)",
-      },
-      {
-        time: "08:20 - 08:30",
-        title: "Phát biểu chào mừng (Lãnh đạo UBND tỉnh Tây Ninh)",
-      },
-      {
-        time: "08:30 - 08:40",
-        title:
-          "Trình chiếu video clip 'Tây Ninh – Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu, thương mại điện tử'",
-      },
-    ],
-  },
-  {
-    time: "08:40 - 09:30",
-    title: "PHIÊN THẢO LUẬN 1:\nNÂNG TẦM CHẤT LƯỢNG, THƯƠNG HIỆU",
-    desc: "Các tham luận chuyên đề nhằm thúc đẩy và định vị thương hiệu hàng hóa",
+    time: "08:00 - 08:35",
+    duration: "35 phút",
+    part: "Sáng 05/9",
+    title: "Khai mạc Hội nghị & Trình chiếu clip giới thiệu",
+    desc: "Nghi thức khai mạc trọng thể, phát biểu chỉ đạo của Lãnh đạo Bộ Công Thương và Lãnh đạo UBND Tỉnh",
     topics: [
-      "Doanh nghiệp Tây Ninh – Chiến lược vươn ra toàn cầu (Hiệp hội Doanh nghiệp tỉnh)",
-      "Tối ưu hóa logistics thúc đẩy thương mại xuyên biên giới (Cảng Quốc tế Long An)",
-      "Thương hiệu tinh bột mì Việt Nam trên thị trường quốc tế (Hiệp hội sản xuất tinh bột mì)",
-      "Chuỗi liên kết chăn nuôi gia cầm tiêu chuẩn Châu Âu (Tập đoàn Hùng Nhơn)",
-      "Nâng tầm vị thế nông sản Việt (Agris)",
-      "Xây dựng chuỗi cung ứng cao su bền vững (Doanh nghiệp cao su)",
+      "Tuyên bố lý do, giới thiệu đại biểu — MC",
+      "Phát biểu khai mạc của Lãnh đạo Bộ Công Thương — Bà Phan Thị Thắng, Thứ trưởng Bộ Công Thương",
+      "Phát biểu chào mừng của Tỉnh — Ông Lê Văn Hẳn, Phó Bí thư Tỉnh ủy - Chủ tịch UBND tỉnh",
+      "Trình chiếu clip Tây Ninh – Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu, thương mại điện tử — Sở Công Thương",
     ],
   },
   {
-    time: "09:30 - 10:00",
-    title: "GIẢI LAO – KẾT NỐI",
-    desc: "Giải lao và tham quan các gian hàng triển lãm thực tế của doanh nghiệp",
-  },
-  {
-    time: "10:00 - 11:15",
-    title: "PHIÊN THẢO LUẬN 2:\nTHAM GIA SÂU CHUỖI GIÁ TRỊ TOÀN CẦU",
-    desc: "Các tham luận định hướng, tháo gỡ rào cản và giải pháp xuất khẩu",
+    time: "08:35 - 09:25",
+    duration: "50 phút",
+    part: "Sáng 05/9",
+    title: "Phiên 1: Nâng tầm chất lượng, thương hiệu Việt",
+    desc: "06 bài tham luận chuyên đề về chiến lược toàn cầu, logistics, nông sản và thương hiệu (08 phút / bài)",
     topics: [
-      "Định hướng và giải pháp thúc đẩy xuất khẩu đạt mục tiêu tăng trưởng hai con số (Cục Xuất nhập khẩu/Vụ Phát triển thị trường nước ngoài, Bộ Công Thương)",
-      "Cảnh báo về các vấn đề phòng vệ thương mại trong bối cảnh hội nhập sâu rộng và Khuyến nghị cho cộng đồng doanh nghiệp (Cục Phòng vệ thương mại, Bộ Công Thương)",
-      "Giải pháp cho doanh nghiệp Việt Nam từng bước thích ứng với các tiêu chuẩn xanh, ESG (PGS. TS. Dương Minh Hải, Đại học Quốc gia Singapore – NUS)",
-      "Nâng cao giá trị nông sản Tây Ninh và dư địa xuất khẩu tại thị trường Trung Quốc (Tham tán thương mại Việt Nam tại Trung Quốc / Pagoda)",
-      "Đánh giá và dự báo thị trường Hoa Kỳ trước những diễn biến chính sách thuế quan mới (Tham tán thương mại Việt Nam tại Hoa Kỳ)",
-      "Tác động từ bất ổn địa chính trị và cánh cửa thâm nhập thị trường Trung Đông (Chủ tịch Tập đoàn Altaj International Holdings, Ả-rập Xê-út)",
-      "Nhu cầu và triển vọng hợp tác tham gia hiệu quả kênh phân phối quốc tế (Central Retail)",
-      "Chiến lược kinh doanh, đầu tư của các doanh nghiệp châu Âu và đồng hành xây dựng chuỗi cung ứng chất lượng, minh bạch, bền vững tại Việt Nam (Tổng Giám đốc De Heus Việt Nam & châu Á)",
-      "Bứt phá xuất khẩu cùng Amazon (Amazon)",
-      "Phiên thảo luận hỏi đáp Q&A (Các đại biểu tham dự)",
+      "Doanh nghiệp Tây Ninh – Chiến lược vươn ra toàn cầu — Bà Ninh Thị Bích Thùy, Phó Chủ tịch Thường trực Hiệp hội Doanh nghiệp tỉnh Tây Ninh",
+      "Tối ưu hóa logistics, thúc đẩy thương mại xuyên biên giới — Ông Võ Quốc Huy, Chủ tịch HĐQT Cảng Quốc tế Long An",
+      "Thương hiệu tinh bột mì Việt Nam trên thị trường quốc tế — Ông Lê Hữu Hùng, PCT Hiệp hội sắn Việt Nam - Chủ tịch Hiệp hội sản xuất tinh bột mì tỉnh Tây Ninh",
+      "Chuỗi liên kết chăn nuôi gia cầm tiêu chuẩn châu Âu — Ông Vũ Mạnh Hùng, Chủ tịch HĐQT Tập đoàn Hùng Nhơn",
+      "Nâng tầm vị thế nông sản Việt — Ông Võ Xuân Hoà, Phó Giám đốc Công ty TNHH Huy Long An – Mỹ Bình",
+      "Nâng tầm sản phẩm thủ công mỹ nghệ – Kết nối giá trị địa phương với thị trường toàn cầu — Ông Võ Thanh Tú, Giám đốc Công ty TNHH MTV Hoà Thành Long An",
     ],
   },
   {
-    time: "11:15 - 11:30",
-    title: "LỄ KÝ KẾT BIÊN BẢN GHI NHỚ HỢP TÁC",
-    desc: "Lễ ký kết bản ghi nhớ hợp tác (MOU) giữa các cơ quan, hiệp hội và doanh nghiệp",
+    time: "09:30 - 09:50",
+    duration: "20 phút",
+    part: "Sáng 05/9",
+    title: "Giải lao và Tham quan gian hàng triển lãm",
+    performer: "Các đại biểu",
   },
   {
-    time: "11:30 - 11:40",
-    title: "PHÁT BIỂU BẾ MẠC HỘI NGHỊ",
-    desc: "Phát biểu bế mạc Hội nghị của Lãnh đạo UBND tỉnh Tây Ninh",
+    time: "09:50 - 11:00",
+    duration: "70 phút",
+    part: "Sáng 05/9",
+    title: "Phiên 2: Tham gia sâu chuỗi giá trị toàn cầu",
+    desc: "08 bài tham luận chuyên sâu định hướng thị trường quốc tế, phòng vệ thương mại, tiêu chuẩn xanh ESG và kênh phân phối (08 phút / bài)",
+    topics: [
+      "Bức tranh xuất khẩu, cơ hội đan xen thách thức trong bối cảnh biến động toàn cầu — Ông Tô Ngọc Sơn, Phó Vụ trưởng, Vụ Phát triển thị trường nước ngoài, Bộ Công Thương",
+      "Phòng vệ thương mại trong bối cảnh mới — Bà Trần Đỗ Quyên, Phó Cục trưởng Cục Phòng vệ thương mại, Bộ Công Thương",
+      "Đánh giá và dự báo thị trường Hoa Kỳ trước những diễn biến chính sách thuế quan mới — Ông Đỗ Ngọc Hưng, Tham tán thương mại Việt Nam tại Hoa Kỳ",
+      "Dòng vốn đầu tư châu Âu và xây dựng chuỗi cung ứng bền vững tại Việt Nam — Ông Johan van den Ban, Tổng Giám đốc Tập đoàn De Heus Việt Nam & châu Á (Hà Lan)",
+      "Nhu cầu từ thị trường Trung Quốc và cơ hội thúc đẩy nâng cấp chuỗi cung ứng hàng hóa và hợp tác sản xuất công nghệ cao — Ông Zhu Xiang Bin, Phó Tổng giám đốc Tập đoàn Xinde, Hội trưởng Thương hội Kim Hoa Chiết Giang, Trung Quốc",
+      "Biến bất ổn thành cơ hội: Từ Tây Ninh đến UAE và thị trường Trung Đông — Ông Trần Tấn Sỹ, Tổng Giám đốc Vietnam Food Pavilion, Tập đoàn Lootah (UAE)",
+      "Đổi mới chiến lược thu mua và khuyến nghị tiếp cận hiệu quả các kênh phân phối quốc tế — Ông Paul Lê, Phó Chủ tịch phụ trách xúc tiến thương mại, Tập đoàn Central Retail",
+      "Giải pháp cho doanh nghiệp Việt Nam từng bước thích ứng với các tiêu chuẩn xanh, ESG — PGS. TS. Dương Minh Hải, Chuyên gia quốc tế, Đại học Quốc gia Singapore – NUS",
+      "Q&A: Trao đổi, thảo luận và giải đáp — Các đại biểu",
+    ],
   },
   {
-    time: "11:40 - 13:30",
-    title: "TIỆC CHIÊU ĐÃI",
-    desc: "Tiệc chiêu đãi đại biểu tham dự hội nghị",
+    time: "11:00 - 11:20",
+    duration: "20 phút",
+    part: "Sáng 05/9",
+    title: "Lễ trao ghi nhớ hợp tác (MOU)",
+    desc: "Lễ ký kết và trao 11 bản ghi nhớ hợp tác chiến lược giữa các cơ quan, hiệp hội và doanh nghiệp",
+    topics: [
+      "1. Sở Công Thương Tây Ninh – Phòng Thương mại Malaysia – Việt Nam (MVCC)",
+      "2. Sở Công Thương Tây Ninh – Lootah Group (UAE)",
+      "3. Sở Công Thương Tây Ninh – Trung tâm Kinh doanh Việt Nam - Pakistan",
+      "4. Sở Công Thương Tây Ninh – Hiệp hội Thương mại điện tử Việt Nam (VECOM)",
+      "5. Sở Nông nghiệp và Môi trường Tây Ninh – Hiệp hội Xúc tiến Hợp tác Kinh tế Việt Nam - Nhật Bản (VJECPA)",
+      "6. Hiệp hội Doanh nghiệp tỉnh Tây Ninh – Hiệp hội doanh nghiệp vừa và nhỏ Singapore",
+      "7. Hiệp hội Doanh nghiệp tỉnh Tây Ninh – Phòng Thương mại & Công nghiệp Liverpool, New South Wales, Úc",
+      "8. Hiệp hội Doanh nghiệp tỉnh Tây Ninh – Spinneys (UAE)",
+      "9. Công ty TNHH Tân Nhiên – Công ty Cổ phần Se-So",
+      "10. Công ty TNHH Hương Việt Xưa – Công ty Vipro Japan",
+      "11. Công ty TNHH Nông Nghiệp Xanh và Xanh – Công ty TNHH HUSK Việt Nam",
+    ],
   },
+  {
+    time: "11:20 - 11:30",
+    duration: "10 phút",
+    part: "Sáng 05/9",
+    title: "Phát biểu bế mạc Hội nghị",
+    performer: "Ông Nguyễn Hồng Thanh, Ủy viên Ban Thường vụ, Phó Chủ tịch Thường trực UBND tỉnh Tây Ninh",
+  },
+  {
+    time: "11:30 - 13:30",
+    duration: "120 phút",
+    part: "Sáng 05/9",
+    title: "Tiệc chiêu đãi (Lunch)",
+    desc: "Tiệc trưa giao lưu thân mật chiêu đãi quý đại biểu và doanh nghiệp tham dự",
+  },
+
+  // ==========================================
+  // II. BUỔI CHIỀU NGÀY 05/9/2026 (13:30 - 17:00)
+  // ==========================================
   {
     time: "13:30 - 16:30",
-    title: "KẾT NỐI GIAO THƯƠNG - KHẢO SÁT DOANH NGHIỆP",
-    desc: "Giao thương trực tiếp giữa các doanh nghiệp (B2B) và khảo sát thực địa địa bàn tỉnh Tây Ninh",
+    duration: "180 phút",
+    part: "Chiều 05/9",
+    title: "Kết nối giao thương B2B & Khảo sát thực tế tại địa bàn Tỉnh",
+    desc: "Giao thương B2B tại Hội trường, 6 tuyến khảo sát doanh nghiệp và làm việc chuyên đề với Đoàn Thụy Điển",
     topics: [
-      "Giao thương trực tiếp giữa các doanh nghiệp (B2B) tại Hội trường chính",
-      "Khảo sát thực tế tại Cảng quốc tế Long An",
-      "Khảo sát thực tế tại Công ty Cổ phần Thực phẩm Richy Miền Nam",
+      "Kết nối giao thương trực tiếp tại Hội trường – B2B",
+      "Đồng thời 13h30 ngày 5/9 Đoàn Thụy Điển làm việc với Sở Công Thương, Ban Quản lý khu kinh tế về điện, đầu tư khu công nghiệp",
+      "(1) Cảng quốc tế Long An tại số 68 đường tỉnh 830, ấp Vĩnh Hòa, xã Tân Tập .",
+      "(2) Công ty cổ phần thực phẩm Richy miền Nam (sản xuất bánh kẹo) tại Đường số 7, KCN Trảng Bàng Phường An Tịnh, Trảng Bàng .",
+      "(3) Công ty CP Chế biến hàng xuất khẩu Long An – Lafooco (sản xuất hạt điều và các loại hạt, sản phẩm sấy) tại số 81B QL62, Long An .",
+      "(4) Công ty CP Thép TVP (sản xuất sắt thép) tại Số 400, Quốc lộ 1, Ấp Bến Lức 9, xã Bến Lức .",
+      "(5) Mixue khảo sát Nông Trang Hải Âu (chanh tươi)",
+      "(6) Khảo sát Đoàn của Wumart và Metro (cả ngày 5/9/2026)",
     ],
+  },
+  {
+    time: "17:00",
+    part: "Chiều 05/9",
+    title: "Di chuyển từ Tây Ninh về Tp. Hồ Chí Minh",
+    desc: "Đoàn kết thúc các hoạt động khảo sát và khởi hành về TP. Hồ Chí Minh",
+  },
+
+  // ==========================================
+  // III. NGÀY 06/9/2026
+  // ==========================================
+  {
+    time: "07:00 - 15:30",
+    part: "Ngày 06/9",
+    title: "Di chuyển và tham quan Khu Danh thắng Núi Bà Đen, Tây Ninh",
+    performer: "Đoàn Bộ Công Thương và Đoàn Doanh nghiệp nước ngoài",
+    desc: "Chương trình tham quan danh thắng, giao lưu văn hóa tại Khu Danh thắng Núi Bà Đen",
+  },
+  {
+    time: "15:30",
+    part: "Ngày 06/9",
+    title: "Di chuyển từ Núi Bà Đen, Tây Ninh về Tp. Hồ Chí Minh (SECC)",
+    performer: "Đoàn Bộ Công Thương và Đoàn Doanh nghiệp nước ngoài",
+    desc: "Khởi hành từ Tây Ninh về Trung tâm Hội chợ và Triển lãm Sài Gòn (SECC)",
   },
 ];
 
-export const speakersData = [
+export interface Speaker {
+  id: number;
+  img: string;
+  name: string;
+  role: string;
+  unit: string;
+  topic: string;
+  session?: string;
+  duration?: string;
+  hasPpt?: boolean;
+}
+
+export const speakersData: Speaker[] = [
+  // Phiên 1: Nâng tầm chất lượng, thương hiệu Việt
   {
     id: 1,
-    img: "/images/speakers/speaker-1.png",
-    name: "Nguyễn Trần Hoàng Bảo Nguyên Phương",
-    role: "Tham tán Thương mại",
-    unit: "Thương vụ Việt Nam tại Đức",
-    topic:
-      "Kinh nghiệm mở rộng thị trường xuất khẩu nông sản chủ lực sang khu vực EU và Bắc Mỹ thông qua các hiệp định thương mại tự do (FTA).",
+    img: "/images/speakers/Ninh_Thi_Bich_Thuy.png",
+    name: "Bà Ninh Thị Bích Thùy",
+    role: "Phó Chủ tịch Thường trực",
+    unit: "Hiệp hội Doanh nghiệp tỉnh Tây Ninh",
+    topic: "Doanh nghiệp Tây Ninh – Chiến lược vươn ra toàn cầu",
+    session: "Phiên 1",
+    duration: "08 phút",
   },
   {
     id: 2,
-    img: "/images/speakers/speaker-1.png",
-    name: "Phạm Thị Thu Hà",
-    role: "Trưởng phòng Xuất nhập khẩu",
-    unit: "Cục Hải quan tỉnh Tây Ninh",
-    topic:
-      "Đẩy mạnh chuyển đổi số trong quy trình thông quan hàng hóa tự động và quản lý rủi ro xuyên biên giới.",
+    img: "/images/speakers/Vo_Quoc_Huy.png",
+    name: "Ông Võ Quốc Huy",
+    role: "Chủ tịch HĐQT",
+    unit: "Cảng Quốc tế Long An",
+    topic: "Tối ưu hóa logistics, thúc đẩy thương mại xuyên biên giới",
+    session: "Phiên 1",
+    duration: "08 phút",
+    hasPpt: true,
   },
   {
     id: 3,
-    img: "/images/speakers/speaker-2.png",
-    name: "Trần Minh Khoa",
-    role: "Tham tán Thương mại",
-    unit: "\nThương vụ Việt Nam tại Hoa Kỳ",
-    topic:
-      "Tiêu chuẩn xanh và phát triển bền vững: Yêu cầu bắt buộc và cơ hội đối với hàng hóa xuất khẩu vào thị trường quốc tế.",
+    img: "/images/speakers/Le_Huu_Hung.png",
+    name: "Ông Lê Hữu Hùng",
+    role: "PCT Hiệp hội sắn Việt Nam - Chủ tịch",
+    unit: "Hiệp hội sản xuất tinh bột mì tỉnh Tây Ninh",
+    topic: "Thương hiệu tinh bột mì Việt Nam trên thị trường quốc tế",
+    session: "Phiên 1",
+    duration: "08 phút",
   },
   {
     id: 4,
-    img: "/images/speakers/speaker-2.png",
-    name: "Đặng Nguyễn Thị Ngọc Lan Anh",
-    role: "Chuyên gia Logistics & Chuỗi cung ứng",
-    unit: "Hiệp hội Logistics Việt Nam",
-    topic:
-      "Tối ưu hóa chi phí vận chuyển hàng hóa xuất nhập khẩu thông qua giải pháp kết nối đa phương thức.",
+    img: "/images/speakers/Vu_Manh_Hung.png",
+    name: "Ông Vũ Mạnh Hùng",
+    role: "Chủ tịch HĐQT",
+    unit: "Tập đoàn Hùng Nhơn",
+    topic: "Chuỗi liên kết chăn nuôi gia cầm tiêu chuẩn châu Âu",
+    session: "Phiên 1",
+    duration: "08 phút",
   },
   {
     id: 5,
-    img: "/images/speakers/speaker-1.png",
-    name: "Michael Anderson",
-    role: "Chuyên gia Thương mại Điện tử",
-    unit: "Amazon Global Selling",
-    topic:
-      "Chiến lược đưa sản phẩm địa phương lên sàn thương mại điện tử quốc tế (Amazon, Alibaba).",
+    img: "/images/speakers/Vo_Xuan_Hoa.png",
+    name: "Ông Võ Xuân Hoà",
+    role: "Phó Giám đốc",
+    unit: "Công ty TNHH Huy Long An – Mỹ Bình",
+    topic: "Nâng tầm vị thế nông sản Việt",
+    session: "Phiên 1",
+    duration: "08 phút",
+    hasPpt: true,
   },
   {
     id: 6,
-    img: "/images/speakers/speaker-1.png",
-    name: "Võ Thị Kim Ngân",
-    role: "Chuyên gia Thu hút Đầu tư",
-    unit: "Sở Kế hoạch và Đầu tư tỉnh Tây Ninh",
+    img: "/images/speakers/Vo_Thanh_Tu.png",
+    name: "Ông Võ Thanh Tú",
+    role: "Giám đốc",
+    unit: "Công ty TNHH MTV Hoà Thành Long An",
     topic:
-      "Cơ hội thu hút vốn đầu tư trực tiếp nước ngoài (FDI) vào các ngành công nghiệp phụ trợ tại Tây Ninh.",
+      "Nâng tầm sản phẩm thủ công mỹ nghệ – Kết nối giá trị địa phương với thị trường toàn cầu",
+    session: "Phiên 1",
+    duration: "08 phút",
+  },
+
+  // Phiên 2: Tham gia sâu chuỗi giá trị toàn cầu
+  {
+    id: 7,
+    img: "/images/speakers/To_Ngoc_Son.png",
+    name: "Ông Tô Ngọc Sơn",
+    role: "Phó Vụ trưởng, Vụ Phát triển thị trường nước ngoài",
+    unit: "Bộ Công Thương",
+    topic:
+      "Bức tranh xuất khẩu, cơ hội đan xen thách thức trong bối cảnh biến động toàn cầu",
+    session: "Phiên 2",
+    duration: "08 phút",
+    hasPpt: true,
+  },
+  {
+    id: 8,
+    img: "/images/speakers/Tran_Do_Quyen.png",
+    name: "Bà Trần Đỗ Quyên",
+    role: "Phó Cục trưởng Cục Phòng vệ thương mại",
+    unit: "Bộ Công Thương",
+    topic:
+      "Phòng vệ thương mại trong bối cảnh mới",
+    session: "Phiên 2",
+    duration: "08 phút",
+    hasPpt: true,
+  },
+  {
+    id: 9,
+    img: "/images/speakers/Do_Ngoc_Hung.png",
+    name: "Ông Đỗ Ngọc Hưng",
+    role: "Tham tán Thương mại Việt Nam tại Hoa Kỳ",
+    unit: "Thương vụ Việt Nam tại Hoa Kỳ",
+    topic:
+      "Đánh giá và dự báo thị trường Hoa Kỳ trước những diễn biến chính sách thuế quan mới",
+    session: "Phiên 2",
+    duration: "08 phút",
+  },
+  {
+    id: 10,
+    img: "/images/speakers/Johan_Van_Den_Ban.png",
+    name: "Ông Johan van den Ban",
+    role: "Tổng Giám đốc",
+    unit: "Tập đoàn De Heus Việt Nam & châu Á (Hà Lan)",
+    topic:
+      "Dòng vốn đầu tư châu Âu và xây dựng chuỗi cung ứng bền vững tại Việt Nam",
+    session: "Phiên 2",
+    duration: "08 phút",
+    hasPpt: true,
+  },
+  {
+    id: 11,
+    img: "/images/speakers/Tran_Tan_Sy.png",
+    name: "Ông Trần Tấn Sỹ",
+    role: "Tổng Giám đốc",
+    unit: "Vietnam Food Pavilion, Tập đoàn Lootah (UAE)",
+    topic:
+      "Biến bất ổn thành cơ hội: Từ Tây Ninh đến UAE và thị trường Trung Đông",
+    session: "Phiên 2",
+    duration: "08 phút",
+    hasPpt: true,
+  },
+  {
+    id: 12,
+    img: "/images/speakers/Zhu_Xiang_Bin.png",
+    name: "Ông Zhu Xiang Bin",
+    role: "Phó Tổng Giám đốc Tập đoàn Xinde",
+    unit: "Hội trưởng Thương hội Kim Hoa Chiết Giang (Trung Quốc)",
+    topic:
+      "Nhu cầu từ thị trường Trung Quốc và cơ hội thúc đẩy nâng cấp chuỗi cung ứng hàng hóa và hợp tác sản xuất công nghệ cao",
+    session: "Phiên 2",
+    duration: "08 phút",
+    hasPpt: true,
+  },
+  {
+    id: 13,
+    img: "/images/speakers/Paul_Le.png",
+    name: "Ông Paul Lê",
+    role: "Phó Chủ tịch phụ trách xúc tiến thương mại",
+    unit: "Tập đoàn Central Retail",
+    topic:
+      "Đổi mới chiến lược thu mua và khuyến nghị tiếp cận hiệu quả các kênh phân phối quốc tế",
+    session: "Phiên 2",
+    duration: "08 phút",
+  },
+  {
+    id: 14,
+    img: "/images/speakers/Duong_Minh_Hai.png",
+    name: "PGS. TS. Dương Minh Hải",
+    role: "Chuyên gia quốc tế",
+    unit: "Đại học Quốc gia Singapore – NUS",
+    topic:
+      "Giải pháp cho doanh nghiệp Việt Nam từng bước thích ứng với các tiêu chuẩn xanh, ESG",
+    session: "Phiên 2",
+    duration: "08 phút",
+    hasPpt: true,
+  },
+
+  // Lãnh đạo phát biểu & Chủ trì Hội nghị
+  {
+    id: 101,
+    img: "/images/speakers/Phan_Thi_Thang.png",
+    name: "Bà Phan Thị Thắng",
+    role: "Thứ trưởng",
+    unit: "Bộ Công Thương Việt Nam",
+    topic: "Phát biểu khai mạc của Lãnh đạo Bộ Công Thương",
+    session: "Lãnh đạo",
+    duration: "05 phút",
+  },
+  {
+    id: 102,
+    img: "/images/speakers/Le_Van_Han.png",
+    name: "Ông Lê Văn Hẳn",
+    role: "Phó Bí thư Tỉnh ủy, Chủ tịch UBND tỉnh",
+    unit: "Ủy ban Nhân dân tỉnh Tây Ninh",
+    topic: "Phát biểu chào mừng của Tỉnh Tây Ninh",
+    session: "Lãnh đạo",
+    duration: "10 phút",
+  },
+  {
+    id: 103,
+    img: "/images/speakers/Nguyen_Hong_Thanh.png",
+    name: "Ông Nguyễn Hồng Thanh",
+    role: "Ủy viên Ban Thường vụ, Phó Chủ tịch Thường trực",
+    unit: "Ủy ban Nhân dân tỉnh Tây Ninh",
+    topic: "Phát biểu bế mạc Hội nghị",
+    session: "Lãnh đạo",
+    duration: "10 phút",
   },
 ];
 
@@ -334,34 +533,189 @@ export const galleryData = {
   tagline: "Khoảnh khắc sự kiện",
   title: "Hình ảnh hoạt động sự kiện",
   desc: "Những khoảnh khắc đáng nhớ, không gian trưng bày sản phẩm Tây Ninh và các lễ ký kết hợp tác quan trọng tại sự kiện.",
-  driveLink: "https://drive.google.com",
   photos: [
     {
-      src: "/images/events/event-large.png",
-      alt: "Lễ ký kết hợp tác",
-      span: "large",
+      id: 1,
+      src: "/images/events/dai_bieu_doanh_nghiep_chup_anh_luu_niem_tai_hoi_nghi.png",
+      tag: "Đại biểu & Lãnh đạo",
+      title: "Chụp ảnh lưu niệm toàn thể Lãnh đạo & Doanh nghiệp",
     },
     {
-      src: "/images/events/event-small-1.png",
-      alt: "Tham quan sản phẩm",
-      span: "small",
+      id: 2,
+      src: "/images/events/11_bien_ban_ghi_nho_hop_tac_duoc_ky_ket_giua_cac_co_quan_hiep_hoi_doanh_nghiep_tay_ninh_voi_cac_doi_tac_trong_va_ngoai_nuoc.png",
+      tag: "Ký kết MOU",
+      title: "Lễ ký kết 11 biên bản ghi nhớ hợp tác (MOU)",
     },
     {
-      src: "/images/events/event-small-2.png",
-      alt: "Kết nối giao thương",
-      span: "small",
+      id: 3,
+      src: "/images/events/tong_quan_hoi_nghi.png",
+      tag: "Toàn cảnh Hội nghị",
+      title: "Toàn cảnh không gian Hội nghị Kết nối 2026",
+    },
+    {
+      id: 4,
+      src: "/images/events/khong_gian_trien_lam.png",
+      tag: "Không gian Trưng bày",
+      title: "Không gian trưng bày sản phẩm xuất khẩu Tây Ninh",
+    },
+    {
+      id: 5,
+      src: "/images/events/doan_lanh_dao_tham_quan_cac_gian_hang.jpg",
+      tag: "Tham quan Gian hàng",
+      title: "Đoàn Lãnh đạo tham quan các gian hàng triển lãm",
+    },
+    {
+      id: 6,
+      src: "/images/events/lanh_dao_khao_sat_san_pham_gian_hang.jpg",
+      tag: "Khảo sát Sản phẩm",
+      title: "Lãnh đạo và đối tác quốc tế khảo sát gian hàng",
+    },
+    {
+      id: 7,
+      src: "/images/events/khong_gian_ket_noi_trung_bay_san_pham_tai_hoi_nghi.png",
+      tag: "Không gian Trưng bày",
+      title: "Không gian kết nối - trưng bày sản phẩm tại Hội nghị",
+    },
+    {
+      id: 8,
+      src: "/images/events/khach_quoc_te_tham_quan_trai_nghiem_san_pham_trung_bay.png",
+      tag: "Khách quốc tế & Doanh nghiệp",
+      title: "Khách quốc tế tham quan, tìm hiểu và trải nghiệm các sản phẩm được trưng bày tại Hội nghị",
+    },
+    {
+      id: 9,
+      src: "/images/events/khong_gian_trung_bay_thu_hut_dong_dao_dai_bieu_doanh_nghiep.png",
+      tag: "Gian hàng & Kết nối",
+      title: "Không gian trưng bày sản phẩm thu hút đông đảo đại biểu và doanh nghiệp tham quan, kết nối tại Hội nghị",
+    },
+    {
+      id: 10,
+      src: "/images/events/dai_bieu_khach_moi_luu_lai_khoanh_khac_dang_nho.png",
+      tag: "Lưu niệm & Check-in",
+      title: "Đại biểu, khách mời lưu lại những khoảnh khắc đáng nhớ tại Hội nghị",
+    },
+    {
+      id: 11,
+      src: "/images/events/quay_trai_cay_xuat_khau_tay_ninh.jpg",
+      tag: "Gian hàng Nông sản",
+      title: "Khu trưng bày trái cây xuất khẩu tiêu biểu Tây Ninh",
+    },
+    {
+      id: 12,
+      src: "/images/events/mang_cau_ba_den_tay_ninh.jpg",
+      tag: "Đặc sản OCOP",
+      title: "Mãng cầu Bà Đen Tây Ninh & nông sản OCOP",
+    },
+    {
+      id: 13,
+      src: "/images/events/thanh_long_ruot_do_tay_ninh.jpg",
+      tag: "Trái cây Xuất khẩu",
+      title: "Thanh long ruột đỏ xuất khẩu Tây Ninh",
+    },
+    {
+      id: 14,
+      src: "/images/events/chanh_khong_hat_xuat_khau.jpg",
+      tag: "Nông sản Xuất khẩu",
+      title: "Chanh không hạt & chanh vàng xuất khẩu",
+    },
+    {
+      id: 15,
+      src: "/images/events/gao_st25_hoang_yen_tay_ninh.jpg",
+      tag: "Gạo Xuất khẩu",
+      title: "Gạo sạch ST25 Hoàng Yến - Lúa Vàng Việt",
+    },
+    {
+      id: 16,
+      src: "/images/events/muoi_tom_gia_vi_tay_ninh.jpg",
+      tag: "Gia vị Đặc sản",
+      title: "Muối tôm Tây Ninh & các dòng nước sốt, gia vị",
+    },
+    {
+      id: 17,
+      src: "/images/events/trai_cay_say_gion_xuat_khau.jpg",
+      tag: "Nông sản Chế biến",
+      title: "Trái cây sấy giòn, mít sấy xuất khẩu",
+    },
+    {
+      id: 18,
+      src: "/images/events/yen_sao_tay_ninh_cao_cap.jpg",
+      tag: "Yến sào Cao cấp",
+      title: "Yến sào và tổ yến chưng Tây Ninh cao cấp",
+    },
+    {
+      id: 19,
+      src: "/images/events/dong_trung_ha_thao_tay_ninh.jpg",
+      tag: "Dược liệu & Sức khỏe",
+      title: "Đông trùng hạ thảo và trà dược liệu Tây Ninh",
+    },
+    {
+      id: 20,
+      src: "/images/events/trung_ga_sach_san_ha.jpg",
+      tag: "Nông nghiệp Công nghệ cao",
+      title: "Trứng gà sạch công nghệ cao San Hà",
+    },
+    {
+      id: 21,
+      src: "/images/events/nuoc_khoang_kiem_ion_life.jpg",
+      tag: "Thực phẩm & Đồ uống",
+      title: "Nước uống ion kiềm I-on Life thương hiệu quốc gia",
+    },
+    {
+      id: 22,
+      src: "/images/events/san_pham_toi_yeu_tay_ninh.jpg",
+      tag: "Sản phẩm Đặc trưng",
+      title: "Gian hàng đặc sản quà tặng Tôi Yêu Tây Ninh",
+    },
+    {
+      id: 23,
+      src: "/images/events/thep_tam_tvp_steel.jpg",
+      tag: "Công nghiệp Thép",
+      title: "Tôn thép tấm hợp kim mạ magie TVP Steel",
+    },
+    {
+      id: 24,
+      src: "/images/events/dau_nhot_cong_nghiep_vioil.jpg",
+      tag: "Công nghiệp Phụ trợ",
+      title: "Dầu nhớt động cơ và phụ trợ công nghiệp Vioil",
+    },
+    {
+      id: 25,
+      src: "/images/events/non_la_khan_ran_truyen_thong.jpg",
+      tag: "Làng nghề Truyền thống",
+      title: "Nón lá và sản phẩm thủ công truyền thống Huy Long An",
+    },
+    {
+      id: 26,
+      src: "/images/events/may_tre_dan_my_nghe_xuat_khau.jpg",
+      tag: "Thủ công Mỹ nghệ",
+      title: "Thủ công mỹ nghệ mây tre đan xuất khẩu",
+    },
+    {
+      id: 27,
+      src: "/images/events/b2b_1.png",
+      tag: "Kết nối B2B",
+      title: "Phiên kết nối B2B quốc tế tại Networking Forum 2026",
+    },
+    {
+      id: 28,
+      src: "/images/events/b2b_2.png",
+      tag: "Kết nối B2B",
+      title: "Doanh nghiệp trong & ngoài nước trao đổi hợp tác trực tiếp",
+    },
+    {
+      id: 29,
+      src: "/images/events/b2b_3.png",
+      tag: "Kết nối B2B",
+      title: "Toàn cảnh không gian gặp gỡ kết nối B2B",
+    },
+    {
+      id: 30,
+      src: "/images/events/b2b_4.png",
+      tag: "Kết nối B2B",
+      title: "Doanh nghiệp Tây Ninh giao thương cùng đối tác quốc tế",
     },
   ],
 };
-
-export const partnersData = [
-  { id: 1, src: "/images/partners/partner-logo-1.png", alt: "Đối tác 1" },
-  { id: 2, src: "/images/partners/partner-logo-2.png", alt: "Đối tác 2" },
-  { id: 3, src: "/images/partners/partner-logo-3.png", alt: "Đối tác 3" },
-  { id: 4, src: "/images/partners/partner-logo-4.png", alt: "Đối tác 4" },
-  { id: 5, src: "/images/partners/partner-logo-5.png", alt: "Đối tác 5" },
-  { id: 6, src: "/images/partners/partner-logo-6.png", alt: "Đối tác 6" },
-];
 
 export const statsData = [
   {
@@ -391,18 +745,6 @@ export const statsData = [
   },
 ];
 
-export const mapData = {
-  tagline: "Không gian sự kiện",
-  title: "SƠ ĐỒ TRIỂN LÃM & B2B",
-  desc: "Hội nghị được tổ chức quy mô với các phân khu chức năng riêng biệt nhằm tối ưu hóa trải nghiệm kết nối và giao thương của đại biểu.",
-  zones: [
-    { name: "Khu vực Hội trường chính", color: "bg-blue-600" },
-    { name: "Không gian trưng bày SP Tây Ninh", color: "bg-emerald-600" },
-    { name: "Khu vực Kết nối Giao thương (B2B)", color: "bg-amber-500" },
-    { name: "Khu vực Tư vấn Chính sách", color: "bg-purple-600" },
-  ],
-};
-
 export const documentData = {
   title: "TÀI LIỆU HỘI NGHỊ",
   desc: "Quét mã QR dưới đây để xem toàn bộ tài liệu, hồ sơ và nội dung chương trình của sự kiện.",
@@ -410,19 +752,11 @@ export const documentData = {
   link: "https://drive.google.com/drive/folders/1xiCngZSJDUIQfPdnrjhTywbQFvJh7Idn?usp=sharing",
 };
 
-export const ctaData = {
-  title: "BẠN ĐÃ SẴN SÀNG THAM GIA?",
-  desc: "Đừng bỏ lỡ cơ hội kết nối với hàng trăm đối tác tiềm năng và các chuyên gia hàng đầu tại sự kiện.",
-  qrImg: "/images/qr-dang-ky.png",
-  link: "https://forms.gle/977Dc7kyF79Go2SP6",
-};
-
 export const footerData = {
   logoTitle: [
     "HỘI NGHỊ KẾT NỐI CHUỖI CUNG ỨNG",
     "HÀNG HÓA XUẤT NHẬP KHẨU VÀ THƯƠNG MẠI ĐIỆN TỬ TỈNH TÂY NINH NĂM 2026",
   ],
-  logoImg: "/images/logo.png",
   directors: ["Bộ Công Thương", "UBND tỉnh Tây Ninh"],
   implementers: ["Sở Công Thương tỉnh Tây Ninh"],
   location:
