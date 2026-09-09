@@ -38,7 +38,7 @@ const AboutSection: React.FC = () => {
   };
 
   return (
-    <section className="section about-section" id="about" style={{ padding: "5rem 0", background: "#ffffff" }}>
+    <section className="section about-section" id="about" style={{ padding: "2.25rem 0", background: "#ffffff" }}>
       <div className="container">
         <div className="about-layout" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3.5rem", alignItems: "center" }}>
           {/* Left Column: Text Content */}
@@ -145,7 +145,7 @@ const AboutSection: React.FC = () => {
                     <iframe
                       src={getYoutubeEmbedUrl(aboutData.videoUrl)}
                       title="Hội nghị Tây Ninh"
-                      allow="encrypted-media"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                       style={{
                         position: "absolute",

@@ -7,14 +7,14 @@ const IndustriesSection: React.FC = () => {
 
   return (
     <section
-      style={{ padding: "6rem 0", background: "#f8fafc" }}
+      style={{ padding: "2.25rem 0", background: "#f8fafc" }}
       data-reveal
       id="potential"
     >
       <div className="container">
         {/* Section Header */}
-        <div className="text-center" style={{ marginBottom: "3.5rem" }} data-reveal>
-          <h2 className="heading-split" style={{ marginBottom: "1rem", color: "#0f172a", fontSize: "2.5rem" }}>
+        <div className="text-center" style={{ marginBottom: "1.25rem" }} data-reveal>
+          <h2 className="heading-split" style={{ marginBottom: "1rem", color: "#0f172a", fontSize: "clamp(1.6rem, 4.5vw, 2.5rem)" }}>
             <span style={{ display: "block", marginBottom: "0.5rem" }}>TIỀM NĂNG</span>
             <span>XUẤT NHẬP KHẨU & PHÁT TRIỂN</span>
           </h2>
@@ -33,7 +33,7 @@ const IndustriesSection: React.FC = () => {
 
         {/* Always-visible Grid Showcase (no hover needed) */}
         <div data-reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.25rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: "1.25rem" }}>
             {pillars.map((pillar: any, idx: number) => (
               <a
                 key={pillar.id || idx}

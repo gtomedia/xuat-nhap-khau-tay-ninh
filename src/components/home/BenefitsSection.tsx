@@ -52,7 +52,7 @@ const BenefitsSection: React.FC = () => {
   return (
     <section
       style={{
-        padding: "6rem 0",
+        padding: "2.25rem 0",
         background: "#f8fafc",
         position: "relative",
         overflow: "hidden",
@@ -88,7 +88,7 @@ const BenefitsSection: React.FC = () => {
 
       <div className="container" style={{ position: "relative", zIndex: 1 }}>
         {/* Header */}
-        <div className="text-center" style={{ marginBottom: "4.5rem" }}>
+        <div className="text-center" style={{ marginBottom: "1.25rem" }}>
           <div style={{ marginBottom: "1.25rem" }}>
             <span
               style={{

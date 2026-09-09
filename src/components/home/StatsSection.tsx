@@ -29,7 +29,7 @@ const StatsSection: React.FC = () => {
       ref={statsRef}
     >
       <div className="container">
-        <div className="grid grid-cols-5 gap-4 text-center">
+        <div className="stats-grid text-center">
           {statsData.map((stat, index) => (
             <div key={index}>
               <div
@@ -58,6 +58,35 @@ const StatsSection: React.FC = () => {
           ))}
         </div>
       </div>
+
+      <style>{`
+        .stats-grid {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 1.5rem;
+        }
+        @media (max-width: 1024px) {
+          .stats-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+          }
+        }
+        @media (max-width: 640px) {
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem 0.75rem;
+          }
+          .stat-number {
+            font-size: 2.25rem !important;
+          }
+          .stats-grid p {
+            font-size: 0.8rem !important;
+          }
+          .stats-grid > div:last-child:nth-child(odd) {
+            grid-column: span 2;
+          }
+        }
+      `}</style>
     </section>
   );
 };
