@@ -55,7 +55,7 @@ const HeroSection: React.FC = () => {
               <h2 className="hero-title-sub animate-fade-up" style={{ animationDelay: "0.2s" }}>{heroData.title2}</h2>
               <p
                 className="hero-location-line animate-fade-up"
-                style={{ marginBottom: "0.3rem", animationDelay: "0.3s" }}
+                style={{ marginBottom: "0.85rem", animationDelay: "0.3s" }}
               >
                 {heroData.subtitle1}
               </p>

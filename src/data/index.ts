@@ -755,7 +755,7 @@ export const documentData = {
 export const footerData = {
   logoTitle: [
     "HỘI NGHỊ KẾT NỐI CHUỖI CUNG ỨNG",
-    "HÀNG HÓA XUẤT NHẬP KHẨU VÀ THƯƠNG MẠI ĐIỆN TỬ TỈNH TÂY NINH NĂM 2026",
+    "HÀNG HÓA XUẤT NHẬP KHẨU, THƯƠNG MẠI ĐIỆN TỬ TỈNH TÂY NINH NĂM 2026",
   ],
   directors: ["Bộ Công Thương", "UBND tỉnh Tây Ninh"],
   implementers: ["Sở Công Thương tỉnh Tây Ninh"],
