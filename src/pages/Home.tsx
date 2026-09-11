@@ -21,9 +21,10 @@ const Home: React.FC = () => {
       <AboutSection />
       <StatsSection />
 
-      {/* 2. Lịch trình & Diễn giả hội nghị */}
+      {/* 2. Lịch trình, Diễn giả & Tài liệu hội nghị */}
       <TimelineSection />
       <SpeakersSection />
+      <DocumentSection />
 
       {/* 3. Quyền lợi tham dự & Tiềm năng phát triển */}
       <BenefitsSection />
@@ -33,9 +34,8 @@ const Home: React.FC = () => {
       {/* 4. Kết nối B2B & Khảo sát thực địa */}
       <PanelDiscussionSection />
 
-      {/* 5. Thư viện hình ảnh & Tài liệu */}
+      {/* 5. Thư viện hình ảnh sự kiện & Video Recap */}
       <EventGallerySection />
-      <DocumentSection />
     </>
   );
 };

@@ -1,10 +1,35 @@
-import React, { useState } from "react";
-import { Mic, ChevronDown, ChevronUp } from "lucide-react";
-import { speakersData, type Speaker } from "@/data";
+import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
+import { Mic, ChevronDown, ChevronUp, Play, X } from "lucide-react";
+import { speakersData, getYoutubeEmbedUrl, type Speaker } from "@/data";
 
 const SpeakersSection: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>("all");
   const [visibleCount, setVisibleCount] = useState<number>(6);
+  const [selectedSpeakerVideo, setSelectedSpeakerVideo] = useState<Speaker | null>(null);
+
+  // Lock body scroll when video modal is open
+  useEffect(() => {
+    if (selectedSpeakerVideo) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedSpeakerVideo]);
+
+  // Handle ESC key to close video modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedSpeakerVideo(null);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   const leaderCount = speakersData.filter((s) => s.session === "Lãnh đạo").length;
   const session1Count = speakersData.filter((s) => s.session === "Phiên 1").length;
@@ -281,9 +306,7 @@ const SpeakersSection: React.FC = () => {
                   }}
                 >
                   <span>
-                    <span style={{ color: "var(--primary, #0555fd)" }}>
-                      {speaker.role}
-                    </span>
+                    {speaker.role}
                     {speaker.unit && <span> — {speaker.unit}</span>}
                   </span>
                 </p>
@@ -343,6 +366,24 @@ const SpeakersSection: React.FC = () => {
                     "{speaker.topic}"
                   </h3>
                 </div>
+
+                {/* Watch speech video button */}
+                {speaker.videoUrl && (
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedSpeakerVideo(speaker);
+                    }}
+                    className="speaker-video-btn"
+                    title={`Xem video phát biểu của ${speaker.name}`}
+                  >
+                    <span className="speaker-video-play-icon">
+                      <Play size={12} fill="currentColor" />
+                    </span>
+                    <span>Xem video phát biểu</span>
+                  </button>
+                )}
               </div>
             </div>
           ))}
@@ -413,6 +454,54 @@ const SpeakersSection: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* ===== SPEAKER VIDEO SPEECH MODAL (BORDERLESS) ===== */}
+      {selectedSpeakerVideo && typeof document !== "undefined" && createPortal(
+        <div
+          className="spk-modal-backdrop"
+          onClick={() => setSelectedSpeakerVideo(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Video phát biểu của ${selectedSpeakerVideo.name}`}
+        >
+          <div
+            className="spk-modal-container"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Floating Close Button */}
+            <button
+              type="button"
+              className="spk-modal-floating-close"
+              onClick={() => setSelectedSpeakerVideo(null)}
+              aria-label="Đóng video"
+            >
+              <X size={22} />
+            </button>
+
+            {/* 16:9 Video Player Only */}
+            <div className="spk-modal-video-wrap">
+              {selectedSpeakerVideo.isVideoFile ? (
+                <video
+                  src={selectedSpeakerVideo.videoUrl}
+                  controls
+                  autoPlay
+                  playsInline
+                  className="spk-modal-media"
+                />
+              ) : (
+                <iframe
+                  src={`${getYoutubeEmbedUrl(selectedSpeakerVideo.videoUrl || "")}?autoplay=1&rel=0`}
+                  title={`Video phát biểu của ${selectedSpeakerVideo.name}`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="spk-modal-media"
+                />
+              )}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
 
       <style>{`
         .speaker-load-more-btn:hover {
@@ -556,6 +645,134 @@ const SpeakersSection: React.FC = () => {
           .speaker-name-pill {
             font-size: 0.85rem !important;
             padding: 0.4rem 0.75rem !important;
+          }
+        }
+
+        /* Speaker Video Action Button - Royal Blue Theme */
+        .speaker-video-btn {
+          margin-top: 0.75rem;
+          width: 100%;
+          padding: 0.55rem 1rem;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          border-radius: 999px;
+          background: linear-gradient(135deg, rgba(5, 85, 253, 0.06) 0%, rgba(30, 106, 218, 0.1) 100%);
+          border: 1px solid rgba(5, 85, 253, 0.25);
+          color: var(--primary, #0555fd);
+          font-weight: 700;
+          font-size: 0.82rem;
+          cursor: pointer;
+          transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+          box-sizing: border-box;
+        }
+        .speaker-video-btn:hover {
+          background: linear-gradient(135deg, var(--primary, #0555fd) 0%, #02298a 100%);
+          color: #ffffff;
+          border-color: transparent;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 18px rgba(5, 85, 253, 0.3);
+        }
+        .speaker-video-play-icon {
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          background: rgba(5, 85, 253, 0.12);
+          color: var(--primary, #0555fd);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.25s ease;
+          flex-shrink: 0;
+        }
+        .speaker-video-btn:hover .speaker-video-play-icon {
+          background: rgba(255, 255, 255, 0.25);
+          color: #ffffff;
+          transform: scale(1.1);
+        }
+
+        /* Speaker Video Modal - Pure Borderless Cinema */
+        .spk-modal-backdrop {
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.88);
+          -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+          z-index: 99999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1.5rem;
+          animation: spkModalFadeIn 0.25s ease-out;
+        }
+        @keyframes spkModalFadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .spk-modal-container {
+          position: relative;
+          width: 100%;
+          max-width: 920px;
+          animation: spkModalScaleUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes spkModalScaleUp {
+          from { opacity: 0; transform: scale(0.95) translateY(10px); }
+          to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .spk-modal-floating-close {
+          position: absolute;
+          top: -46px;
+          right: 0;
+          background: rgba(255, 255, 255, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          border-radius: 50%;
+          width: 38px;
+          height: 38px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #ffffff;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          z-index: 10;
+        }
+        .spk-modal-floating-close:hover {
+          background: #ef4444;
+          border-color: #ef4444;
+          transform: rotate(90deg) scale(1.08);
+        }
+        .spk-modal-video-wrap {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+          height: 0;
+          background: #000000;
+          border-radius: 1rem;
+          overflow: hidden;
+          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+          border: none;
+        }
+        .spk-modal-media {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+        @media (max-width: 640px) {
+          .spk-modal-backdrop {
+            padding: 0.75rem;
+          }
+          .spk-modal-floating-close {
+            top: -42px;
+            right: 2px;
+            width: 34px;
+            height: 34px;
+          }
+          .spk-modal-video-wrap {
+            border-radius: 0.75rem;
           }
         }
       `}</style>
