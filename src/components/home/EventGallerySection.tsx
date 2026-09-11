@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { galleryData, trailerData, getYoutubeEmbedUrl } from "@/data";
-import { X, ChevronLeft, ChevronRight, Camera, ChevronDown, ChevronUp, Film } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Camera, ChevronDown, ChevronUp, Play } from "lucide-react";
 
 interface PhotoItem {
   id?: number;
@@ -10,10 +10,24 @@ interface PhotoItem {
   title: string;
 }
 
+const getYoutubeVideoId = (url: string) => {
+  if (!url) return "";
+  if (url.includes("youtube.com/watch?v=")) return url.split("v=")[1]?.split("&")[0];
+  if (url.includes("youtu.be/")) return url.split("youtu.be/")[1]?.split("?")[0];
+  if (url.includes("youtube.com/embed/")) return url.split("embed/")[1]?.split("?")[0];
+  return "";
+};
+
 const EventGallerySection: React.FC = () => {
   const { photos, tagline, title, desc } = galleryData;
   const [activePhotoIndex, setActivePhotoIndex] = useState<number | null>(null);
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const [isPlayingRecap, setIsPlayingRecap] = useState<boolean>(false);
+
+  const recapVideoId = getYoutubeVideoId(trailerData?.link || "");
+  const recapThumbnail = recapVideoId
+    ? `https://img.youtube.com/vi/${recapVideoId}/maxresdefault.jpg`
+    : "/images/events/tong_quan_hoi_nghi.png";
 
   // Initial display is 6 photos (2 full rows of 3 photos each, max 3 photos/row)
   const initialPhotoCount = 6;
@@ -59,7 +73,7 @@ const EventGallerySection: React.FC = () => {
     >
       <div className="container">
         {/* Section Header */}
-        <div className="text-center" style={{ marginBottom: "1.25rem" }}>
+        <div className="text-center" style={{ marginBottom: "1.5rem" }}>
           <span
             style={{
               display: "inline-flex",
@@ -103,52 +117,52 @@ const EventGallerySection: React.FC = () => {
           </p>
         </div>
 
-        {/* Modern Bento Grid with Video Recap in its own row */}
-        <div className="gallery-bento-grid">
-          {/* 1. Video Recap in its own dedicated row (span 12) */}
-          {trailerData?.link && (
-            <div className="gallery-card card-recap-video">
-              <iframe
-                src={getYoutubeEmbedUrl(trailerData.link)}
-                title={trailerData.title || "Video Recap Hội nghị"}
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  border: 0,
-                  display: "block",
-                }}
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  top: "1rem",
-                  left: "1rem",
-                  background: "rgba(5, 85, 253, 0.9)",
-                  backdropFilter: "blur(8px)",
-                  color: "#ffffff",
-                  padding: "0.3rem 0.85rem",
-                  borderRadius: "999px",
-                  fontSize: "0.75rem",
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.5px",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.35rem",
-                  pointerEvents: "none",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
-                  zIndex: 2,
-                }}
-              >
-                <Film size={13} /> Video Recap
-              </div>
-            </div>
-          )}
+        {/* 1. Standalone Video Recap Box (Tương tự kiểu Video giới thiệu của AboutSection, không tự chạy, có nút Play mở) */}
+        {trailerData?.link && (
+          <div className="recap-video-wrapper">
+            <div className="recap-video-inner">
+              {isPlayingRecap ? (
+                <iframe
+                  src={`${getYoutubeEmbedUrl(trailerData.link)}?autoplay=1&rel=0`}
+                  title={trailerData.title || "Video Recap Hội nghị"}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="recap-iframe"
+                />
+              ) : (
+                <div
+                  className="recap-poster"
+                  onClick={() => setIsPlayingRecap(true)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") setIsPlayingRecap(true);
+                  }}
+                  aria-label="Phát video recap"
+                >
+                  <img
+                    src={recapThumbnail}
+                    alt={trailerData.title || "Video Recap Hội nghị"}
+                    className="recap-poster-img"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = recapVideoId
+                        ? `https://img.youtube.com/vi/${recapVideoId}/hqdefault.jpg`
+                        : "/images/events/tong_quan_hoi_nghi.png";
+                    }}
+                  />
 
-          {/* 2. Event & Product Photos (3 photos per row, span 4) */}
+                  {/* Clean Simple Play Button (Dark translucent circle with white play triangle) */}
+                  <div className="recap-simple-play-btn" aria-label="Bấm để phát video">
+                    <Play size={30} fill="#ffffff" color="#ffffff" style={{ marginLeft: "3px" }} />
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* 2. Event Photos Grid (3 photos per row, max 3 photos/row) */}
+        <div className="gallery-bento-grid">
           {visiblePhotos.map((item: any, idx: number) => (
             <div
               key={item.id || idx}
@@ -164,7 +178,7 @@ const EventGallerySection: React.FC = () => {
             >
               <img
                 src={item.src}
-                alt={item.title || "Hình ảnh sự kiện"}
+                alt={item.title || "Hình ảnh Hội nghị"}
                 className="gallery-card-img"
                 loading="lazy"
               />
@@ -178,7 +192,7 @@ const EventGallerySection: React.FC = () => {
 
         {/* Toggle Expand Button */}
         {photos.length > initialPhotoCount && (
-          <div className="text-center" style={{ marginTop: "1.5rem" }}>
+          <div className="text-center" style={{ marginTop: "1.75rem" }}>
             <button
               type="button"
               onClick={() => setIsExpanded(!isExpanded)}
@@ -192,7 +206,7 @@ const EventGallerySection: React.FC = () => {
               ) : (
                 <>
                   <ChevronDown size={20} />
-                  Xem thêm hình ảnh sự kiện & gian hàng ({photos.length - initialPhotoCount} ảnh)
+                  Xem thêm hình ảnh Hội nghị ({photos.length - initialPhotoCount} ảnh)
                 </>
               )}
             </button>
@@ -275,7 +289,84 @@ const EventGallerySection: React.FC = () => {
 
       <style>{`
         /* ============================
-           MODERN BENTO GRID (MATCHING CONTAINER)
+           STANDALONE VIDEO RECAP BOX (MATCHING ABOUT SECTION STYLE)
+        ============================ */
+        .recap-video-wrapper {
+          width: 100%;
+          margin: 0 auto 1.25rem;
+          border-radius: 1rem;
+          overflow: hidden;
+          box-shadow: 0 8px 30px rgba(15, 23, 42, 0.1);
+          border: 1px solid rgba(226, 232, 240, 0.9);
+          background: #000000;
+          position: relative;
+        }
+
+        .recap-video-inner {
+          position: relative;
+          padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+          height: 0;
+          overflow: hidden;
+          background: #000;
+        }
+
+        .recap-iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+          display: block;
+        }
+
+        .recap-poster {
+          position: absolute;
+          inset: 0;
+          cursor: pointer;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .recap-poster-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .recap-poster:hover .recap-poster-img {
+          transform: scale(1.035);
+        }
+
+        .recap-simple-play-btn {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 68px;
+          height: 68px;
+          border-radius: 50%;
+          background: rgba(0, 0, 0, 0.58);
+          backdrop-filter: blur(4px);
+          -webkit-backdrop-filter: blur(4px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+          transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.25s ease;
+          pointer-events: none;
+        }
+
+        .recap-poster:hover .recap-simple-play-btn {
+          transform: translate(-50%, -50%) scale(1.1);
+          background: rgba(0, 0, 0, 0.78);
+        }
+
+        /* ============================
+           MODERN PHOTO GRID (3 PHOTOS PER ROW)
         ============================ */
         .gallery-bento-grid {
           display: grid;
@@ -301,21 +392,6 @@ const EventGallerySection: React.FC = () => {
         .gallery-card:hover {
           transform: translateY(-4px);
           box-shadow: 0 16px 32px rgba(5, 85, 253, 0.18), 0 0 0 1px rgba(5, 85, 253, 0.3);
-        }
-
-        /* Row 1: Video Recap full row (span 12) */
-        .gallery-card.card-recap-video {
-          grid-column: span 12;
-          aspect-ratio: 16 / 9;
-          width: 100%;
-          height: auto;
-          background: #000;
-          cursor: default;
-          border: 1px solid rgba(5, 85, 253, 0.25);
-        }
-        .gallery-card.card-recap-video:hover {
-          transform: none;
-          box-shadow: 0 12px 36px rgba(5, 85, 253, 0.2);
         }
 
         /* Subsequent Rows: 3 Balanced Thumbnails (max 3 photos per row) */
@@ -648,10 +724,9 @@ const EventGallerySection: React.FC = () => {
            RESPONSIVE BREAKPOINTS
         ============================ */
         @media (max-width: 992px) {
-          .gallery-card.card-recap-video {
-            grid-column: span 12;
-            aspect-ratio: 16 / 9;
-            height: auto;
+          .recap-video-wrapper {
+            margin-bottom: 1.25rem;
+            border-radius: 1rem;
           }
           .gallery-card.card-sub {
             grid-column: span 6;
@@ -661,13 +736,20 @@ const EventGallerySection: React.FC = () => {
         }
 
         @media (max-width: 640px) {
+          .recap-video-wrapper {
+            margin-bottom: 0.75rem;
+            border-radius: 0.85rem;
+          }
+          .recap-simple-play-btn {
+            width: 52px;
+            height: 52px;
+          }
+          .recap-simple-play-btn svg {
+            width: 22px;
+            height: 22px;
+          }
           .gallery-bento-grid {
             gap: 0.75rem;
-          }
-          .gallery-card.card-recap-video {
-            grid-column: span 12;
-            aspect-ratio: 16 / 9;
-            height: auto;
           }
           .gallery-card.card-sub {
             grid-column: span 12;
@@ -676,19 +758,6 @@ const EventGallerySection: React.FC = () => {
           }
           .gallery-card-title {
             font-size: 0.9rem !important;
-          }
-        }
-          .lb-main {
-            gap: 0.5rem;
-            padding: 0.5rem;
-          }
-          .lb-arrow {
-            width: 38px;
-            height: 38px;
-          }
-          .lb-thumb {
-            width: 44px;
-            height: 32px;
           }
         }
       `}</style>
