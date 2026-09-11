@@ -81,7 +81,7 @@ const PanelDiscussionSection: React.FC = () => {
     <section
       className="section bg-light animate-fade-right"
       id="b2b"
-      style={{ paddingTop: "2.25rem", paddingBottom: "2.25rem" }}
+      style={{ paddingTop: "1.5rem", paddingBottom: "1.5rem" }}
     >
       <div className="container">
         {/* Section Header */}
@@ -127,7 +127,7 @@ const PanelDiscussionSection: React.FC = () => {
             color: "#ffffff",
             borderRadius: "1.25rem",
             padding: "2.25rem 2.5rem",
-            marginBottom: "3rem",
+            marginBottom: "1.5rem",
             boxShadow: "0 12px 36px rgba(5, 85, 253, 0.25)",
             position: "relative",
             overflow: "hidden",

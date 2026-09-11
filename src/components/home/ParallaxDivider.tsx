@@ -2,7 +2,7 @@ import React from "react";
 
 const ParallaxDivider: React.FC = () => {
   return (
-    <section className="parallax-divider animate-fade-up">
+    <section className="parallax-divider animate-fade-up" style={{ padding: "1.5rem 0" }}>
       <div
         className="container text-center"
         style={{ position: "relative", zIndex: 2 }}

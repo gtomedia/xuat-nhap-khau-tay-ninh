@@ -73,9 +73,9 @@ const TimelineSection: React.FC = () => {
 
   return (
     <section
-      className="section py-8"
+      className="section"
       id="schedule"
-      style={{ background: "var(--background-alt, #f8fafc)", padding: "2.25rem 0" }}
+      style={{ background: "var(--background-alt, #f8fafc)", padding: "1.5rem 0" }}
     >
       <div className="container">
         {/* Heading */}
@@ -115,6 +115,7 @@ const TimelineSection: React.FC = () => {
             tỉnh Tây Ninh năm 2026 diễn ra từ ngày 05 đến 06 tháng 9 năm 2026.
           </p>
           <div
+            className="tl-location-badge"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -144,32 +145,40 @@ const TimelineSection: React.FC = () => {
             justifyContent: "center",
             flexWrap: "wrap",
             gap: "0.75rem",
-            marginBottom: "3.5rem",
+            marginBottom: "1.5rem",
           }}
         >
           <button
             onClick={() => setActiveTab("all")}
             className={`tl-tab-btn ${activeTab === "all" ? "active" : ""}`}
           >
-            Toàn bộ chương trình ({timelineData.length})
+            <span className="tl-tab-label-full">Toàn bộ chương trình</span>
+            <span className="tl-tab-label-short">Tất cả</span>
+            <span className="tl-tab-badge">{timelineData.length}</span>
           </button>
           <button
             onClick={() => setActiveTab("Sáng 05/9")}
             className={`tl-tab-btn ${activeTab === "Sáng 05/9" ? "active" : ""}`}
           >
-            Sáng 05/9: Khai mạc & 2 Phiên ({countMorning})
+            <span className="tl-tab-label-full">Sáng 05/9: Khai mạc & 2 Phiên</span>
+            <span className="tl-tab-label-short">Sáng 05/9</span>
+            <span className="tl-tab-badge">{countMorning}</span>
           </button>
           <button
             onClick={() => setActiveTab("Chiều 05/9")}
             className={`tl-tab-btn ${activeTab === "Chiều 05/9" ? "active" : ""}`}
           >
-            Chiều 05/9: B2B & Khảo sát ({countAfternoon})
+            <span className="tl-tab-label-full">Chiều 05/9: B2B & Khảo sát</span>
+            <span className="tl-tab-label-short">Chiều 05/9</span>
+            <span className="tl-tab-badge">{countAfternoon}</span>
           </button>
           <button
             onClick={() => setActiveTab("Ngày 06/9")}
             className={`tl-tab-btn ${activeTab === "Ngày 06/9" ? "active" : ""}`}
           >
-            Ngày 06/9: Núi Bà Đen ({countDay3})
+            <span className="tl-tab-label-full">Ngày 06/9: Núi Bà Đen</span>
+            <span className="tl-tab-label-short">Ngày 06/9</span>
+            <span className="tl-tab-badge">{countDay3}</span>
           </button>
         </div>
 
@@ -574,6 +583,12 @@ const TimelineSection: React.FC = () => {
       </div>
 
       <style>{`
+        .tl-tab-label-short {
+          display: none;
+        }
+        .tl-tab-label-full {
+          display: inline;
+        }
         .tl-tab-btn {
           padding: 0.6rem 1.35rem;
           border-radius: 9999px;
@@ -585,6 +600,9 @@ const TimelineSection: React.FC = () => {
           cursor: pointer;
           transition: all 0.25s ease;
           box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+          display: inline-flex;
+          align-items: center;
+          gap: 0.45rem;
         }
         .tl-tab-btn:hover {
           border-color: var(--primary, #0555fd);
@@ -597,25 +615,60 @@ const TimelineSection: React.FC = () => {
           border-color: transparent;
           box-shadow: 0 4px 14px rgba(5, 85, 253, 0.25);
         }
+        .tl-tab-badge {
+          background: #e2e8f0;
+          color: #64748b;
+          font-size: 0.75rem;
+          font-weight: 700;
+          padding: 0.12rem 0.55rem;
+          border-radius: 999px;
+          transition: all 0.25s ease;
+        }
+        .tl-tab-btn.active .tl-tab-badge {
+          background: rgba(255, 255, 255, 0.25);
+          color: #ffffff;
+        }
 
         @media (max-width: 768px) {
-          .tl-tabs-wrap {
-            justify-content: flex-start !important;
-            overflow-x: auto !important;
-            flex-wrap: nowrap !important;
-            padding: 0.25rem 0.5rem 0.75rem !important;
-            margin-bottom: 2rem !important;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
+          .tl-tab-label-short {
+            display: inline !important;
           }
-          .tl-tabs-wrap::-webkit-scrollbar {
-            display: none;
+          .tl-tab-label-full {
+            display: none !important;
+          }
+          .tl-tabs-wrap {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            width: 100% !important;
+            max-width: 440px !important;
+            margin: 0 auto 2rem auto !important;
+            gap: 0.45rem !important;
+            padding: 0 !important;
+            overflow-x: visible !important;
           }
           .tl-tab-btn {
-            white-space: nowrap !important;
-            flex-shrink: 0 !important;
+            flex: 1 1 calc(50% - 0.45rem) !important;
+            justify-content: center !important;
             font-size: 0.82rem !important;
-            padding: 0.5rem 0.95rem !important;
+            padding: 0.55rem 0.5rem !important;
+            border-radius: 0.85rem !important;
+            white-space: nowrap !important;
+            box-sizing: border-box !important;
+          }
+          .tl-location-badge {
+            border-radius: 0.85rem !important;
+            padding: 0.65rem 1rem !important;
+            font-size: 0.82rem !important;
+            text-align: left !important;
+            align-items: flex-start !important;
+            width: 100% !important;
+            max-width: 440px !important;
+            box-sizing: border-box !important;
+          }
+          .tl-location-badge svg {
+            flex-shrink: 0 !important;
+            margin-top: 2px !important;
           }
           .tl-item {
             display: flex !important;

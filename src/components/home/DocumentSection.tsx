@@ -3,16 +3,15 @@ import { documentData } from "@/data";
 
 const DocumentSection: React.FC = () => {
   return (
-    <section className="section bg-alt" data-reveal="fade">
+    <section className="section bg-alt" data-reveal="fade" style={{ padding: "1.5rem 0" }}>
       <div className="container text-center">
-        <h2 className="section-title">{documentData.title}</h2>
+        <h2 className="section-title" style={{ marginBottom: "1rem" }}>{documentData.title}</h2>
         <p
           style={{
             color: "var(--text-secondary)",
-            marginBottom: "2.5rem",
             fontSize: "1.2rem",
             maxWidth: "600px",
-            margin: "0 auto 2.5rem",
+            margin: "0 auto 1.5rem",
           }}
         >
           {documentData.desc}

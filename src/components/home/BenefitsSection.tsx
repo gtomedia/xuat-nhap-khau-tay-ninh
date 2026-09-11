@@ -52,7 +52,7 @@ const BenefitsSection: React.FC = () => {
   return (
     <section
       style={{
-        padding: "2.25rem 0",
+        padding: "1.5rem 0",
         background: "#f8fafc",
         position: "relative",
         overflow: "hidden",
@@ -89,7 +89,7 @@ const BenefitsSection: React.FC = () => {
       <div className="container" style={{ position: "relative", zIndex: 1 }}>
         {/* Header */}
         <div className="text-center" style={{ marginBottom: "1.25rem" }}>
-          <div style={{ marginBottom: "1.25rem" }}>
+          <div style={{ marginBottom: "1rem" }}>
             <span
               style={{
                 display: "inline-block",
@@ -106,7 +106,7 @@ const BenefitsSection: React.FC = () => {
               {benefitsData.tagline}
             </span>
           </div>
-          <h2 className="section-title">{benefitsData.title}</h2>
+          <h2 className="section-title" style={{ marginBottom: "1rem" }}>{benefitsData.title}</h2>
           <p
             style={{
               color: "#475569",

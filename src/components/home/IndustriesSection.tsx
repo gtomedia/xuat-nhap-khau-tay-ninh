@@ -7,7 +7,7 @@ const IndustriesSection: React.FC = () => {
 
   return (
     <section
-      style={{ padding: "2.25rem 0", background: "#f8fafc" }}
+      style={{ padding: "1.5rem 0", background: "#f8fafc" }}
       data-reveal
       id="potential"
     >

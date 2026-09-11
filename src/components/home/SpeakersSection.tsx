@@ -48,8 +48,8 @@ const SpeakersSection: React.FC = () => {
       className="section"
       id="speakers"
       style={{
-        paddingBottom: "2.25rem",
-        paddingTop: "2.25rem",
+        paddingBottom: "1.5rem",
+        paddingTop: "1.5rem",
         position: "relative",
         backgroundColor: "#ffffff",
       }}
@@ -75,7 +75,7 @@ const SpeakersSection: React.FC = () => {
         </div>
 
         {/* Filter Tabs - Modern Segmented Capsule */}
-        <div className="speaker-tab-wrapper" style={{ display: "flex", justifyContent: "center", marginBottom: "3.5rem" }}>
+        <div className="speaker-tab-wrapper" style={{ display: "flex", justifyContent: "center", marginBottom: "1.5rem" }}>
           <div
             className="speaker-tab-nav"
             style={{
@@ -266,25 +266,35 @@ const SpeakersSection: React.FC = () => {
 
                 {/* Role and Unit */}
                 <p
+                  className="speaker-role-unit"
                   style={{
-                    fontSize: "0.9rem",
+                    fontSize: "0.88rem",
                     color: "#475569",
                     marginBottom: "0.65rem",
                     fontWeight: 600,
-                    lineHeight: 1.5,
+                    lineHeight: 1.45,
+                    minHeight: "2.85rem",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textAlign: "center",
                   }}
                 >
-                  <span style={{ color: "var(--primary, #0555fd)" }}>
-                    {speaker.role}
+                  <span>
+                    <span style={{ color: "var(--primary, #0555fd)" }}>
+                      {speaker.role}
+                    </span>
+                    {speaker.unit && <span> — {speaker.unit}</span>}
                   </span>
-                  {speaker.unit && <span> — {speaker.unit}</span>}
                 </p>
 
                 {/* Topic Box */}
                 <div
                   className="speaker-topic-box"
                   style={{
-                    marginTop: "0.4rem",
+                    marginTop: "auto",
+                    flex: 1,
+                    minHeight: "96px",
                     background: "rgba(5, 85, 253, 0.05)",
                     borderLeft: "3px solid var(--primary, #0555fd)",
                     borderRadius: "0.5rem",
@@ -292,6 +302,9 @@ const SpeakersSection: React.FC = () => {
                     textAlign: "left",
                     width: "100%",
                     boxSizing: "border-box",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-start",
                   }}
                 >
                   <div
@@ -303,6 +316,7 @@ const SpeakersSection: React.FC = () => {
                       fontSize: "0.8rem",
                       fontWeight: 700,
                       marginBottom: "0.35rem",
+                      flexShrink: 0,
                     }}
                   >
                     <Mic size={13} />

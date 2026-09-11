@@ -5,11 +5,11 @@ const IntroSection: React.FC = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <section id="intro" style={{ padding: "2.25rem 0", background: "#f8fafc" }}>
+    <section id="intro" style={{ padding: "1.5rem 0", background: "#f8fafc" }}>
       <div className="container">
         {/* Section Header */}
         <div style={{ textAlign: "center", marginBottom: "1.25rem" }} data-reveal>
-          <h2 className="section-title">{introData.title}</h2>
+          <h2 className="section-title" style={{ marginBottom: "1rem" }}>{introData.title}</h2>
           <p
             style={{
               color: "#64748b",

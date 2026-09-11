@@ -75,7 +75,7 @@ button {
   text-align: center;
 }
 .section {
-  padding: 2.25rem 0;
+  padding: 1.5rem 0;
 }
 
 .section.bg-alt {
@@ -85,7 +85,7 @@ button {
 .section-title {
   font-size: 2.75rem;
   font-weight: 800;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   text-align: center;
   color: var(--primary);
   text-transform: uppercase;

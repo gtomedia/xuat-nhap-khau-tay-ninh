@@ -53,13 +53,13 @@ const EventGallerySection: React.FC = () => {
 
   return (
     <section
-      style={{ padding: "2.25rem 0", background: "#f8fafc" }}
+      style={{ padding: "1.5rem 0", background: "#f8fafc" }}
       className="animate-fade-up"
       id="gallery"
     >
       <div className="container">
         {/* Section Header */}
-        <div className="text-center" style={{ marginBottom: "1.5rem" }}>
+        <div className="text-center" style={{ marginBottom: "1.25rem" }}>
           <span
             style={{
               display: "inline-flex",
