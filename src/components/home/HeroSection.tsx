@@ -2,13 +2,22 @@ import React from "react";
 import { heroData } from "@/data";
 
 const HeroSection: React.FC = () => {
-  const getCookie = (name: string) => {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop()?.split(";").shift();
-    return null;
+  const getCurrentLang = () => {
+    if (typeof window === "undefined") return "vi";
+    const match = document.cookie.match(/(?:^|; )googtrans=([^;]*)/);
+    if (match) {
+      try {
+        const decoded = decodeURIComponent(match[1]);
+        const parts = decoded.split("/");
+        if (parts.length >= 3 && parts[2]) return parts[2];
+      } catch {
+        const parts = match[1].split("/");
+        if (parts.length >= 3 && parts[2]) return parts[2];
+      }
+    }
+    return localStorage.getItem("app_lang") || "vi";
   };
-  const currentLang = getCookie("googtrans")?.split("/")[2] || "vi";
+  const currentLang = getCurrentLang();
 
   return (
     <section className="hero">

@@ -52,12 +52,30 @@ const Footer: React.FC = () => {
           </div>
           <div>
             <h4 style={{ fontSize: '1.125rem', marginBottom: '1rem', fontWeight: 700, color: '#facc15', textTransform: 'uppercase' }}>Hoặc liên hệ</h4>
-            <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto', columnGap: '0.5rem', rowGap: '0.5rem', fontSize: '0.9rem', color: '#fff' }}>
+            <div
+              className="footer-contacts-grid"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'auto auto auto',
+                columnGap: '0.75rem',
+                rowGap: '0.6rem',
+                fontSize: '0.9rem',
+                color: '#fff',
+                alignItems: 'center',
+              }}
+            >
               {footerData.contacts.map((c, index) => (
                 <React.Fragment key={index}>
-                  <strong style={{ color: '#fff' }}>{c.label}:</strong>
-                  <span>{c.text}</span>
-                  <a href={`tel:${c.phone.replace(/\./g, '')}`} style={{ color: 'inherit', textDecoration: 'none' }} onMouseEnter={e => (e.currentTarget.style.color = '#facc15')} onMouseLeave={e => (e.currentTarget.style.color = 'inherit')}>{c.phone}</a>
+                  <strong style={{ color: '#fff', whiteSpace: 'nowrap' }}>{c.label}:</strong>
+                  <span style={{ whiteSpace: 'nowrap' }}>{c.text}</span>
+                  <a
+                    href={`tel:${c.phone.replace(/\./g, '')}`}
+                    style={{ color: 'inherit', textDecoration: 'none', whiteSpace: 'nowrap' }}
+                    onMouseEnter={e => (e.currentTarget.style.color = '#facc15')}
+                    onMouseLeave={e => (e.currentTarget.style.color = 'inherit')}
+                  >
+                    {c.phone}
+                  </a>
                 </React.Fragment>
               ))}
             </div>
@@ -82,10 +100,10 @@ const Footer: React.FC = () => {
         }
         .footer-grid-3 {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: 1fr 1fr 1.25fr;
           gap: 2.5rem;
         }
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
           .footer-grid-3 {
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
@@ -100,6 +118,10 @@ const Footer: React.FC = () => {
             grid-template-columns: 1fr;
             gap: 2rem;
             text-align: center;
+          }
+          .footer-contacts-grid {
+            justify-content: center;
+            display: inline-grid !important;
           }
         }
       `}</style>

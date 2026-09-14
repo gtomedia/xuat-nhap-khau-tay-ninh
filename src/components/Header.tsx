@@ -27,31 +27,81 @@ const Header: React.FC = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isLangOpen]);
 
-  const getCookie = (name: string) => {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-
-    if (parts.length === 2) {
-      return parts.pop()?.split(";").shift();
+  const getStoredLang = () => {
+    if (typeof window === "undefined") return "vi";
+    const match = document.cookie.match(/(?:^|; )googtrans=([^;]*)/);
+    if (match) {
+      try {
+        const decoded = decodeURIComponent(match[1]);
+        const parts = decoded.split("/");
+        if (parts.length >= 3 && parts[2]) {
+          return parts[2];
+        }
+      } catch {
+        const parts = match[1].split("/");
+        if (parts.length >= 3 && parts[2]) {
+          return parts[2];
+        }
+      }
     }
-
-    return null;
+    return localStorage.getItem("app_lang") || "vi";
   };
 
-  const currentLang = getCookie("googtrans")?.split("/")[2] || "vi";
+  const [currentLang, setCurrentLang] = useState<string>(getStoredLang);
+
+  useEffect(() => {
+    const lang = getStoredLang();
+    setCurrentLang(lang);
+  }, []);
 
   const switchLanguage = (lang: string) => {
-    if (lang === "vi") {
-      document.cookie =
-        "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+    setCurrentLang(lang);
+    localStorage.setItem("app_lang", lang);
 
-      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname}`;
+    const hostname = window.location.hostname;
+    const isLocal = hostname === "localhost" || hostname === "127.0.0.1";
+
+    const setCookieForDomains = (cookieVal: string) => {
+      // 1. Host-only
+      document.cookie = `googtrans=${cookieVal}; path=/; SameSite=Lax`;
+
+      // 2. Explicit hostname and root domain if not localhost
+      if (!isLocal) {
+        document.cookie = `googtrans=${cookieVal}; path=/; domain=${hostname}; SameSite=Lax`;
+        document.cookie = `googtrans=${cookieVal}; path=/; domain=.${hostname}; SameSite=Lax`;
+
+        const parts = hostname.split(".");
+        if (parts.length > 2) {
+          const rootDomain = parts.slice(-2).join(".");
+          document.cookie = `googtrans=${cookieVal}; path=/; domain=.${rootDomain}; SameSite=Lax`;
+        }
+      }
+    };
+
+    if (lang === "vi") {
+      // Clear cookies
+      const past = "expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = `googtrans=; ${past}`;
+      if (!isLocal) {
+        document.cookie = `googtrans=; ${past} domain=${hostname};`;
+        document.cookie = `googtrans=; ${past} domain=.${hostname};`;
+      }
+      setCookieForDomains("/vi/vi");
     } else {
-      document.cookie = `googtrans=/vi/${lang}; path=/`;
-      document.cookie = `googtrans=/vi/${lang}; path=/; domain=${window.location.hostname}`;
+      setCookieForDomains(`/vi/${lang}`);
     }
 
-    window.location.reload();
+    // Trigger Google Translate combo directly if available
+    const combo = document.querySelector<HTMLSelectElement>(".goog-te-combo");
+    if (combo) {
+      combo.value = lang;
+      combo.dispatchEvent(new Event("change"));
+    }
+
+    // Reload page to ensure all React components and DOM elements reflect translation
+    setTimeout(() => {
+      window.location.reload();
+    }, 150);
   };
 
   const languages = [

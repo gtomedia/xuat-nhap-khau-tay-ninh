@@ -2,36 +2,13 @@ import React from "react";
 import { Globe, TrendingUp, Handshake, FileText } from "lucide-react";
 import { benefitsData } from "@/data";
 
-const CARD_STYLES = [
-  {
-    bg: "#1e3a8a",
-    iconBg: "rgba(255,255,255,0.2)",
-    iconColor: "#ffffff",
-    textColor: "#ffffff",
-    descColor: "rgba(255,255,255,0.82)",
-  },
-  {
-    bg: "#b45309",
-    iconBg: "rgba(255,255,255,0.2)",
-    iconColor: "#ffffff",
-    textColor: "#ffffff",
-    descColor: "rgba(255,255,255,0.82)",
-  },
-  {
-    bg: "#065f46",
-    iconBg: "rgba(255,255,255,0.2)",
-    iconColor: "#ffffff",
-    textColor: "#ffffff",
-    descColor: "rgba(255,255,255,0.82)",
-  },
-  {
-    bg: "#1e1b4b",
-    iconBg: "rgba(255,255,255,0.2)",
-    iconColor: "#ffffff",
-    textColor: "#ffffff",
-    descColor: "rgba(255,255,255,0.82)",
-  },
-];
+const CARD_STYLE = {
+  bg: "#1e3a8a",
+  iconBg: "rgba(255,255,255,0.2)",
+  iconColor: "#ffffff",
+  textColor: "#ffffff",
+  descColor: "rgba(255,255,255,0.85)",
+};
 
 const BenefitsSection: React.FC = () => {
   const renderIcon = (iconName: string) => {
@@ -133,7 +110,7 @@ const BenefitsSection: React.FC = () => {
           data-stagger="120"
         >
           {benefitsData.items.map((item, index) => {
-            const style = CARD_STYLES[index % CARD_STYLES.length];
+            const style = CARD_STYLE;
             return (
               <div
                 key={index}
@@ -141,7 +118,7 @@ const BenefitsSection: React.FC = () => {
                 style={{
                   background: style.bg,
                   borderRadius: "1.75rem",
-                  padding: "2.5rem 2rem",
+                  padding: "2.5rem 1.5rem",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
@@ -151,6 +128,7 @@ const BenefitsSection: React.FC = () => {
                   cursor: "default",
                   position: "relative",
                   overflow: "hidden",
+                  height: "100%",
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLDivElement).style.transform =
@@ -215,8 +193,13 @@ const BenefitsSection: React.FC = () => {
                     fontSize: "1.05rem",
                     fontWeight: 800,
                     marginBottom: "0.875rem",
-                    lineHeight: 1.3,
-                    whiteSpace: "nowrap",
+                    lineHeight: 1.4,
+                    whiteSpace: "normal",
+                    wordBreak: "break-word",
+                    minHeight: "2.8rem",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                 >
                   {item.title}
