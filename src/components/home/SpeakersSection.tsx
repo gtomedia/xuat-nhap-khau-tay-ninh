@@ -83,7 +83,7 @@ const SpeakersSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center" style={{ marginBottom: "1.25rem" }}>
           <h2 className="section-title text-center" style={{ marginBottom: "1rem" }}>
-            DIỄN GIẢ & BÁO CÁO VIÊN
+            LÃNH ĐẠO & DIỄN GIẢ
           </h2>
           <p
             style={{
@@ -94,8 +94,7 @@ const SpeakersSection: React.FC = () => {
               lineHeight: 1.7,
             }}
           >
-            Các tham luận chuyên sâu được trình bày bởi đại diện cơ quan quản lý nhà nước, 
-            tham tán thương mại quốc tế, lãnh đạo các hiệp hội và tập đoàn doanh nghiệp đầu ngành.
+            Các bài phát biểu chỉ đạo từ đại diện cơ quan quản lý nhà nước cùng các tham luận chuyên sâu của chuyên gia, hiệp hội và tập đoàn doanh nghiệp đầu ngành.
           </p>
         </div>
 
@@ -420,7 +419,7 @@ const SpeakersSection: React.FC = () => {
                   transition: "all 0.25s ease",
                 }}
               >
-                <span>Xem thêm diễn giả ({filteredSpeakers.length - visibleCount} người)</span>
+                <span>Xem thêm ({filteredSpeakers.length - visibleCount} người)</span>
                 <ChevronDown size={18} />
               </button>
             ) : (
@@ -449,7 +448,7 @@ const SpeakersSection: React.FC = () => {
             )}
 
             <span style={{ fontSize: "0.85rem", color: "#64748b", fontWeight: 500 }}>
-              Đang hiển thị {displayedSpeakers.length} / {filteredSpeakers.length} diễn giả
+              Đang hiển thị {displayedSpeakers.length} / {filteredSpeakers.length} người
             </span>
           </div>
         )}
