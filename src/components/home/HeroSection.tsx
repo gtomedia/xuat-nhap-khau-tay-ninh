@@ -39,7 +39,7 @@ const HeroSection: React.FC = () => {
         >
           {currentLang === "en" ? (
             <>
-              <p className="en-subtitle animate-fade-up" style={{ animationDelay: "0.1s" }}>TAY NINH E-COMMERCE AND</p>
+              <p className="en-subtitle animate-fade-up" style={{ animationDelay: "0.1s" }}>THE 4TH TAY NINH E-COMMERCE AND</p>
               <p className="en-subtitle animate-fade-up" style={{ marginBottom: "0.8rem", animationDelay: "0.2s" }}>
                 EXPORT-IMPORT SUPPLY CHAIN
               </p>

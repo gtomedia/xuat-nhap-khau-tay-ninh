@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { galleryData, trailerData, getYoutubeEmbedUrl } from "@/data";
-import { X, ChevronLeft, ChevronRight, Camera, ChevronDown, ChevronUp, Play } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Camera, ChevronDown, ChevronUp, Play, Images, ExternalLink } from "lucide-react";
 
 interface PhotoItem {
   id?: number;
@@ -19,7 +19,16 @@ const getYoutubeVideoId = (url: string) => {
 };
 
 const EventGallerySection: React.FC = () => {
-  const { photos, tagline, title, desc } = galleryData;
+  const {
+    photos,
+    tagline,
+    title,
+    desc,
+    driveFooterNotice,
+    expandBtnText,
+    collapseBtnText,
+    driveArchives,
+  } = galleryData;
   const [activePhotoIndex, setActivePhotoIndex] = useState<number | null>(null);
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const [isPlayingRecap, setIsPlayingRecap] = useState<boolean>(false);
@@ -201,15 +210,40 @@ const EventGallerySection: React.FC = () => {
               {isExpanded ? (
                 <>
                   <ChevronUp size={20} />
-                  Thu gọn hình ảnh
+                  {collapseBtnText || "Thu gọn hình ảnh"}
                 </>
               ) : (
                 <>
                   <ChevronDown size={20} />
-                  Xem thêm hình ảnh Hội nghị ({photos.length - initialPhotoCount} ảnh)
+                  {expandBtnText || "Xem thêm hình ảnh Hội nghị"} ({photos.length - initialPhotoCount} ảnh)
                 </>
               )}
             </button>
+          </div>
+        )}
+
+        {/* Google Drive Archives Footer Notice */}
+        {driveArchives && driveArchives.length > 0 && (
+          <div className="gallery-drive-footer-notice">
+            <span className="gallery-drive-footer-text">
+              <Images size={16} />
+              {driveFooterNotice}
+            </span>
+            <div className="gallery-drive-footer-links">
+              {driveArchives.map((archive: any, index: number) => (
+                <a
+                  key={archive.year || index}
+                  href={archive.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="gallery-drive-footer-pill"
+                  title={`Tải ảnh năm ${archive.year} trên Google Drive`}
+                >
+                  <span>{archive.label}</span>
+                  <ExternalLink size={12} />
+                </a>
+              ))}
+            </div>
           </div>
         )}
       </div>
@@ -496,6 +530,154 @@ const EventGallerySection: React.FC = () => {
         }
 
         /* ============================
+           GOOGLE DRIVE ARCHIVES BUTTONS
+        ============================ */
+        .gallery-drive-wrapper {
+          margin-top: 1.25rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .gallery-drive-container {
+          display: inline-flex;
+          align-items: center;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 0.75rem 1rem;
+          background: #ffffff;
+          padding: 0.6rem 1.25rem;
+          border-radius: 999px;
+          border: 1px solid rgba(5, 85, 253, 0.16);
+          box-shadow: 0 4px 20px rgba(5, 85, 253, 0.06);
+        }
+
+        .gallery-drive-label {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.45rem;
+          font-size: 0.88rem;
+          font-weight: 700;
+          color: var(--primary, #040e6f);
+        }
+
+        .gallery-drive-buttons {
+          display: inline-flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+        }
+
+        .gallery-drive-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.45rem;
+          padding: 0.38rem 0.85rem;
+          background: rgba(5, 85, 253, 0.05);
+          color: #1e3a8a;
+          font-size: 0.82rem;
+          font-weight: 600;
+          border-radius: 999px;
+          border: 1px solid rgba(5, 85, 253, 0.2);
+          text-decoration: none;
+          transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-drive-btn:hover {
+          background: var(--primary, #0555fd);
+          color: #ffffff;
+          border-color: var(--primary, #0555fd);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(5, 85, 253, 0.25);
+        }
+
+        .gallery-drive-year-badge {
+          background: #0555fd;
+          color: #ffffff;
+          padding: 0.1rem 0.45rem;
+          border-radius: 6px;
+          font-size: 0.72rem;
+          font-weight: 700;
+          transition: all 0.25s ease;
+        }
+
+        .gallery-drive-btn:hover .gallery-drive-year-badge {
+          background: #ffffff;
+          color: #0555fd;
+        }
+
+        .gallery-drive-icon {
+          opacity: 0.65;
+          transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+
+        .gallery-drive-btn:hover .gallery-drive-icon {
+          opacity: 1;
+          transform: translate(1px, -1px);
+        }
+
+        /* Footer notice below View More */
+        .gallery-drive-footer-notice {
+          margin-top: 2rem;
+          padding: 1.25rem 2rem;
+          background: #ffffff;
+          border: 1px solid rgba(5, 85, 253, 0.16);
+          border-radius: 1.25rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          gap: 0.9rem;
+          max-width: 580px;
+          margin-left: auto;
+          margin-right: auto;
+          box-shadow: 0 10px 30px rgba(5, 85, 253, 0.06);
+        }
+
+        .gallery-drive-footer-text {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          font-size: 0.95rem;
+          color: var(--primary, #040e6f);
+          font-weight: 700;
+        }
+
+        .gallery-drive-footer-links {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 0.75rem;
+          width: 100%;
+        }
+
+        .gallery-drive-footer-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.45rem;
+          font-size: 0.88rem;
+          font-weight: 600;
+          color: #0555fd;
+          background: #f8fafc;
+          padding: 0.45rem 1.15rem;
+          border-radius: 999px;
+          border: 1.5px solid rgba(5, 85, 253, 0.22);
+          text-decoration: none;
+          transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+          box-shadow: 0 2px 6px rgba(5, 85, 253, 0.04);
+        }
+
+        .gallery-drive-footer-pill:hover {
+          background: #0555fd;
+          color: #ffffff;
+          border-color: #0555fd;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 14px rgba(5, 85, 253, 0.28);
+        }
+
+        /* ============================
            FULL-SCREEN LIGHTBOX
         ============================ */
         .lb-backdrop {
@@ -758,6 +940,15 @@ const EventGallerySection: React.FC = () => {
           }
           .gallery-card-title {
             font-size: 0.9rem !important;
+          }
+          .gallery-drive-footer-notice {
+            border-radius: 1rem;
+            padding: 1rem 1.25rem;
+            width: 100%;
+          }
+          .gallery-drive-footer-pill {
+            padding: 0.4rem 0.95rem;
+            font-size: 0.84rem;
           }
         }
       `}</style>

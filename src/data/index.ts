@@ -16,7 +16,7 @@ export const heroData = {
   title1: "HỘI NGHỊ",
   title2: "KẾT NỐI CHUỖI CUNG ỨNG",
   subtitle1: "HÀNG HÓA XUẤT NHẬP KHẨU, THƯƠNG MẠI ĐIỆN TỬ",
-  subtitle2: "TỈNH TÂY NINH NĂM 2026",
+  subtitle2: "TỈNH TÂY NINH LẦN IV NĂM 2026",
   date: "Tây Ninh, ngày 05 tháng 9 năm 2026",
   image: "/images/hero-banner.png",
 };
@@ -24,7 +24,7 @@ export const heroData = {
 export const trailerData = {
   link: "https://www.youtube.com/watch?v=b7TtQs8ZbBs", // Link video YouTube của Recap, để trống "" nếu không có
   title:
-    "Video Recap Hội nghị Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu và Thương mại điện tử tỉnh Tây Ninh năm 2026",
+    "Video Recap Hội nghị Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu và Thương mại điện tử tỉnh Tây Ninh lần IV năm 2026",
 };
 
 export const introData = {
@@ -554,6 +554,26 @@ export const galleryData = {
   tagline: "Khoảnh khắc Hội nghị",
   title: "HÌNH ẢNH HỘI NGHỊ",
   desc: "Những khoảnh khắc trang trọng, lễ ký kết hợp tác quan trọng, phiên kết nối giao thương B2B và các hoạt động nổi bật tại Hội nghị.",
+  driveFooterNotice: "Kho tư liệu hình ảnh Hội nghị qua các năm:",
+  expandBtnText: "Xem thêm hình ảnh Hội nghị",
+  collapseBtnText: "Thu gọn hình ảnh",
+  driveArchives: [
+    {
+      year: "2024",
+      label: "Năm 2024",
+      link: "https://drive.google.com/drive/folders/1xiCngZSJDUIQfPdnrjhTywbQFvJh7Idn?usp=sharing",
+    },
+    {
+      year: "2025",
+      label: "Năm 2025",
+      link: "https://drive.google.com/drive/folders/1xiCngZSJDUIQfPdnrjhTywbQFvJh7Idn?usp=sharing",
+    },
+    {
+      year: "2026",
+      label: "Năm 2026",
+      link: "https://drive.google.com/drive/folders/1xiCngZSJDUIQfPdnrjhTywbQFvJh7Idn?usp=sharing",
+    },
+  ],
   photos: [
     {
       id: 1,
@@ -707,16 +727,32 @@ export const statsData = [
 ];
 
 export const documentData = {
+  tagline: "Tư liệu Hội nghị",
   title: "TÀI LIỆU HỘI NGHỊ",
-  desc: "Quét mã QR dưới đây để xem toàn bộ tài liệu, hồ sơ và nội dung chương trình của sự kiện.",
+  desc: "Quét mã QR hoặc truy cập đường dẫn trực tiếp để xem toàn bộ tài liệu, hồ sơ thông tin và báo cáo tham luận của Hội nghị.",
   qrImg: "/images/qr-tai-lieu.png",
   link: "https://drive.google.com/drive/folders/1xiCngZSJDUIQfPdnrjhTywbQFvJh7Idn?usp=sharing",
+  qrBoxTitle: "Quét Mã QR Truy Cập",
+  qrBoxHint: "Dùng camera điện thoại hoặc ứng dụng Zalo để quét mã",
+  viewBtnText: "Mở Thư Mục Tài Liệu",
+  copyBtnText: "Sao Chép Liên Kết",
+  copiedText: "Đã sao chép liên kết!",
+  features: [
+    {
+      title: "Chương trình & Nội dung Hội nghị",
+      desc: "Toàn văn kịch bản chương trình chi tiết, danh sách đoàn chủ tọa, đại biểu và thông điệp chào mừng.",
+    },
+    {
+      title: "Báo cáo tham luận & Chuyên đề",
+      desc: "Tổng hợp bài trình bày từ các chuyên gia quốc tế, cơ quan ngoại giao và doanh nghiệp xuất nhập khẩu.",
+    },
+  ],
 };
 
 export const footerData = {
   logoTitle: [
     "HỘI NGHỊ KẾT NỐI CHUỖI CUNG ỨNG",
-    "HÀNG HÓA XUẤT NHẬP KHẨU, THƯƠNG MẠI ĐIỆN TỬ TỈNH TÂY NINH NĂM 2026",
+    "HÀNG HÓA XUẤT NHẬP KHẨU, THƯƠNG MẠI ĐIỆN TỬ TỈNH TÂY NINH LẦN IV NĂM 2026",
   ],
   directors: ["Bộ Công Thương", "UBND tỉnh Tây Ninh"],
   implementers: ["Sở Công Thương tỉnh Tây Ninh"],
