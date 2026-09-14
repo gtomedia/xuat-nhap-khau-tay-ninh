@@ -6,6 +6,6 @@ interface AppState {
 }
 
 export const useAppStore = create<AppState>((set) => ({
-  title: "HỘI NGHỊ KẾT NỐI CHUỖI CUNG ỨNG HÀNG HÓA XUẤT NHẬP KHẨU, THƯƠNG MẠI ĐIỆN TỬ - TỈNH TÂY NINH LẦN IV NĂM 2026",
+  title: "HỘI NGHỊ KẾT NỐI CHUỖI CUNG ỨNG HÀNG HÓA XUẤT NHẬP KHẨU, THƯƠNG MẠI ĐIỆN TỬ - TỈNH TÂY NINH",
   setTitle: (title) => set({ title }),
 }));
