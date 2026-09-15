@@ -187,7 +187,8 @@ export const timelineData: TimelineItem[] = [
     time: "07:30 - 08:00",
     duration: "30 phút",
     part: "Sáng 05/9",
-    title: "Đăng ký và đón tiếp đại biểu, tham quan trưng bày sản phẩm đặc trưng, sản phẩm xuất khẩu của Tỉnh",
+    title:
+      "Đăng ký và đón tiếp đại biểu, tham quan trưng bày sản phẩm đặc trưng, sản phẩm xuất khẩu của Tỉnh",
     performer: "Sở Công Thương",
   },
   {
@@ -268,7 +269,8 @@ export const timelineData: TimelineItem[] = [
     duration: "10 phút",
     part: "Sáng 05/9",
     title: "Phát biểu bế mạc Hội nghị",
-    performer: "Ông Nguyễn Hồng Thanh, Ủy viên Ban Thường vụ, Phó Chủ tịch Thường trực UBND tỉnh Tây Ninh",
+    performer:
+      "Ông Nguyễn Hồng Thanh, Ủy viên Ban Thường vụ, Phó Chủ tịch Thường trực UBND tỉnh Tây Ninh",
   },
   {
     time: "11:30 - 13:30",
@@ -430,8 +432,7 @@ export const speakersData: Speaker[] = [
     name: "Bà Trần Đỗ Quyên",
     role: "Phó Cục trưởng Cục Phòng vệ thương mại",
     unit: "Bộ Công Thương",
-    topic:
-      "Phòng vệ thương mại trong bối cảnh mới",
+    topic: "Phòng vệ thương mại trong bối cảnh mới",
     session: "Phiên 2",
     duration: "08 phút",
     hasPpt: true,
@@ -485,6 +486,7 @@ export const speakersData: Speaker[] = [
     session: "Phiên 2",
     duration: "08 phút",
     hasPpt: true,
+    videoUrl: "https://www.youtube.com/watch?v=khqTggZkTAc",
   },
   {
     id: 13,
@@ -577,43 +579,50 @@ export const galleryData = {
       id: 1,
       src: "/images/events/doan_chu_tich_dieu_hanh_hoi_nghi.jpg",
       tag: "Đoàn Chủ tịch",
-      title: "Đoàn Chủ tịch điều hành Hội nghị Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu tỉnh Tây Ninh 2026",
+      title:
+        "Đoàn Chủ tịch điều hành Hội nghị Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu tỉnh Tây Ninh 2026",
     },
     {
       id: 2,
       src: "/images/events/11_bien_ban_ghi_nho_hop_tac_duoc_ky_ket_giua_cac_co_quan_hiep_hoi_doanh_nghiep_tay_ninh_voi_cac_doi_tac_trong_va_ngoai_nuoc.png",
       tag: "Ký kết MOU",
-      title: "Lễ ký kết 11 biên bản ghi nhớ hợp tác (MOU) giữa cơ quan, hiệp hội, doanh nghiệp Tây Ninh với các đối tác",
+      title:
+        "Lễ ký kết 11 biên bản ghi nhớ hợp tác (MOU) giữa cơ quan, hiệp hội, doanh nghiệp Tây Ninh với các đối tác",
     },
     {
       id: 3,
       src: "/images/events/dai_bieu_doanh_nghiep_chup_anh_luu_niem_tai_hoi_nghi.png",
       tag: "Đại biểu & Lãnh đạo",
-      title: "Chụp ảnh lưu niệm toàn thể Lãnh đạo Bộ ngành, Tỉnh ủy, UBND tỉnh và cộng đồng Doanh nghiệp",
+      title:
+        "Chụp ảnh lưu niệm toàn thể Lãnh đạo Bộ ngành, Tỉnh ủy, UBND tỉnh và cộng đồng Doanh nghiệp",
     },
     {
       id: 4,
       src: "/images/events/tong_quan_hoi_nghi.png",
       tag: "Toàn cảnh Hội nghị",
-      title: "Toàn cảnh phiên toàn thể Hội nghị Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu tỉnh Tây Ninh 2026",
+      title:
+        "Toàn cảnh phiên toàn thể Hội nghị Kết nối chuỗi cung ứng hàng hóa xuất nhập khẩu tỉnh Tây Ninh 2026",
     },
     {
       id: 5,
       src: "/images/events/b2b_1.png",
       tag: "Kết nối Giao thương B2B",
-      title: "Phiên kết nối giao thương B2B quốc tế trực tiếp giữa doanh nghiệp Tây Ninh và đối tác nước ngoài",
+      title:
+        "Phiên kết nối giao thương B2B quốc tế trực tiếp giữa doanh nghiệp Tây Ninh và đối tác nước ngoài",
     },
     {
       id: 6,
       src: "/images/events/doan_lanh_dao_tham_quan_khu_trung_bay_xuat_khau.jpg",
       tag: "Tham quan Triển lãm",
-      title: "Đoàn Lãnh đạo Bộ Công Thương và tỉnh Tây Ninh tham quan các gian hàng xuất khẩu tiêu biểu",
+      title:
+        "Đoàn Lãnh đạo Bộ Công Thương và tỉnh Tây Ninh tham quan các gian hàng xuất khẩu tiêu biểu",
     },
     {
       id: 7,
       src: "/images/events/b2b_2.png",
       tag: "Kết nối Giao thương B2B",
-      title: "Doanh nghiệp trong & ngoài nước trao đổi, đàm phán hợp tác xuất nhập khẩu trực tiếp",
+      title:
+        "Doanh nghiệp trong & ngoài nước trao đổi, đàm phán hợp tác xuất nhập khẩu trực tiếp",
     },
     {
       id: 8,
@@ -625,73 +634,85 @@ export const galleryData = {
       id: 9,
       src: "/images/events/b2b_4.png",
       tag: "Kết nối Giao thương B2B",
-      title: "Doanh nghiệp Tây Ninh giới thiệu tiềm năng và giao lưu hợp tác cùng các đối tác quốc tế",
+      title:
+        "Doanh nghiệp Tây Ninh giới thiệu tiềm năng và giao lưu hợp tác cùng các đối tác quốc tế",
     },
     {
       id: 10,
       src: "/images/events/toan_canh_hoi_truong_thong_nhat.jpg",
       tag: "Không gian Hội trường",
-      title: "Toàn cảnh không gian Hội trường Thống Nhất trang trọng trước giờ khai mạc Hội nghị",
+      title:
+        "Toàn cảnh không gian Hội trường Thống Nhất trang trọng trước giờ khai mạc Hội nghị",
     },
     {
       id: 11,
       src: "/images/events/lanh_dao_va_doi_tac_chup_anh_tai_gian_hang.jpg",
       tag: "Gặp gỡ Đối tác",
-      title: "Lãnh đạo UBND tỉnh Tây Ninh và đối tác quốc tế chụp ảnh lưu niệm tại gian hàng triển lãm",
+      title:
+        "Lãnh đạo UBND tỉnh Tây Ninh và đối tác quốc tế chụp ảnh lưu niệm tại gian hàng triển lãm",
     },
     {
       id: 12,
       src: "/images/events/doan_lanh_dao_tham_quan_cac_gian_hang.jpg",
       tag: "Tham quan Triển lãm",
-      title: "Đoàn Lãnh đạo các cấp khảo sát và động viên các doanh nghiệp tham gia trưng bày sản phẩm",
+      title:
+        "Đoàn Lãnh đạo các cấp khảo sát và động viên các doanh nghiệp tham gia trưng bày sản phẩm",
     },
     {
       id: 13,
       src: "/images/events/lanh_dao_khao_sat_san_pham_gian_hang.jpg",
       tag: "Khảo sát Sản phẩm",
-      title: "Lãnh đạo và các đối tác quốc tế khảo sát tiêu chuẩn chất lượng sản phẩm xuất khẩu",
+      title:
+        "Lãnh đạo và các đối tác quốc tế khảo sát tiêu chuẩn chất lượng sản phẩm xuất khẩu",
     },
     {
       id: 14,
       src: "/images/events/khach_quoc_te_tham_quan_trai_nghiem_san_pham_trung_bay.png",
       tag: "Giao thương Quốc tế",
-      title: "Khách quốc tế tìm hiểu, trải nghiệm các sản phẩm nông sản và công nghiệp xuất khẩu tiêu biểu",
+      title:
+        "Khách quốc tế tìm hiểu, trải nghiệm các sản phẩm nông sản và công nghiệp xuất khẩu tiêu biểu",
     },
     {
       id: 15,
       src: "/images/events/khong_gian_trung_bay_thu_hut_dong_dao_dai_bieu_doanh_nghiep.png",
       tag: "Không gian Trưng bày",
-      title: "Khu vực trưng bày sản phẩm thu hút đông đảo đại biểu, hiệp hội và doanh nghiệp kết nối",
+      title:
+        "Khu vực trưng bày sản phẩm thu hút đông đảo đại biểu, hiệp hội và doanh nghiệp kết nối",
     },
     {
       id: 16,
       src: "/images/events/khong_gian_ket_noi_trung_bay_san_pham_tai_hoi_nghi.png",
       tag: "Không gian Trưng bày",
-      title: "Không gian kết nối - trưng bày chuỗi cung ứng sản phẩm tại Hội nghị",
+      title:
+        "Không gian kết nối - trưng bày chuỗi cung ứng sản phẩm tại Hội nghị",
     },
     {
       id: 17,
       src: "/images/events/khong_gian_trien_lam.png",
       tag: "Không gian Trưng bày",
-      title: "Toàn cảnh không gian triển lãm sản phẩm đặc trưng tỉnh Tây Ninh bên lề Hội nghị",
+      title:
+        "Toàn cảnh không gian triển lãm sản phẩm đặc trưng tỉnh Tây Ninh bên lề Hội nghị",
     },
     {
       id: 18,
       src: "/images/events/khu_vuc_don_tiep_check_in_dai_bieu.jpg",
       tag: "Đón tiếp & Check-in",
-      title: "Khu vực đón tiếp chu đáo và quầy check-in đại biểu tham dự Hội nghị",
+      title:
+        "Khu vực đón tiếp chu đáo và quầy check-in đại biểu tham dự Hội nghị",
     },
     {
       id: 19,
       src: "/images/events/dai_bieu_quet_ma_qr_nhan_the_tham_du.jpg",
       tag: "Đón tiếp Đại biểu",
-      title: "Đại biểu quét mã QR làm thủ tục đăng ký nhanh chóng và nhận thẻ tham dự tại quầy lễ tân",
+      title:
+        "Đại biểu quét mã QR làm thủ tục đăng ký nhanh chóng và nhận thẻ tham dự tại quầy lễ tân",
     },
     {
       id: 20,
       src: "/images/events/dai_bieu_khach_moi_luu_lai_khoanh_khac_dang_nho.png",
       tag: "Lưu niệm Hội nghị",
-      title: "Đại biểu, khách mời lưu lại những khoảnh khắc trang trọng, đáng nhớ tại Hội nghị",
+      title:
+        "Đại biểu, khách mời lưu lại những khoảnh khắc trang trọng, đáng nhớ tại Hội nghị",
     },
   ],
 };
