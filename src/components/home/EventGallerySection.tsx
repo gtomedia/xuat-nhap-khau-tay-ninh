@@ -132,7 +132,7 @@ const EventGallerySection: React.FC = () => {
             <div className="recap-video-inner">
               {isPlayingRecap ? (
                 <iframe
-                  src={`${getYoutubeEmbedUrl(trailerData.link)}?autoplay=1&rel=0`}
+                  src={`${getYoutubeEmbedUrl(trailerData.link)}?autoplay=1&rel=0&vq=hd1080`}
                   title={trailerData.title || "Video Recap Hội nghị"}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen

@@ -467,17 +467,25 @@ const SpeakersSection: React.FC = () => {
             className="spk-modal-container"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Floating Close Button */}
-            <button
-              type="button"
-              className="spk-modal-floating-close"
-              onClick={() => setSelectedSpeakerVideo(null)}
-              aria-label="Đóng video"
-            >
-              <X size={22} />
-            </button>
+            {/* Header with Speaker Info & Close Button */}
+            <div className="spk-modal-header-bar">
+              <div className="spk-modal-header-info">
+                <span className="spk-modal-speaker-name">{selectedSpeakerVideo.name}</span>
+                {selectedSpeakerVideo.topic && (
+                  <span className="spk-modal-speaker-topic"> • {selectedSpeakerVideo.topic}</span>
+                )}
+              </div>
+              <button
+                type="button"
+                className="spk-modal-floating-close"
+                onClick={() => setSelectedSpeakerVideo(null)}
+                aria-label="Đóng video"
+              >
+                <X size={22} />
+              </button>
+            </div>
 
-            {/* 16:9 Video Player Only */}
+            {/* 16:9 Video Player (Cinema Size) */}
             <div className="spk-modal-video-wrap">
               {selectedSpeakerVideo.isVideoFile ? (
                 <video
@@ -489,7 +497,7 @@ const SpeakersSection: React.FC = () => {
                 />
               ) : (
                 <iframe
-                  src={`${getYoutubeEmbedUrl(selectedSpeakerVideo.videoUrl || "")}?autoplay=1&rel=0`}
+                  src={`${getYoutubeEmbedUrl(selectedSpeakerVideo.videoUrl || "")}?autoplay=1&rel=0&vq=hd1080`}
                   title={`Video phát biểu của ${selectedSpeakerVideo.name}`}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
@@ -691,18 +699,18 @@ const SpeakersSection: React.FC = () => {
           transform: scale(1.1);
         }
 
-        /* Speaker Video Modal - Pure Borderless Cinema */
+        /* Speaker Video Modal - Pure Cinema Theater (Ultra Large) */
         .spk-modal-backdrop {
           position: fixed;
           inset: 0;
-          background: rgba(0, 0, 0, 0.88);
-          -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+          background: rgba(1, 4, 14, 0.94);
+          -webkit-backdrop-filter: blur(14px);
+          backdrop-filter: blur(14px);
           z-index: 99999;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 1.5rem;
+          padding: 1rem;
           animation: spkModalFadeIn 0.25s ease-out;
         }
         @keyframes spkModalFadeIn {
@@ -711,67 +719,102 @@ const SpeakersSection: React.FC = () => {
         }
         .spk-modal-container {
           position: relative;
-          width: 100%;
-          max-width: 920px;
+          width: min(96vw, 1440px, calc((88vh - 65px) * 16 / 9));
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.75rem;
+          margin: auto;
           animation: spkModalScaleUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
         }
         @keyframes spkModalScaleUp {
-          from { opacity: 0; transform: scale(0.95) translateY(10px); }
+          from { opacity: 0; transform: scale(0.96) translateY(12px); }
           to { opacity: 1; transform: scale(1) translateY(0); }
         }
+        .spk-modal-header-bar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+          width: 100%;
+          padding: 0 0.5rem;
+        }
+        .spk-modal-header-info {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          min-width: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .spk-modal-speaker-name {
+          font-size: 1.15rem;
+          font-weight: 700;
+          color: #ffffff;
+          letter-spacing: -0.01em;
+          flex-shrink: 0;
+        }
+        .spk-modal-speaker-topic {
+          font-size: 0.95rem;
+          color: #94a3b8;
+          font-weight: 400;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
         .spk-modal-floating-close {
-          position: absolute;
-          top: -46px;
-          right: 0;
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(255, 255, 255, 0.15);
           border: 1px solid rgba(255, 255, 255, 0.25);
           border-radius: 50%;
-          width: 38px;
-          height: 38px;
+          width: 42px;
+          height: 42px;
           display: flex;
           align-items: center;
           justify-content: center;
           color: #ffffff;
           cursor: pointer;
-          transition: all 0.2s ease;
-          z-index: 10;
+          transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+          flex-shrink: 0;
         }
         .spk-modal-floating-close:hover {
           background: #ef4444;
           border-color: #ef4444;
           transform: rotate(90deg) scale(1.08);
+          box-shadow: 0 4px 18px rgba(239, 68, 68, 0.45);
         }
         .spk-modal-video-wrap {
           position: relative;
           width: 100%;
-          padding-bottom: 56.25%;
-          height: 0;
+          aspect-ratio: 16 / 9;
           background: #000000;
-          border-radius: 1rem;
+          border-radius: 1.25rem;
           overflow: hidden;
-          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+          box-shadow: 0 30px 90px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.12);
           border: none;
         }
         .spk-modal-media {
-          position: absolute;
-          top: 0;
-          left: 0;
           width: 100%;
           height: 100%;
           border: none;
+          display: block;
         }
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .spk-modal-backdrop {
-            padding: 0.75rem;
+            padding: 0.5rem;
+          }
+          .spk-modal-speaker-name {
+            font-size: 0.95rem;
+          }
+          .spk-modal-speaker-topic {
+            display: none;
           }
           .spk-modal-floating-close {
-            top: -42px;
-            right: 2px;
-            width: 34px;
-            height: 34px;
+            width: 36px;
+            height: 36px;
           }
           .spk-modal-video-wrap {
-            border-radius: 0.75rem;
+            border-radius: 0.875rem;
           }
         }
       `}</style>

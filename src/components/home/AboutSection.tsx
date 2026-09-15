@@ -32,7 +32,7 @@ const AboutSection: React.FC = () => {
   const baseEmbedUrl = getYoutubeEmbedUrl(aboutData.videoUrl);
   const autoplayEmbedUrl = `${baseEmbedUrl}${
     baseEmbedUrl.includes("?") ? "&" : "?"
-  }autoplay=1&mute=1&playsinline=1&enablejsapi=1`;
+  }autoplay=1&mute=1&playsinline=1&enablejsapi=1&vq=hd1080`;
 
   const renderIcon = (iconName: string, size = 18) => {
     switch (iconName) {

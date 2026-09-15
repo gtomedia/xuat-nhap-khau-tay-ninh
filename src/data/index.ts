@@ -349,7 +349,7 @@ export const speakersData: Speaker[] = [
     topic: "Doanh nghiệp Tây Ninh – Chiến lược vươn ra toàn cầu",
     session: "Phiên 1",
     duration: "08 phút",
-    videoUrl: "https://www.youtube.com/watch?v=b7TtQs8ZbBs",
+    videoUrl: "https://www.youtube.com/watch?v=dkr4c46J3jQ",
   },
   {
     id: 2,
@@ -361,7 +361,7 @@ export const speakersData: Speaker[] = [
     session: "Phiên 1",
     duration: "08 phút",
     hasPpt: true,
-    videoUrl: "https://www.youtube.com/watch?v=WzO3cW5UDJg",
+    videoUrl: "https://www.youtube.com/watch?v=3Kh_ed03tUM",
   },
   {
     id: 3,
@@ -372,7 +372,7 @@ export const speakersData: Speaker[] = [
     topic: "Thương hiệu tinh bột mì Việt Nam trên thị trường quốc tế",
     session: "Phiên 1",
     duration: "08 phút",
-    videoUrl: "https://www.youtube.com/watch?v=b7TtQs8ZbBs",
+    videoUrl: "https://www.youtube.com/watch?v=6DOVtnm97Js",
   },
   {
     id: 4,
@@ -383,7 +383,7 @@ export const speakersData: Speaker[] = [
     topic: "Chuỗi liên kết chăn nuôi gia cầm tiêu chuẩn châu Âu",
     session: "Phiên 1",
     duration: "08 phút",
-    videoUrl: "https://www.youtube.com/watch?v=WzO3cW5UDJg",
+    videoUrl: "https://www.youtube.com/watch?v=DXtLZDqJ2sE",
   },
   {
     id: 5,
@@ -395,7 +395,7 @@ export const speakersData: Speaker[] = [
     session: "Phiên 1",
     duration: "08 phút",
     hasPpt: true,
-    videoUrl: "https://www.youtube.com/watch?v=b7TtQs8ZbBs",
+    videoUrl: "https://www.youtube.com/watch?v=Fj0PQ7pIjFQ",
   },
   {
     id: 6,
@@ -407,7 +407,7 @@ export const speakersData: Speaker[] = [
       "Nâng tầm sản phẩm thủ công mỹ nghệ – Kết nối giá trị địa phương với thị trường toàn cầu",
     session: "Phiên 1",
     duration: "08 phút",
-    videoUrl: "https://www.youtube.com/watch?v=WzO3cW5UDJg",
+    videoUrl: "https://www.youtube.com/watch?v=09BC_3-BXhI",
   },
 
   // Phiên 2: Tham gia sâu chuỗi giá trị toàn cầu
@@ -422,7 +422,7 @@ export const speakersData: Speaker[] = [
     session: "Phiên 2",
     duration: "08 phút",
     hasPpt: true,
-    videoUrl: "https://www.youtube.com/watch?v=b7TtQs8ZbBs",
+    videoUrl: "https://www.youtube.com/watch?v=vLVfBAqXcwI",
   },
   {
     id: 8,
@@ -435,7 +435,7 @@ export const speakersData: Speaker[] = [
     session: "Phiên 2",
     duration: "08 phút",
     hasPpt: true,
-    videoUrl: "https://www.youtube.com/watch?v=WzO3cW5UDJg",
+    videoUrl: "https://www.youtube.com/watch?v=dxOJ09REdDg",
   },
   {
     id: 9,
@@ -447,7 +447,7 @@ export const speakersData: Speaker[] = [
       "Đánh giá và dự báo thị trường Hoa Kỳ trước những diễn biến chính sách thuế quan mới",
     session: "Phiên 2",
     duration: "08 phút",
-    videoUrl: "https://www.youtube.com/watch?v=b7TtQs8ZbBs",
+    videoUrl: "https://www.youtube.com/watch?v=Fx3F-_NFM7w",
   },
   {
     id: 10,
@@ -460,7 +460,7 @@ export const speakersData: Speaker[] = [
     session: "Phiên 2",
     duration: "08 phút",
     hasPpt: true,
-    videoUrl: "https://www.youtube.com/watch?v=WzO3cW5UDJg",
+    videoUrl: "https://www.youtube.com/watch?v=Fie6nimIPGk",
   },
   {
     id: 11,
@@ -472,8 +472,7 @@ export const speakersData: Speaker[] = [
       "Biến bất ổn thành cơ hội: Từ Tây Ninh đến UAE và thị trường Trung Đông",
     session: "Phiên 2",
     duration: "08 phút",
-    hasPpt: true,
-    videoUrl: "https://www.youtube.com/watch?v=b7TtQs8ZbBs",
+    videoUrl: "https://www.youtube.com/watch?v=XfBNjgStBDk",
   },
   {
     id: 12,
@@ -486,7 +485,6 @@ export const speakersData: Speaker[] = [
     session: "Phiên 2",
     duration: "08 phút",
     hasPpt: true,
-    videoUrl: "https://www.youtube.com/watch?v=WzO3cW5UDJg",
   },
   {
     id: 13,
@@ -498,7 +496,7 @@ export const speakersData: Speaker[] = [
       "Đổi mới chiến lược thu mua và khuyến nghị tiếp cận hiệu quả các kênh phân phối quốc tế",
     session: "Phiên 2",
     duration: "08 phút",
-    videoUrl: "https://www.youtube.com/watch?v=b7TtQs8ZbBs",
+    videoUrl: "https://www.youtube.com/watch?v=oWTHoPzfYAE",
   },
   {
     id: 14,
@@ -511,7 +509,7 @@ export const speakersData: Speaker[] = [
     session: "Phiên 2",
     duration: "08 phút",
     hasPpt: true,
-    videoUrl: "https://www.youtube.com/watch?v=WzO3cW5UDJg",
+    videoUrl: "https://www.youtube.com/watch?v=6ASMP9y__IU",
   },
 
   // Lãnh đạo phát biểu & Chủ trì Hội nghị
@@ -524,7 +522,7 @@ export const speakersData: Speaker[] = [
     topic: "Phát biểu khai mạc của Lãnh đạo Bộ Công Thương",
     session: "Lãnh đạo",
     duration: "05 phút",
-    videoUrl: "https://www.youtube.com/watch?v=b7TtQs8ZbBs",
+    videoUrl: "https://www.youtube.com/watch?v=BLImGzMYdTU",
   },
   {
     id: 102,
@@ -535,7 +533,7 @@ export const speakersData: Speaker[] = [
     topic: "Phát biểu chào mừng của Tỉnh Tây Ninh",
     session: "Lãnh đạo",
     duration: "10 phút",
-    videoUrl: "https://www.youtube.com/watch?v=b7TtQs8ZbBs",
+    videoUrl: "https://www.youtube.com/watch?v=4vGnNO5VUoo",
   },
   {
     id: 103,
@@ -546,7 +544,7 @@ export const speakersData: Speaker[] = [
     topic: "Phát biểu bế mạc Hội nghị",
     session: "Lãnh đạo",
     duration: "10 phút",
-    videoUrl: "https://www.youtube.com/watch?v=b7TtQs8ZbBs",
+    videoUrl: "https://www.youtube.com/watch?v=Nq76UD49zpI",
   },
 ];
 
